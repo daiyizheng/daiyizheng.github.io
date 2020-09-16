@@ -1,0 +1,1726 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="TorchServe, 呆小症日记">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>TorchServe | 呆小症日记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="呆小症日记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">呆小症日记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">呆小症日记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">TorchServe</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                                <span class="chip bg-color">部署</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%BF%90%E7%BB%B4/" class="post-category">
+                                运维
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-09-14
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="TorchServe"><a href="#TorchServe" class="headerlink" title="TorchServe"></a>TorchServe</h1><h2 id="什么是TorchServe"><a href="#什么是TorchServe" class="headerlink" title="什么是TorchServe"></a>什么是TorchServe</h2><p>TorchServe是用于服务PyTorch模型的灵活易用的工具。它没有TFX的复杂性，因此，它没有提供那么多的功能。但是，这是完成工作的直接方法！</p>
+<p><img src="/2020/09/14/torchserve/1.png"></p>
+<p>​       TorchServe提供了一组必要的功能，例如服务器，模型存档器工具，API端点规范，日志记录，度量，批处理推断和模型快照等。它还提供了一系列高级功能，例如，对定制推理服务的支持，单元测试以及通过JMeter收集基准数据的简便方法。目前，它处于实验阶段，但在大多数情况下，它的工作原理就像是一种魅力。实际上，我们将在本文后面的部分中进行测试。</p>
+<ul>
+<li>支持<a target="_blank" rel="noopener" href="https://huggingface.co/">HuggingFace</a>，这是一个深度学习库，其任务是为所有人提高NLP的使用程度，并提供文档和示例</li>
+<li>支持<a target="_blank" rel="noopener" href="https://github.com/NVIDIA/waveglow">Nvidia Waveglow</a>（一个基于流的语音合成生成网络，提供文档和示例）</li>
+<li>与Model Zoo紧密集成，Model Zoo是一个深度学习注册表，其中包含根据流行的预训练模型创建的模型档案</li>
+<li>支持<a target="_blank" rel="noopener" href="https://aws.amazon.com/cloudformation/">AWS Cloud Forming</a>，可通过简单的配置文件（YAML或JSON）方便地在EC2实例上启动服务器</li>
+<li>支持通过<a target="_blank" rel="noopener" href="https://jiffyclub.github.io/snakeviz/">snakevize</a>分析器对TorchServe Python执行<a target="_blank" rel="noopener" href="https://jiffyclub.github.io/snakeviz/">性能</a>分析，以详细报告执行时间</li>
+<li>具有清晰说明的重构文档</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>JAVA 安装　JDK&gt;=8</li>
+</ul>
+<p>For Ubuntu:</p>
+<pre><code>sudo apt-get install openjdk-11-jdk</code></pre>
+<p>For CentOS:</p>
+<pre><code>openjdk-11-jdk
+sudo yum install java-11-openjdk</code></pre>
+<p>For macOS:</p>
+<pre><code>brew tap AdoptOpenJDK/openjdk
+brew cask install adoptopenjdk11</code></pre>
+<p><code>torch</code>默认情况下，不会安装TorchServe 。该项目中的大多数示例都需要使用Torch。</p>
+<ul>
+<li>For virtualenv</li>
+</ul>
+<pre><code>#For CPU/GPU
+pip install torch torchvision torchtext</code></pre>
+<ul>
+<li>For conda</li>
+</ul>
+<pre><code>#For CPU
+conda install -c pytorch -c powerai pytorch torchtext torchvision
+#For GPU
+conda install -c pytorch -c powerai pytorch torchtext torchvision cudatoolkit=10.1</code></pre>
+<h3 id="pip-安装"><a href="#pip-安装" class="headerlink" title="pip 安装"></a>pip 安装</h3><p><strong>From PyTorch official repositories</strong></p>
+<pre><code>pip install -f https://download.pytorch.org/whl/torch_stable.html torchserve torch-model-archiver</code></pre>
+<h3 id="conda安装"><a href="#conda安装" class="headerlink" title="conda安装"></a>conda安装</h3><pre><code>conda install -c pytorch torchserve torch-model-archiver</code></pre>
+<h3 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker安装</h3><h3 id="CPU-only"><a href="#CPU-only" class="headerlink" title="CPU only"></a>CPU only</h3><p>For specific versions use:</p>
+<pre><code>docker run --rm -it -p 8080:8080 -p 8081:8081 pytorch/torchserve:0.1-cpu</code></pre>
+<p>For the latest version you can use the <code>latest</code> tag:</p>
+<pre><code>docker run --rm -it -p 8080:8080 -p 8081:8081 pytorch/torchserve:latest</code></pre>
+<h3 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h3><p>For specific versions use:</p>
+<pre><code>docker run --rm -it --gpus all -p 8080:8080 -p 8081:8081 pytorch/torchserve:0.1-cuda10.1-cudnn7-runtime</code></pre>
+<p>For the latest version you can use the <code>gpu-latest</code> tag:</p>
+<pre><code>docker run --rm -it --gpus all -p 8080:8080 -p 8081:8081 pytorch/torchserve:latest-gpu</code></pre>
+<blockquote>
+<p>个人推荐使用Docker安装，省去安装环境的麻烦！</p>
+</blockquote>
+<h2 id="示例一"><a href="#示例一" class="headerlink" title="示例一"></a>示例一</h2><p>安装TorchServe，请按照<a target="_blank" rel="noopener" href="https://github.com/pytorch/serve/blob/master/README.md#installing-torchserve-with-pip">GitHub上</a>的说明进行操作</p>
+<ol>
+<li>下载TorchServe存储库以访问示例。运行以下代码：</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> torchserve-examples
+<span class="token function">cd</span> torchserve-examples
+<span class="token function">git</span> clone https://github.com/pytorch/serve.git</code></pre>
+<ol start="2">
+<li>从官方PyTorch模型库中下载DenseNet图像分类模型。运行以下代码：</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://download.pytorch.org/models/densenet161-8d451a50.pth</code></pre>
+<ol start="3">
+<li>将模型从PyTorch转换为TorchServe格式。TorchServe使用扩展名为.mar的模型存档格式。.mar文件使用<code>state_dict</code>（将每个层映射到其参数张量的字典对象）打包模型检查点或模型定义文件。您可以使用<code>torch-model-archiver</code>TorchServe中的工具来创建.mar文件。您无需创建自定义处理程序，只需指定即可<code>--handler image_classifier</code>，它会自动为您设置处理程序。现在您已经有了.mar文件，请使用TorchServe托管它。运行以下代码：</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">torch-model-archiver --model-name densenet161 \
+--version 1.0 --model-file serve/examples/image_classifier/densenet_161/model.py \
+--serialized-file densenet161-8d451a50.pth \
+--extra-files serve/examples/image_classifier/index_to_name.json \
+--handler image_classifier
+
+<span class="token function">ls</span> *.mar</code></pre>
+<p><strong>handler</strong> 自定义</p>
+<p>您可以通过使类具有任何名称来创建自定义处理程序，但是该类必须具有<code>initialize</code>和<code>handle</code>方法。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ModelHandler</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    A custom model handler implementation.
+    """</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_context <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>initialized <span class="token operator">=</span> <span class="token boolean">False</span>
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>device <span class="token operator">=</span> None
+
+    <span class="token keyword">def</span> <span class="token function">initialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Invoke by torchserve for loading a model
+        :param context: context contains model server system properties
+        :return:
+        """</span>
+
+        <span class="token comment" spellcheck="true">#  load the model</span>
+        self<span class="token punctuation">.</span>manifest <span class="token operator">=</span> context<span class="token punctuation">.</span>manifest
+
+        properties <span class="token operator">=</span> context<span class="token punctuation">.</span>system_properties
+        model_dir <span class="token operator">=</span> properties<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"model_dir"</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">"cuda:"</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>properties<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"gpu_id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">else</span> <span class="token string">"cpu"</span><span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># Read model serialize/pt file</span>
+        serialized_file <span class="token operator">=</span> self<span class="token punctuation">.</span>manifest<span class="token punctuation">[</span><span class="token string">'model'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'serializedFile'</span><span class="token punctuation">]</span>
+        model_pt_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>model_dir<span class="token punctuation">,</span> serialized_file<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span>model_pt_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> RuntimeError<span class="token punctuation">(</span><span class="token string">"Missing the model.pt file"</span><span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>model <span class="token operator">=</span> torch<span class="token punctuation">.</span>jit<span class="token punctuation">.</span>load<span class="token punctuation">(</span>model_pt_path<span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>initialized <span class="token operator">=</span> <span class="token boolean">True</span>
+
+
+    <span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Invoke by TorchServe for prediction request.
+        Do pre-processing of data, prediction using model and postprocessing of prediciton output
+        :param data: Input data for prediction
+        :param context: Initial context contains model server system properties.
+        :return: prediction output
+        """</span>
+        pred_out <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>forward<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> pred_out</code></pre>
+<p><strong>handler高级自定义处理程序</strong></p>
+<p>从头开始编写自定义处理程序</p>
+<p><em>通常，您应该从BaseHandler派生，并且只重写行为需要更改的方法！</em>如您在示例中所见，大多数情况下，您只需要覆盖<code>preprocess</code>或<code>postprocess</code></p>
+<p>尽管如此，您仍然可以从头开始编写一个类。下面是一个例子。基本上，它遵循典型的Init-Pre-Infer-Post模式创建可维护的自定义处理程序。</p>
+<pre class=" language-python"><code class="language-python"> custom handler file
+
+<span class="token comment" spellcheck="true"># model_handler.py</span>
+
+<span class="token triple-quoted-string string">"""
+ModelHandler defines a custom model handler.
+"""</span>
+
+<span class="token keyword">from</span> ts<span class="token punctuation">.</span>torch_handler<span class="token punctuation">.</span>base_handler <span class="token keyword">import</span> BaseHandler
+
+<span class="token keyword">class</span> <span class="token class-name">ModelHandler</span><span class="token punctuation">(</span>BaseHandler<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    A custom model handler implementation.
+    """</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_context <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>initialized <span class="token operator">=</span> <span class="token boolean">False</span>
+
+    <span class="token keyword">def</span> <span class="token function">initialize</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Initialize model. This will be called during model loading time
+        :param context: Initial context contains model server system properties.
+        :return:
+        """</span>
+        self<span class="token punctuation">.</span>_context <span class="token operator">=</span> context
+        self<span class="token punctuation">.</span>initialized <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token comment" spellcheck="true">#  load the model, refer 'custom handler class' above for details</span>
+
+    <span class="token keyword">def</span> <span class="token function">preprocess</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Transform raw input into model input data.
+        :param batch: list of raw requests, should match batch size
+        :return: list of preprocessed model input data
+        """</span>
+        <span class="token comment" spellcheck="true"># Take the input data and make it inference ready</span>
+        preprocessed_data <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> preprocessed_data <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            preprocessed_data <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"body"</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> preprocessed_data
+
+
+    <span class="token keyword">def</span> <span class="token function">inference</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> model_input<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Internal inference methods
+        :param model_input: transformed model input data
+        :return: list of inference output in NDArray
+        """</span>
+        <span class="token comment" spellcheck="true"># Do some inference call to engine here and return output</span>
+        model_output <span class="token operator">=</span> self<span class="token punctuation">.</span>model<span class="token punctuation">.</span>forward<span class="token punctuation">(</span>model_input<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> model_output
+
+    <span class="token keyword">def</span> <span class="token function">postprocess</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> inference_output<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Return inference result.
+        :param inference_output: list of inference output
+        :return: list of predict results
+        """</span>
+        <span class="token comment" spellcheck="true"># Take output from network and post-process to desired format</span>
+        postprocess_output <span class="token operator">=</span> inference_output
+        <span class="token keyword">return</span> postprocess_output
+
+    <span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Invoke by TorchServe for prediction request.
+        Do pre-processing of data, prediction using model and postprocessing of prediciton output
+        :param data: Input data for prediction
+        :param context: Initial context contains model server system properties.
+        :return: prediction output
+        """</span>
+        model_input <span class="token operator">=</span> self<span class="token punctuation">.</span>preprocess<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        model_output <span class="token operator">=</span> self<span class="token punctuation">.</span>inference<span class="token punctuation">(</span>model_input<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>postprocess<span class="token punctuation">(</span>model_output<span class="token punctuation">)</span></code></pre>
+<ol>
+<li>您收到以下输出：</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">densenet161.mar serve</code></pre>
+<p>​    主模型。运行以下代码：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> model_store
+<span class="token function">mv</span> densenet161.mar model_store/
+torchserve --start --model-store model_store --models densenet161<span class="token operator">=</span>densenet161.mar <span class="token comment" spellcheck="true">#非docker安装</span>
+<span class="token comment" spellcheck="true">#docker安装　推荐</span>
+docker run --rm -it -p 3000:8080 -p 3001:8081 -v <span class="token variable"><span class="token variable">$(</span><span class="token function">pwd</span><span class="token variable">)</span></span>/model_store:/home/model-server/model-store pytorch/torchserve:0.1-cpu  torchserve --start --model-store model_store --models densenet161<span class="token operator">=</span>densenet161.mar <span class="token operator">&amp;</span><span class="token operator">></span>server.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1</code></pre>
+<blockquote>
+<p> 扩展：<code>torch-model-archiver --model-name resnet34 \--version 1.0 \--serialized-file resnet34.pt \--extra-files ./index_to_name.json,./MyHandler.py \--handler my_handler.py \--export-path model-store -f</code></p>
+<p>变量<code>--model-name</code>定义了模型的最终名称。这是非常重要的，因为它将是endpoint的名称空间，负责进行预测。你还可以指定一个<code>--version</code>。<code>--serialized-file</code>指向我们之前创建的存储的 <code>.pt</code>模型。<code>--handler</code> 是一个python文件，我们在其中调用我们的自定义handler。</p>
+<p>它暴露了一个<code>handle</code>函数，我们从该函数调用自定义handler中的方法。你可以使用默认名称来使用默认handler(例如，<code>--handler image_classifier</code>)。</p>
+<p>在<code>--extra-files</code>中，你需要将路径传递给你的handlers正在使用的所有文件。在本例中，我们必须向<code>.json</code>文件中添加路径。使用所有人类可读标签名称，并在<code>MyHandler.py</code> 中定义每个类别。</p>
+<p>如果你传递一个<code>index_to_name.json</code>文件，它将自动加载到handler ，并通过<code>self.mapping</code>访问。</p>
+<p><code>--export-path</code>就是 <code>.mar</code>存放的地方，我还添加了<code>-f</code>来覆盖原有的文件。</p>
+<p>如果一切顺利的话，你可以看到<code>resnet34.mar</code>存放在<code>./model-store</code>路径中。</p>
+</blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://jishuin.proginn.com/p/763bfbd2c54d">https://jishuin.proginn.com/p/763bfbd2c54d</a></p>
+<p>注意：(1)docker rm只是删除容器，rm -v 不仅删除容器（如果容器有使用卷，卷也会进行相应的删除）。不能与-d一起使用,注意调用内部接口3001,外部接口3000</p>
+<ol>
+<li>调用</li>
+</ol>
+<pre class=" language-python"><code class="language-python">curl <span class="token operator">-</span>X POST http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">127.0</span><span class="token punctuation">.</span><span class="token number">0.1</span><span class="token punctuation">:</span><span class="token number">3000</span><span class="token operator">/</span>predictions<span class="token operator">/</span>densenet161 <span class="token operator">-</span>T <span class="token punctuation">.</span><span class="token operator">/</span>examples<span class="token operator">/</span>image_classifier<span class="token operator">/</span>kitten<span class="token punctuation">.</span>jpg</code></pre>
+<p>curl知识　请参考<a href="/2020/09/15/curl-ming-ling/" title="curl命令">curl命令</a></p>
+<p>您收到以下输出：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>
+ &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token property">"tiger_cat"</span><span class="token operator">:</span> <span class="token number">0.4693356156349182</span>
+ &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+ &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token property">"tabby"</span><span class="token operator">:</span> <span class="token number">0.46338796615600586</span>
+ &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+ &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token property">"Egyptian_cat"</span><span class="token operator">:</span> <span class="token number">0.06456131488084793</span>
+ &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+ &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token property">"lynx"</span><span class="token operator">:</span> <span class="token number">0.0012828155886381865</span>
+ &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+ &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token property">"plastic_bag"</span><span class="token operator">:</span> <span class="token number">0.00023323005007114261</span>
+ &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">]</span></code></pre>
+<h2 id="托管多个模型并扩展工作"><a href="#托管多个模型并扩展工作" class="headerlink" title="托管多个模型并扩展工作"></a>托管多个模型并扩展工作</h2><p>TorchServe提供了一个管理API，用于列出已注册的模型，将新模型注册到现有服务器，取消注册当前模型，增加或减少每个模型的工作人员数量，描述模型的状态，添加版本以及设置默认版本。Management API正在端口8081上侦听，并且默认情况下只能从localhost访问，但是您可以更改默认行为。</p>
+<p>要注册新模型，请完成以下步骤：</p>
+<ol>
+<li><p>使用以下代码下载新模型：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth
+torch-model-archiver --model-name fastrcnn --version 1.0 \
+--model-file serve/examples/object_detector/fast-rcnn/model.py \
+--serialized-file fasterrcnn_resnet50_fpn_coco-258fb6c6.pth \
+--handler object_detector \
+--extra-files serve/examples/object_detector/index_to_name.json
+
+<span class="token function">mv</span> fastrcnn.mar model-store/</code></pre>
+</li>
+<li><p>使用以下代码注册新模型：</p>
+<pre class=" language-bash"><code class="language-bash">curl -X POST <span class="token string">"http://localhost:3001/models?url=fastrcnn.mar"</span></code></pre>
+<p>您收到以下输出：</p>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"Model \"fastrcnn\" registered"</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p>您还可以使用以下代码查询已注册模型的列表：</p>
+<pre class=" language-bash"><code class="language-bash">curl <span class="token string">"http://localhost:3001/models"</span></code></pre>
+<p>您收到以下输出：</p>
+<pre class=" language-json"><code class="language-json">&amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token property">"models"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token property">"modelName"</span><span class="token operator">:</span> <span class="token string">"densenet161"</span><span class="token punctuation">,</span>
+            <span class="token property">"modelUrl"</span><span class="token operator">:</span> <span class="token string">"densenet161.mar"</span>
+        &amp;#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token property">"modelName"</span><span class="token operator">:</span> <span class="token string">"fastrcnn"</span><span class="token punctuation">,</span>
+            <span class="token property">"modelUrl"</span><span class="token operator">:</span> <span class="token string">"fastrcnn.mar"</span>
+        &amp;#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">]</span>
+&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>缩放模型工人。没有为新模型分配工人，因此请使用以下代码设置最小工人数：</p>
+<pre class=" language-bash"><code class="language-bash">curl -v -X PUT <span class="token string">"http://localhost:3000/models/fastrcnn?min_worker=2"</span>
+curl <span class="token string">"http://localhost:3000/models/fastrcnn"</span></code></pre>
+<p>您收到以下输出：</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">[</span>
+  &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token property">"modelName"</span><span class="token operator">:</span> <span class="token string">"fastrcnn"</span><span class="token punctuation">,</span>
+    <span class="token property">"modelVersion"</span><span class="token operator">:</span> <span class="token string">"1.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"modelUrl"</span><span class="token operator">:</span> <span class="token string">"fastrcnn.mar"</span><span class="token punctuation">,</span>
+    <span class="token property">"runtime"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
+    <span class="token property">"minWorkers"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token property">"maxWorkers"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token property">"batchSize"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">"maxBatchDelay"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+…
+…</code></pre>
+<p>如果您的模型托管在具有许多内核的CPU上，例如具有96个vCPU的c5.24xlarge EC2实例，则可以使用上述方法轻松扩展线程数。</p>
+</li>
+<li><p>使用以下代码注销模型：</p>
+<pre class=" language-bash"><code class="language-bash">curl -X DELETE http://localhost:3000/models/fastrcnn/</code></pre>
+</li>
+<li><p>要对模型进行版本控制，请在调用时<code>torch-model-archiver</code>，将版本号传递给<code>--version</code>请参见以下代码：</p>
+<p>请参见以下代码：</p>
+<pre class=" language-bash"><code class="language-bash">torch-model-archiver --model-name fastrcnn --version 1.0 <span class="token punctuation">..</span>.</code></pre>
+</li>
+</ol>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>​        TorchServe是一种用于服务PyTorch模型的灵活易用的工具。提供的功能以及如何利用其实用程序通过REST端点为PyTorch模型提供服务。通过MNIST示例对其进行了测试。为了进一步了解，请深入阅读<a target="_blank" rel="noopener" href="https://pytorch.org/serve/">文档</a>和<a target="_blank" rel="noopener" href="https://github.com/pytorch/serve/tree/master/examples">官方示例</a>。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">daiyizheng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com/2020/09/14/torchserve/">http://yoursite.com/2020/09/14/torchserve/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">daiyizheng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                                    <span class="chip bg-color">部署</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '4UATY1Wl6PiOAJtLDeI11JPG-9Nh9j0Va',
+        appKey: 'm8JJMe4Ok7crFRmTthEbo48R',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/09/15/curl-ming-ling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="curl命令">
+                        
+                        <span class="card-title">curl命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            curl命令
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/shell/" class="post-category">
+                                    shell
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">命令</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/14/bert-for-joint-intent-classification-and-slot-filling/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="BERT for Joint Intent Classification and Slot Filling">
+                        
+                        <span class="card-title">BERT for Joint Intent Classification and Slot Filling</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            BERT应用于意图分类和槽填充
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%BA%E6%96%87/" class="post-category">
+                                    论文
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Bert/">
+                        <span class="chip bg-color">Bert</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E7%B1%BB/">
+                        <span class="chip bg-color">分类</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A7%BD%E5%A1%AB%E5%85%85/">
+                        <span class="chip bg-color">槽填充</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">daiyizheng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

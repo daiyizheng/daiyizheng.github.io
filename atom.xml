@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>呆小症日记</title>
+  
+  <subtitle>日积月累</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-09-15T03:15:23.143Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>daiyizheng</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>curl命令</title>
+    <link href="http://yoursite.com/2020/09/15/curl-ming-ling/"/>
+    <id>http://yoursite.com/2020/09/15/curl-ming-ling/</id>
+    <published>2020-09-15T03:04:55.000Z</published>
+    <updated>2020-09-15T03:15:23.143Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;curl&quot;&gt;&lt;a href=&quot;#curl&quot; class=&quot;headerlink&quot; title=&quot;curl&quot;&gt;&lt;/a&gt;curl&lt;/h1&gt;&lt;h2 id=&quot;命令：curl&quot;&gt;&lt;a href=&quot;#命令：curl&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="shell" scheme="http://yoursite.com/categories/shell/"/>
+    
+    
+      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TorchServe</title>
+    <link href="http://yoursite.com/2020/09/14/torchserve/"/>
+    <id>http://yoursite.com/2020/09/14/torchserve/</id>
+    <published>2020-09-14T07:29:51.000Z</published>
+    <updated>2020-09-15T07:35:13.851Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;TorchServe&quot;&gt;&lt;a href=&quot;#TorchServe&quot; class=&quot;headerlink&quot; title=&quot;TorchServe&quot;&gt;&lt;/a&gt;TorchServe&lt;/h1&gt;&lt;h2 id=&quot;什么是TorchServe&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="部署" scheme="http://yoursite.com/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BERT for Joint Intent Classification and Slot Filling</title>
+    <link href="http://yoursite.com/2020/09/14/bert-for-joint-intent-classification-and-slot-filling/"/>
+    <id>http://yoursite.com/2020/09/14/bert-for-joint-intent-classification-and-slot-filling/</id>
+    <published>2020-09-14T03:32:47.000Z</published>
+    <updated>2020-09-14T06:13:57.431Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;BERT-for-Joint-Intent-Classification-and-Slot-Filling&quot;&gt;&lt;a href=&quot;#BERT-for-Joint-Intent-Classification-and-Slot-Filling&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87/"/>
+    
+    
+      <category term="Bert" scheme="http://yoursite.com/tags/Bert/"/>
+    
+      <category term="分类" scheme="http://yoursite.com/tags/%E5%88%86%E7%B1%BB/"/>
+    
+      <category term="槽填充" scheme="http://yoursite.com/tags/%E6%A7%BD%E5%A1%AB%E5%85%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Joint Extraction of Entities and Relations Based on a Novel Decomposition Strategy</title>
+    <link href="http://yoursite.com/2020/09/13/joint-extraction-of-entities-and-relations-based-on-a-novel-decomposition-strategy/"/>
+    <id>http://yoursite.com/2020/09/13/joint-extraction-of-entities-and-relations-based-on-a-novel-decomposition-strategy/</id>
+    <published>2020-09-12T16:02:24.000Z</published>
+    <updated>2020-09-13T09:34:58.512Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基于一种新的分解策略的实体和关系的联合提取&quot;&gt;&lt;a href=&quot;#基于一种新的分解策略的实体和关系的联合提取&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87/"/>
+    
+    
+      <category term="关系抽取" scheme="http://yoursite.com/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关系抽取汇总</title>
+    <link href="http://yoursite.com/2020/09/12/guan-xi-chou-qu-github-hui-zong/"/>
+    <id>http://yoursite.com/2020/09/12/guan-xi-chou-qu-github-hui-zong/</id>
+    <published>2020-09-12T10:48:56.000Z</published>
+    <updated>2020-09-13T01:49:46.866Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;关系抽取汇总&quot;&gt;&lt;a href=&quot;#关系抽取汇总&quot; class=&quot;headerlink&quot; title=&quot;关系抽取汇总&quot;&gt;&lt;/a&gt;关系抽取汇总&lt;/h1&gt;&lt;p&gt; 　　目前有两大类方法，一种是使用流水线的方法（Pipelined
+        
+      
+    
+    </summary>
+    
+    
+      <category term="汇总" scheme="http://yoursite.com/categories/%E6%B1%87%E6%80%BB/"/>
+    
+    
+      <category term="关系抽取" scheme="http://yoursite.com/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python argparse参数解析模块</title>
+    <link href="http://yoursite.com/2020/09/12/python-argparse-can-shu-jie-xi-mo-kuai/"/>
+    <id>http://yoursite.com/2020/09/12/python-argparse-can-shu-jie-xi-mo-kuai/</id>
+    <published>2020-09-12T03:53:37.000Z</published>
+    <updated>2020-09-12T03:59:11.798Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;argparse&quot;&gt;&lt;a href=&quot;#argparse&quot; class=&quot;headerlink&quot; title=&quot;argparse&quot;&gt;&lt;/a&gt;argparse&lt;/h1&gt;&lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://yoursite.com/categories/python/"/>
+    
+    
+      <category term="python基础" scheme="http://yoursite.com/tags/python%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="参数模块" scheme="http://yoursite.com/tags/%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9D%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pytorch两种模型保存方式</title>
+    <link href="http://yoursite.com/2020/09/11/pytorch-liang-chong-mo-xing-bao-cun-fang-shi/"/>
+    <id>http://yoursite.com/2020/09/11/pytorch-liang-chong-mo-xing-bao-cun-fang-shi/</id>
+    <published>2020-09-11T14:39:26.000Z</published>
+    <updated>2020-09-11T14:49:00.335Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Torch模型保存&quot;&gt;&lt;a href=&quot;#Torch模型保存&quot; class=&quot;headerlink&quot; title=&quot;Torch模型保存&quot;&gt;&lt;/a&gt;Torch模型保存&lt;/h1&gt;&lt;h2 id=&quot;只保存模型参数&quot;&gt;&lt;a href=&quot;#只保存模型参数&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="torch" scheme="http://yoursite.com/categories/torch/"/>
+    
+    
+      <category term="torch基础" scheme="http://yoursite.com/tags/torch%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图神经网络开放数据集</title>
+    <link href="http://yoursite.com/2020/09/10/tu-shen-jing-wang-luo-kai-fang-shu-ju-ji/"/>
+    <id>http://yoursite.com/2020/09/10/tu-shen-jing-wang-luo-kai-fang-shu-ju-ji/</id>
+    <published>2020-09-10T06:17:13.000Z</published>
+    <updated>2020-09-12T01:53:01.516Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;图神经网络开放数据集&quot;&gt;&lt;a href=&quot;#图神经网络开放数据集&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据集" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+    
+      <category term="开放数据" scheme="http://yoursite.com/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="图神经" scheme="http://yoursite.com/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>几种常见激活函数</title>
+    <link href="http://yoursite.com/2020/09/10/ji-huo-han-shu/"/>
+    <id>http://yoursite.com/2020/09/10/ji-huo-han-shu/</id>
+    <published>2020-09-10T02:49:48.000Z</published>
+    <updated>2020-09-10T10:38:31.634Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;几种常见激活函数&quot;&gt;&lt;a href=&quot;#几种常见激活函数&quot; class=&quot;headerlink&quot; title=&quot;几种常见激活函数&quot;&gt;&lt;/a&gt;几种常见激活函数&lt;/h1&gt;&lt;h2 id=&quot;为什么需要激活函数&quot;&gt;&lt;a href=&quot;#为什么需要激活函数&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>标注精灵</title>
+    <link href="http://yoursite.com/2020/09/07/biao-zhu-jing-ling/"/>
+    <id>http://yoursite.com/2020/09/07/biao-zhu-jing-ling/</id>
+    <published>2020-09-07T12:50:30.000Z</published>
+    <updated>2020-09-07T12:58:11.849Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;标注精灵（ubantu）&quot;&gt;&lt;a href=&quot;#标注精灵（ubantu）&quot; class=&quot;headerlink&quot; title=&quot;标注精灵（ubantu）&quot;&gt;&lt;/a&gt;标注精灵（ubantu）&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;下载标注精灵&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="脚本" scheme="http://yoursite.com/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="lniux" scheme="http://yoursite.com/tags/lniux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ngnix Flask 高并发部署方案详细教程！</title>
+    <link href="http://yoursite.com/2020/09/06/ngnix/"/>
+    <id>http://yoursite.com/2020/09/06/ngnix/</id>
+    <published>2020-09-06T02:32:14.000Z</published>
+    <updated>2020-09-10T00:42:16.562Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;虽然标题写的是 Flask，但是下面这个教程不仅仅只适用于 Flask, 还适用于其他Python
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="falsk" scheme="http://yoursite.com/tags/falsk/"/>
+    
+      <category term="ngnix" scheme="http://yoursite.com/tags/ngnix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bahdanau 和 Luong 两种 Attention 机制的区别</title>
+    <link href="http://yoursite.com/2020/09/05/bahdanau-he-luong-liang-chong-attention-ji-zhi-de-qu-bie/"/>
+    <id>http://yoursite.com/2020/09/05/bahdanau-he-luong-liang-chong-attention-ji-zhi-de-qu-bie/</id>
+    <published>2020-09-05T05:50:29.000Z</published>
+    <updated>2020-09-05T06:26:40.781Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Bahdanau-和-Luong-两种-Attention-机制的区别&quot;&gt;&lt;a href=&quot;#Bahdanau-和-Luong-两种-Attention-机制的区别&quot; class=&quot;headerlink&quot; title=&quot;Bahdanau 和 Luong 两种
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
+    
+      <category term="注意力机制" scheme="http://yoursite.com/tags/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GRAPH-BERT: Only Attention is Needed for Learning Graph Representations</title>
+    <link href="http://yoursite.com/2020/09/03/graph-bert-only-attention-is-needed-for-learning-graph-representations/"/>
+    <id>http://yoursite.com/2020/09/03/graph-bert-only-attention-is-needed-for-learning-graph-representations/</id>
+    <published>2020-09-03T15:46:57.000Z</published>
+    <updated>2020-09-16T01:00:15.847Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;GRAPH-BERT-Only-Attention-is-Needed-for-Learning-Graph-Representations&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="论文" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87/"/>
+    
+    
+      <category term="Bert" scheme="http://yoursite.com/tags/Bert/"/>
+    
+      <category term="GNN" scheme="http://yoursite.com/tags/GNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>beam search 算法</title>
+    <link href="http://yoursite.com/2020/09/03/beam-search-suan-fa/"/>
+    <id>http://yoursite.com/2020/09/03/beam-search-suan-fa/</id>
+    <published>2020-09-03T15:45:36.000Z</published>
+    <updated>2020-09-04T05:01:54.800Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;转载至&lt;a href=&quot;https://www.zhihu.com/question/54356960&quot;&gt;https://www.zhihu.com/question/54356960&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;beam-search-原理&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="序列" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97/"/>
+    
+      <category term="Seq2Seq" scheme="http://yoursite.com/tags/Seq2Seq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GNN</title>
+    <link href="http://yoursite.com/2020/09/03/gnn/"/>
+    <id>http://yoursite.com/2020/09/03/gnn/</id>
+    <published>2020-09-03T15:36:32.000Z</published>
+    <updated>2020-09-03T15:36:32.302Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>markdown数学公式</title>
+    <link href="http://yoursite.com/2020/09/03/markdown-shu-xue-gong-shi/"/>
+    <id>http://yoursite.com/2020/09/03/markdown-shu-xue-gong-shi/</id>
+    <published>2020-09-03T13:42:47.000Z</published>
+    <updated>2020-09-03T14:28:24.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;markdown支持完整LaTex数学公式语法&lt;/p&gt;
+&lt;h4 id=&quot;1-上标和下标&quot;&gt;&lt;a href=&quot;#1-上标和下标&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+      <category term="数学公式" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XLNet</title>
+    <link href="http://yoursite.com/2020/08/31/xlnet/"/>
+    <id>http://yoursite.com/2020/08/31/xlnet/</id>
+    <published>2020-08-30T16:56:18.000Z</published>
+    <updated>2020-08-31T10:55:51.088Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;XLNet&quot;&gt;&lt;a href=&quot;#XLNet&quot; class=&quot;headerlink&quot; title=&quot;XLNet&quot;&gt;&lt;/a&gt;XLNet&lt;/h1&gt;&lt;p&gt;Paper: &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BART</title>
+    <link href="http://yoursite.com/2020/08/28/bart/"/>
+    <id>http://yoursite.com/2020/08/28/bart/</id>
+    <published>2020-08-28T12:24:08.000Z</published>
+    <updated>2020-08-28T12:26:58.411Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;BART&quot;&gt;&lt;a href=&quot;#BART&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="命名实体识别" scheme="http://yoursite.com/tags/%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/"/>
+    
+      <category term="标注工具" scheme="http://yoursite.com/tags/%E6%A0%87%E6%B3%A8%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TextCNN</title>
+    <link href="http://yoursite.com/2020/08/27/textcnn/"/>
+    <id>http://yoursite.com/2020/08/27/textcnn/</id>
+    <published>2020-08-27T09:12:18.000Z</published>
+    <updated>2020-08-27T14:01:28.527Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;TextCNN&quot;&gt;&lt;a href=&quot;#TextCNN&quot; class=&quot;headerlink&quot; title=&quot;TextCNN&quot;&gt;&lt;/a&gt;TextCNN&lt;/h1&gt;&lt;p&gt;Paper &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="文本分类" scheme="http://yoursite.com/tags/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bert原理</title>
+    <link href="http://yoursite.com/2020/08/27/bert-yuan-li/"/>
+    <id>http://yoursite.com/2020/08/27/bert-yuan-li/</id>
+    <published>2020-08-27T01:31:53.000Z</published>
+    <updated>2020-09-05T17:28:01.039Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Bert原理&quot;&gt;&lt;a href=&quot;#Bert原理&quot; class=&quot;headerlink&quot; title=&quot;Bert原理&quot;&gt;&lt;/a&gt;Bert原理&lt;/h2&gt;&lt;p&gt;Paper &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="预训练模型" scheme="http://yoursite.com/tags/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="Encoder" scheme="http://yoursite.com/tags/Encoder/"/>
+    
+  </entry>
+  
+</feed>

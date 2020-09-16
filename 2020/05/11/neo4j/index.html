@@ -1,0 +1,2022 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="neo4j, 呆小症日记">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>neo4j | 呆小症日记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="呆小症日记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">呆小症日记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">呆小症日记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">neo4j</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%9B%BE%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">图数据</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%AE%89%E8%A3%85/">
+                                <span class="chip bg-color">安装</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-05-11
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="neo4j"><a href="#neo4j" class="headerlink" title="neo4j"></a>neo4j</h1><h2 id="安装neo4j"><a href="#安装neo4j" class="headerlink" title="安装neo4j"></a>安装neo4j</h2><h2 id="docker-安装neo4j"><a href="#docker-安装neo4j" class="headerlink" title="docker 安装neo4j"></a>docker 安装neo4j</h2><ol>
+<li><code>docker pull neo4j</code></li>
+<li><code>sudo docker run --name neo4j --detach --publish=7474:7474 --publish=7687:7687  --volume=/home/daiyizheng/docker/neo4j/data:/data  --volume=/home/daiyizheng/docker/neo4j/logs:/logs --volume=/home/daiyizheng/docker/neo4j/conf:/conf --volume=/home/daiyizheng/docker/neo4j/import:/import            --env=NEO4J_dbms_memory_pagecache_size=8G  --env=NEO4J_dbms_memory_heap_initial__size=4G --env=NEO4J_dbms_memory_heap_max__size=8G neo4j</code></li>
+</ol>
+<h2 id="非docker-安装"><a href="#非docker-安装" class="headerlink" title="非docker 安装"></a>非docker 安装</h2><p>JDK版本：1.8</p>
+<p>工具：Xshell6、Xftp6</p>
+<p>Neo4j是基于Java的图形数据库，运行Neo4j需要启动JVM进程，因此必须安装JAVA SE的JDK。</p>
+<p>下载安装包 <a target="_blank" rel="noopener" href="http://doc.we-yun.com:1008/neo4j/3.5.20/">http://doc.we-yun.com:1008/neo4j/3.5.20/</a></p>
+<p>liunx环境Neo4j下载地址：<a target="_blank" rel="noopener" href="http://neo4j.com.cn/topic/5b003eae9662eee704f31cee(%E7%A4%BE%E5%8C%BA%E7%89%88%E5%85%8D%E8%B4%B9)">http://neo4j.com.cn/topic/5b003eae9662eee704f31cee(社区版免费)</a></p>
+<p>或者直接在服务器上使用命令下载：</p>
+<p> curl -O <a target="_blank" rel="noopener" href="http://dist.neo4j.org/neo4j-community-3.4.5-unix.tar.gz">http://dist.neo4j.org/neo4j-community-3.4.5-unix.tar.gz</a></p>
+<p>2：解压安装</p>
+<p>tar -axvf neo4j-community-3.4.5-unix.tar.gz</p>
+<p>3:修改配置</p>
+<p>在安装目录下找到conf目录下的neo4j.conf文件</p>
+<p>修改相应配置如下：</p>
+<pre class=" language-shell"><code class="language-shell"># 修改第22行load csv时l路径，在前面加个#，可从任意路径读取文件
+#dbms.directories.import=import
+
+# 修改35行和36行，设置JVM初始堆内存和JVM最大堆内存
+# 生产环境给的JVM最大堆内存越大越好，但是要小于机器的物理内存
+dbms.memory.heap.initial_size=5g
+dbms.memory.heap.max_size=10g
+
+# 修改46行，可以认为这个是缓存，如果机器配置高，这个越大越好
+dbms.memory.pagecache.size=10g
+
+# 修改54行，去掉改行的#，可以远程通过ip访问neo4j数据库
+dbms.connectors.default_listen_address=0.0.0.0
+
+# 默认 bolt端口是7687，http端口是7474，https关口是7473，不修改下面3项也可以
+# 修改71行，去掉#，设置http端口为7687，端口可以自定义，只要不和其他端口冲突就行
+#dbms.connector.bolt.listen_address=:7687
+
+# 修改75行，去掉#，设置http端口为7474，端口可以自定义，只要不和其他端口冲突就行
+dbms.connector.http.listen_address=:7474
+
+# 修改79行，去掉#，设置http端口为7473，端口可以自定义，只要不和其他端口冲突就行
+dbms.connector.https.listen_address=:7473
+
+# 修改227行，去掉#，允许从远程url来load csv
+dbms.security.allow_csv_import_from_file_urls=true
+
+# 修改246行，允许使用neo4j-shell，类似于mysql 命令行之类的
+dbms.shell.enabled=true
+
+# 修改235行，去掉#，设置连接neo4j-shell的端口，一般都是localhost或者127.0.0.1，这样安全，其他地址的话，一般使用https就行
+dbms.shell.host=127.0.0.1
+
+# 修改250行，去掉#，设置neo4j-shell端口，端口可以自定义，只要不和其他端口冲突就行
+dbms.shell.port=1337
+
+# 修改254行，设置neo4j可读可写
+dbms.read_only=false</code></pre>
+<p>4：启动</p>
+<p> 进入bin目录执行./neo4j start</p>
+<p>进入bin目录执行./neo4j stop</p>
+<p>查看图数据库状态</p>
+<p>进入bin目录执行./neo4j status</p>
+<p>7：客户端访问</p>
+<p>http://服务器ip地址:7474/browser/</p>
+<p>在浏览器访问图数据库所在的机器上的7474端口（第一次访问账号neo4j，密码neo4j，会提示修改初始密码）</p>
+<h2 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h2><p>访问Neo4j验证失败（The client is unauthorized due to authentication failure.）</p>
+<p>大概意思就是说服务器验证失败。</p>
+<p>如果你有在浏览器上登录不同的neo4j数据库，很可能是由于缓存没有清理掉导致的。<br>可以试试无痕浏览来访问neo4j的web页面。<br>另外有还有两种解决方案：</p>
+<p>停止neo4j服务，并且删除<code>data/dbms/auth</code>，重新启动<br>修改neo4j.conf配置文件，取消验证机制，修改如下：<br><code>dbms.security.auth_enabled=false</code></p>
+<h2 id="neo4j数据库迁移–Neo4j数据库导入导出的方法"><a href="#neo4j数据库迁移–Neo4j数据库导入导出的方法" class="headerlink" title="neo4j数据库迁移–Neo4j数据库导入导出的方法"></a>neo4j数据库迁移–Neo4j数据库导入导出的方法</h2><p>Neo4j数据进行备份、还原、迁移的操作时，首先要关闭neo4j;</p>
+<pre><code>/usr/share/neo4j/bin
+neo4j stop</code></pre>
+<p>如果出现</p>
+<pre><code>Neo4j not running</code></pre>
+<p>出现这种情况, Neo4j没有运行, 但是浏览器仍然可以访问neo4j数据库的情况, 直接执行导入数据后,是无法看到导入的数据库,</p>
+<p>其实这种情况下Neo4j仍在运行(否则浏览器是无法然访问的),</p>
+<p>这就需要强制杀死Neo4j进程,则执行命令 </p>
+<pre><code>ps -ef|grep neo4j</code></pre>
+<p> <img src="/2020/05/11/neo4j/1.png" alt="img"></p>
+<pre><code>kill -9 &lt;对应的pid&gt;</code></pre>
+<p>关闭Neo4j后, 再次用浏览器访问Neo4j,是无法访问的,说明Neo4j是关闭运行了,在此情况下,是可以执行Neo4j的数据导出与导入的.</p>
+<p>执行数据导出命令</p>
+<pre><code>./neo4j-admin  dump --database=graph.db --to=/home/robot/Neoj_data/graph.db.dump</code></pre>
+<p>执行数据导入命令</p>
+<pre><code>neo4j-admin load --from=/home/robot/Neoj_data/graph.db.dump --database=graph.db --force  #数据导入
+neo4j start        </code></pre>
+<h2 id="导入csv-文件"><a href="#导入csv-文件" class="headerlink" title="导入csv 文件"></a>导入csv 文件</h2><p>将文件复制到import 文件夹中</p>
+<p>在<code>http://127.0.0.1:7474/browser/</code>窗口中执行脚本（注意，数据过大可能报错）</p>
+<p>可以在浏览器端或者是neo4j的console下进行这种方式的数据导入，但是这种方式只适用于20M以内的数据导入，对于大量数据是不适用的。</p>
+<pre class=" language-shell"><code class="language-shell"># node节点
+LOAD CSV WITH HEADERS  FROM "file:///node.csv" AS line MERGE (p:Entity&#123;id:line.id,name:line.name&#125;)
+##查考节点
+start n = node(*)
+return n
+# 关系
+LOAD CSV WITH HEADERS FROM "file:///relationship.csv" AS line match (from:Entity&#123;id:line.start_id&#125;),(to:Entity&#123;id:line.end_id&#125;)
+merge (from)-[r:rel&#123;property1:line.property1,property2:line.property2&#125;]->(to)</code></pre>
+<h3 id="命令行导入"><a href="#命令行导入" class="headerlink" title="命令行导入"></a>命令行导入</h3><pre class=" language-shell"><code class="language-shell">./neo4j-admin import --database=pkubase.db --nodes "/home/daiyizheng/文档/NLP-NER-projet/CCKS -2020-ckbqa/data/pre-data/node.csv" --relationships "/home/daiyizheng/文档/NLP-NER-projet/CCKS -2020-ckbqa/data/pre-data/relation.csv" --ignore-extra-columns=true --ignore-missing-nodes=true --ignore-duplicate-nodes=true
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">import导入csv
+import语法
+neo4j-admin import [--mode=csv] [--database=<name>]
+                          [--additional-config=<config-file-path>]
+                          [--report-file=<filename>]
+                          [--nodes[:Label1:Label2]=<"file1,file2,...">]
+                          [--relationships[:RELATIONSHIP_TYPE]=<"file1,file2,...">]
+                          [--id-type=<STRING|INTEGER|ACTUAL>]
+                          [--input-encoding=<character-set>]
+                          [--ignore-extra-columns[=<true|false>]]
+                          [--ignore-duplicate-nodes[=<true|false>]]
+                          [--ignore-missing-nodes[=<true|false>]]
+                          [--multiline-fields[=<true|false>]]
+                          [--delimiter=<delimiter-character>]
+                          [--array-delimiter=<array-delimiter-character>]
+                          [--quote=<quotation-character>]
+                          [--max-memory=<max-memory-that-importer-can-use>]
+                          [--f=<File containing all arguments to this import>]
+</code></pre>
+<pre class=" language-python"><code class="language-python">命令：
+<span class="token punctuation">.</span><span class="token operator">/</span>bin<span class="token operator">/</span>neo4j<span class="token operator">-</span><span class="token keyword">import</span> <span class="token operator">-</span><span class="token operator">-</span>into data<span class="token operator">/</span>databases<span class="token operator">/</span>graph_kg_merge_id<span class="token punctuation">.</span>db <span class="token operator">-</span><span class="token operator">-</span>nodes<span class="token punctuation">:</span>Persons data<span class="token operator">/</span>csv_kg_merge_id<span class="token operator">/</span>persons<span class="token punctuation">.</span>csv <span class="token operator">-</span><span class="token operator">-</span>nodes<span class="token punctuation">:</span>Industry data<span class="token operator">/</span>csv_kg_merge_id<span class="token operator">/</span>industry<span class="token punctuation">.</span>csv <span class="token operator">-</span><span class="token operator">-</span>relationships<span class="token punctuation">:</span>Director data<span class="token operator">/</span>csv_kg_merge_id<span class="token operator">/</span>director<span class="token punctuation">.</span>csv <span class="token operator">-</span><span class="token operator">-</span>multiline<span class="token operator">-</span>fields<span class="token operator">=</span>true</code></pre>
+<pre class=" language-she"><code class="language-she">各文件内容
+一、节点
+name:ID 表示该列的属性名为name，ID 
+表示该属性是唯一标示一个实体的属性（类似关系型数据库中的主码），括号表示一个id-group，即表示该ID唯一表示括号内种类的实体，而不是所有实体；
+
+节点Persons.csv：
+
+person_name:id,name
+71927,乜标@1963-01-01
+71928,冯泽舟@1954-01-01
+71929,张宇锋@1965-01-01
+71930,丁涛@1979-01-01
+71931,周静尧@1963-05-01
+
+
+
+节点industry.csv：
+
+industry_name:id,id,name
+71917,江苏新日新能源车辆有限公司,江苏新日新能源车辆有限公司
+71918,北京新泉志和汽车饰件系统有限公司,北京新泉志和汽车饰件系统有限公司
+71919,芜湖新泉汽车饰件系统有限公司,芜湖新泉汽车饰件系统有限公司
+71920,宁波新泉志和汽车饰件系统有限公司,宁波新泉志和汽车饰件系统有限公司
+71921,宁波新泉汽车饰件系统有限公司,宁波新泉汽车饰件系统有限公司
+
+
+二、关系
+START_ID 和END_ID 表示边的起点和终点的ID，可以加上它们各自的id-group；
+
+关系 director.csv
+
+:START_ID,:END_ID,position
+71927,16816,3
+71928,16840,4
+71929,16047,3
+71930,16573,4
+71931,16918,4</code></pre>
+<h2 id="Neo4j多库切换"><a href="#Neo4j多库切换" class="headerlink" title="Neo4j多库切换"></a><strong>Neo4j多库切换</strong></h2><p>方法一：</p>
+<p>因为Neo4j的import导入时，只能导入一个不存的db，这就在想创建多个库时，需要去切换，Neo4j默认的库是graph.db，在./conf/neo4j.conf可以修改</p>
+<pre class=" language-shell"><code class="language-shell"># Neo4j configuration
+#
+# For more details and a complete list of settings, please see
+# https://neo4j.com/docs/operations-manual/current/reference/configuration-settings/
+#*****************************************************************
+
+# The name of the database to mount
+#dbms.active_database=graph.db</code></pre>
+<p>方法二：</p>
+<p>切换多个库的方法，将新库重新连接到默认库graph.db，然后重启Neo4j </p>
+<pre class=" language-shell"><code class="language-shell">//软连接
+>>>cd ./data/databases/
+>>>ln -s graph_kg.db graph.db
+
+//重启neo4j
+>>>cd $NEO4j_HOME/bin
+>>>./neo4j restart
+
+// 删除软连接
+>>>ln-s test_chk  test_chk_ln
+>>>rm -rf  ./test_chk_ln</code></pre>
+<h2 id="neo4j-基本操作元素"><a href="#neo4j-基本操作元素" class="headerlink" title="neo4j 基本操作元素"></a>neo4j 基本操作元素</h2><ul>
+<li>neo4j可支持语言：**.NET、Java、Spring、JavaScript、Python、Ruby、PHP、R、Go、C / C++、Clojure、Perl、Haskell**</li>
+<li>几个专有名词：<strong>变量（标识符）、节点、关系、实体、标签、属性、索引、约束</strong></li>
+</ul>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">## 查的语句有：WHERE语句、ORDER BY 默认是升序，降序添加DESC、LIMIT 返回靠前的一定数目的数据、SKIP 返回靠后的一定数目的数据、UNION 子查询结果合并</span>
+
+<span class="token comment" spellcheck="true">## 查询基本结构</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:NODENAME<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> n 
+
+<span class="token comment" spellcheck="true"># LIMIT </span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:NODENAME<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> n <span class="token keyword">LIMIT</span> <span class="token number">5</span>
+
+<span class="token comment" spellcheck="true"># SKIP</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:NODENAME<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> n SKIP <span class="token number">5</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:NODENAME<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> n SKIP <span class="token number">1</span> <span class="token keyword">LIMIT</span> <span class="token number">5</span>
+
+<span class="token comment" spellcheck="true">## union</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>pp:Person<span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> pp<span class="token punctuation">.</span>age<span class="token punctuation">,</span>pp<span class="token punctuation">.</span>name
+<span class="token keyword">UNION</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token number">cc</span>:Customer<span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> <span class="token number">cc</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span><span class="token number">cc</span><span class="token punctuation">.</span>name
+
+<span class="token comment" spellcheck="true">## 查询节点个数：</span>
+<span class="token keyword">match</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">count</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## 查询所有的关系类型：</span>
+<span class="token keyword">CALL</span> <span class="token number">db</span><span class="token punctuation">.</span>relationshipTypes<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## 查询所有的节点标签：</span>
+<span class="token keyword">CALL</span> <span class="token number">db</span><span class="token punctuation">.</span>labels<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## 查询节点关系种类：</span>
+<span class="token keyword">CALL</span> <span class="token number">db</span><span class="token punctuation">.</span><span class="token keyword">schema</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## 查询N层关系的节点：</span>
+<span class="token keyword">match</span> q<span class="token operator">=</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token operator">*</span><span class="token number">5</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">return</span> q <span class="token keyword">limit</span> <span class="token number">200</span> 这个为查询<span class="token number">5</span>到<span class="token number">8</span>层关系的
+<span class="token keyword">match</span> q<span class="token operator">=</span><span class="token punctuation">(</span>dh<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>jq<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>rr<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">return</span> q <span class="token keyword">limit</span> <span class="token number">400</span>
+<span class="token comment" spellcheck="true">## 查询节点关系数个数</span>
+<span class="token keyword">match</span><span class="token punctuation">(</span>dh:Person<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>jq:Teacher<span class="token punctuation">)</span> <span class="token keyword">with</span> dh<span class="token punctuation">,</span> <span class="token function">count</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token keyword">as</span> dhs <span class="token keyword">where</span> dhs <span class="token operator">></span> <span class="token number">2</span> <span class="token keyword">return</span> dh
+
+<span class="token comment" spellcheck="true">## return</span>
+返回一个节点：<span class="token keyword">match</span> <span class="token punctuation">(</span>n:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"B"&amp;#125;) return n;</span>
+返回一个关系：<span class="token keyword">match</span> <span class="token punctuation">(</span>n:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"A"&amp;#125;)-[r:KNOWS]->(c) return r;</span>
+返回一个属性：<span class="token keyword">match</span> <span class="token punctuation">(</span>n:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"A"&amp;#125;) return n.name;</span>
+返回所有节点：<span class="token keyword">match</span> p<span class="token operator">=</span><span class="token punctuation">(</span>:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"A"&amp;#125;)-[r]->(b) return *;</span>
+列别名： <span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span>:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"A"&amp;#125;) return a.age as thisisage;</span>
+表达式： <span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span>:Node:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"A"&amp;#125;) return a.age >30 ,”literal”,(a)–>();</span>
+唯一结果：<span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span>:Node<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"A"&amp;#125;)–>(b) return distinct b;</span>
+
+<span class="token comment" spellcheck="true">## merge-查询</span>
+<span class="token comment" spellcheck="true">## 在merge子句中指定on match子句</span>
+<span class="token comment" spellcheck="true">## 如果节点已经存在于数据库中，那么执行on match子句，修改节点的属性；</span>
+<span class="token keyword">MERGE</span> <span class="token punctuation">(</span>person:Person<span class="token punctuation">)</span>
+<span class="token keyword">ON</span> <span class="token keyword">MATCH</span> <span class="token keyword">SET</span> person<span class="token punctuation">.</span>found <span class="token operator">=</span> <span class="token boolean">TRUE</span> <span class="token punctuation">,</span> person<span class="token punctuation">.</span>lastAccessed <span class="token operator">=</span> <span class="token keyword">timestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> <span class="token keyword">merge</span>子句用于<span class="token keyword">match</span>或<span class="token keyword">create</span>多个关系
+
+<span class="token comment" spellcheck="true">## merge子句用于match或create多个关系</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>oliver:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Oliver Stone' &amp;#125;),(reiner:Person &amp;#123; name: 'Rob Reiner' &amp;#125;)</span>
+<span class="token keyword">MERGE</span> <span class="token punctuation">(</span>oliver<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>:DIRECTED<span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">(</span>movie:Movie<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span><span class="token punctuation">[</span>:ACTED_IN<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>reiner<span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> movie
+
+集合函数查询
+（<span class="token number">1</span>）通过id函数，返回节点或关系的ID
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Oliver Stone' &amp;#125;)-[r]->(movie)</span>
+<span class="token keyword">RETURN</span> id<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+（<span class="token number">2</span>）通过<span class="token keyword">type</span>函数，查询关系的类型
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Oliver Stone' &amp;#125;)-[r]->(movie)</span>
+<span class="token keyword">RETURN</span> <span class="token keyword">type</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+（<span class="token number">3</span>）通过lables函数，查询节点的标签
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Oliver Stone' &amp;#125;)-[r]->(movie)</span>
+<span class="token keyword">RETURN</span> lables<span class="token punctuation">(</span>movie<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+（<span class="token number">4</span>）通过<span class="token keyword">keys</span>函数，查看节点或关系的属性键
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span>
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Alice'</span>
+<span class="token keyword">RETURN</span> <span class="token keyword">keys</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span>
+
+（<span class="token number">5</span>）通过properties<span class="token punctuation">(</span><span class="token punctuation">)</span>函数，查看节点或关系的属性
+<span class="token keyword">CREATE</span> <span class="token punctuation">(</span>p:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Stefan', city: 'Berlin' &amp;#125;)</span>
+<span class="token keyword">RETURN</span> properties<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+
+（<span class="token number">6</span>）nodes<span class="token punctuation">(</span>path<span class="token punctuation">)</span>：返回path中节点
+<span class="token keyword">match</span> p<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">-->(b)-->(c) where a.name='Alice' and c.name='Eskil' return nodes(p)</span>
+
+（<span class="token number">7</span>）relationships<span class="token punctuation">(</span>path<span class="token punctuation">)</span>：返回path中的关系
+<span class="token keyword">match</span> p<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">-->(b)-->(c) where a.name='Alice' and c.name='Eskil' return relationships(p)</span>
+
+路径查询
+常规路径查询：
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'm' &amp;#125;)-->(person)</span>
+<span class="token keyword">RETURN</span> person<span class="token punctuation">;</span>
+返回的是:name为m的这个节点，指向的节点，不包括m节点本身
+
+可变长度路径：
+<span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span>:Product <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;productName:'Chai'&amp;#125; )-[*1..5]-(b:Customer&amp;#123;companyName : 'Frankenversand'&amp;#125;) return a,b</span>
+<span class="token comment" spellcheck="true">//[*1..5]可变长度路径，从a到b的1-5条路径；</span>
+
+零长度路径
+<span class="token keyword">START</span> <span class="token number">a</span><span class="token operator">=</span>node<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">MATCH</span> p1<span class="token operator">=</span><span class="token number">a</span><span class="token operator">-</span><span class="token punctuation">[</span>:KNOWS<span class="token operator">*</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token number">b</span><span class="token punctuation">,</span> p2<span class="token operator">=</span><span class="token number">b</span><span class="token operator">-</span><span class="token punctuation">[</span>:BLOCKS<span class="token operator">*</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token number">c</span>
+<span class="token keyword">RETURN</span> <span class="token number">a</span><span class="token punctuation">,</span><span class="token number">b</span><span class="token punctuation">,</span><span class="token number">c</span><span class="token punctuation">,</span> length<span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">,</span> length<span class="token punctuation">(</span>p2<span class="token punctuation">)</span>
+这个查询将返回四个路径，其中有些路径长度为<span class="token number">0</span><span class="token punctuation">.</span>
+
+最短路径
+使用shortestPath函数可以找出一条两个节点间的最短路径，如下。
+查询：
+<span class="token keyword">START</span> <span class="token number">d</span><span class="token operator">=</span>node<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">e</span><span class="token operator">=</span>node<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">MATCH</span> p <span class="token operator">=</span> shortestPath<span class="token punctuation">(</span> <span class="token number">d</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token number">e</span> <span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> p
+这意味着：找出两点间的一条最短路径，最大关系长度为<span class="token number">15</span><span class="token punctuation">.</span>圆括号内是一个简单的路径连接，开始节点，连接关系和结束节点。关系的字符描述像关系类型，最大数和方向在寻找最短路径中都将被用到。也可以标识路径为可选。
+
+最短路径案例一：
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>p1:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"Jonathan Lipnicki"&amp;#125;),(p2:Person&amp;#123;name:"Joel Silver"&amp;#125;),</span>
+p<span class="token operator">=</span>shortestpath<span class="token punctuation">(</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> p
+这里<span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">10</span><span class="token punctuation">]</span>表示路径深度<span class="token number">10</span>以内查找所有存在的关系中的最短路径关系
+最短路径案例二：
+
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>p1:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;name:"Jonathan Lipnicki"&amp;#125;),(p2:Person&amp;#123;name:"Joel Silver"&amp;#125;),</span>
+p<span class="token operator">=</span>allshortestpaths<span class="token punctuation">(</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> p
+找出所有最短路径
+
+查询关系属性
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'matt' &amp;#125;)-[r]->( Person) RETURN r,type(r);</span>
+功能：查看姓名为matt的人，到标签person之间，关系有哪些
+
+一些特殊的用法：
+<span class="token keyword">with</span>用法：<span class="token keyword">with</span>从句可以连接多个查询的结果，即将上一个查询的结果用作下一个查询的开始。
+collecty用法：代表把内容序列化
+<span class="token keyword">with</span>用法、匿名变量（具体可以见《图数据库》，40P）
+
+（<span class="token number">1</span>）匿名变量
+<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">-</span><span class="token punctuation">[</span>:ass<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>:bss<span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">b</span><span class="token punctuation">)</span>
+
+（<span class="token number">2</span>）<span class="token keyword">with</span>用法：
+
+<span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>:<span class="token keyword">work</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">b</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token number">b</span> <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token number">b</span><span class="token punctuation">.</span>yeah <span class="token keyword">DESC</span>
+<span class="token keyword">RETURN</span> <span class="token number">a</span><span class="token punctuation">,</span><span class="token number">b</span>
+
+过滤聚合函数的结果：
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>david <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: “David” &amp;#125;)–(otherPerson)–>() WITH otherPerson, count(*) AS foaf</span>
+<span class="token keyword">WHERE</span> foaf <span class="token operator">></span> <span class="token number">1</span> <span class="token keyword">RETURN</span> otherPerson<span class="token punctuation">;</span>
+
+collect前排序结果：
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span>  <span class="token keyword">WITH</span> n   <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> n<span class="token punctuation">.</span>name <span class="token keyword">DESC</span> <span class="token keyword">LIMIT</span> <span class="token number">3</span>  <span class="token keyword">RETURN</span> collect<span class="token punctuation">(</span>n<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+
+<span class="token keyword">limit</span>搜索路径的分支：
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: "Anders" &amp;#125;)--(m)  WITH m  ORDER BY m.name DESC LIMIT 1  MATCH (m)--(o)  RETURN o.name;</span>
+
+UNWIND
+将一个集合展开为一个可选的list，有点像py中的生成器。
+<span class="token comment" spellcheck="true">//&amp;#123;batch: [&amp;#123;name:"Alice",age:32&amp;#125;,&amp;#123;name:"Bob",age:42&amp;#125;]&amp;#125;</span>
+UNWIND <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;batch&amp;#125; as row</span>
+<span class="token keyword">CREATE</span> <span class="token punctuation">(</span>n:Label<span class="token punctuation">)</span>
+<span class="token keyword">SET</span> n<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token keyword">row</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> n<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token keyword">row</span><span class="token punctuation">.</span>age
+其中<span class="token keyword">row</span>，就被定义为一个可迭代的List。
+案例二：
+<span class="token comment" spellcheck="true">//&amp;#123;batch: [&amp;#123;from:"alice@example.com",to:"bob@example.com",properties:&amp;#123;since:2012&amp;#125;&amp;#125;,&amp;#123;from:"alice@example.com",to:"charlie@example.com",properties:&amp;#123;since:2016&amp;#125;&amp;#125;]&amp;#125;</span>
+UNWIND <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;batch&amp;#125; as row</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token keyword">from</span>:Label <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;from:row.from&amp;#125;)</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token keyword">to</span>:Label <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;to:row.to&amp;#125;)</span>
+<span class="token keyword">CREATE</span><span class="token operator">/</span><span class="token keyword">MERGE</span> <span class="token punctuation">(</span><span class="token keyword">from</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>rel:KNOWS<span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">to</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token keyword">ON</span> <span class="token keyword">CREATE</span><span class="token punctuation">)</span> <span class="token keyword">SET</span> rel<span class="token punctuation">.</span>since <span class="token operator">=</span> <span class="token keyword">row</span><span class="token punctuation">.</span>properties<span class="token punctuation">.</span>since</code></pre>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">## create-创建节点</span>
+<span class="token keyword">create</span> <span class="token punctuation">(</span>n:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Robert Zemeckis', born: 1951 &amp;#125;) return n;</span>
+
+<span class="token comment" spellcheck="true">## create-创建节点间关系</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token number">a</span>:Person<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">b</span>:Person<span class="token punctuation">)</span> 
+<span class="token keyword">where</span> <span class="token number">a</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'m'</span><span class="token operator">and</span> <span class="token number">b</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Andres'</span> 
+<span class="token keyword">CREATE</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r:girl<span class="token punctuation">]</span><span class="token operator">-</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token number">b</span><span class="token punctuation">)</span> 
+<span class="token keyword">RETURN</span> r<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">## create-创建节点间关系 + 关系属性</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token number">a</span>:Person<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">b</span>:Person<span class="token punctuation">)</span>
+<span class="token keyword">WHERE</span> <span class="token number">a</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'m'</span><span class="token operator">and</span> <span class="token number">b</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Andres'</span> 
+<span class="token keyword">CREATE</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r:girl <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; roles:['friend'] &amp;#125;]->(b)</span>
+<span class="token keyword">RETURN</span> r<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">##create-创建完整路径path</span>
+<span class="token keyword">CREATE</span> p <span class="token operator">=</span><span class="token punctuation">(</span>vic:Worker:Person<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name:'vic',title:"Developer" &amp;#125;)-[:WORKS_AT]->(neo)&lt;-[:WORKS_AT]-(michael:Worker:Person &amp;#123; name: 'Michael',title:"Manager" &amp;#125;)</span>
+<span class="token keyword">RETURN</span> p
+逻辑为：创建vic这个人与变量<span class="token punctuation">(</span>neo<span class="token punctuation">)</span>的<span class="token punctuation">[</span>:WORKS_AT<span class="token punctuation">]</span>关系；
+创建michael这个人与变量<span class="token punctuation">(</span>neo<span class="token punctuation">)</span>的<span class="token punctuation">[</span>:WORKS_AT<span class="token punctuation">]</span>关系
+
+<span class="token comment" spellcheck="true">## 创建唯一性节点 CREATE UNIQUE</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>root <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'root' &amp;#125;) </span>
+<span class="token keyword">CREATE</span> <span class="token keyword">UNIQUE</span> <span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>:LOVES<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span>someone<span class="token punctuation">)</span> 
+<span class="token keyword">RETURN</span> someone
+
+<span class="token comment" spellcheck="true">##  merge-on create 新增属性</span>
+<span class="token keyword">Merge</span>子句的作用有两个：当模式（Pattern）存在时，匹配该模式；当模式不存在时，创建新的模式（参考）。
+如果需要创建节点，那么执行<span class="token keyword">on</span> <span class="token keyword">create</span>子句，修改节点的属性
+<span class="token keyword">MERGE</span> <span class="token punctuation">(</span>keanu:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Keanu Reeves' &amp;#125;)</span>
+<span class="token keyword">ON</span> <span class="token keyword">CREATE</span> <span class="token keyword">SET</span> keanu<span class="token punctuation">.</span>created <span class="token operator">=</span> <span class="token keyword">timestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> keanu<span class="token punctuation">.</span>name<span class="token punctuation">,</span> keanu<span class="token punctuation">.</span>created
+注意：<span class="token keyword">ON</span> <span class="token keyword">CREATE</span> <span class="token keyword">SET</span>只在创建使用有用，如果节点已经存在了，那么该命令失效。</code></pre>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><pre class=" language-sql"><code class="language-sql">大致有两个：<span class="token keyword">DELETE</span>与REMOVE
+
+<span class="token comment" spellcheck="true">## 删除所有节点与关系——delete</span>
+删除单个节点：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Useless<span class="token punctuation">)</span> <span class="token keyword">DELETE</span> n<span class="token punctuation">;</span>
+删除单个节点和连接它的关系：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Andres' &amp;#125;)-[r]-() DELETE n, r</span>
+删除所有节点和关系：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> OPTIONAL <span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">DELETE</span> n<span class="token punctuation">,</span>r
+删除某一类关系：<span class="token keyword">match</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r:created<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">DELETE</span> <span class="token keyword">delete</span> r
+
+<span class="token comment" spellcheck="true">## 删除标签与属性——remove</span>
+删除属性：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>andres <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Andres' &amp;#125;) REMOVE andres.age RETURN andres;</span>
+删除节点的标签：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Peter' &amp;#125;) REMOVE n:German RETURN n;</span>
+删除多重标签：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Peter' &amp;#125;) REMOVE n:German:Swedish RETURN n</span>
+
+<span class="token comment" spellcheck="true">##  重设为NULL——set</span>
+删除属性：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: ‘Andres’ &amp;#125;) SET n.name = NULL RETURN n</span>
+</code></pre>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><pre class=" language-sql"><code class="language-sql"><span class="token keyword">set</span>
+节点额外加入标签与属性
+
+<span class="token comment" spellcheck="true">// 加入额外标签</span>
+<span class="token keyword">match</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token keyword">where</span> id<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">7</span>
+<span class="token keyword">set</span> n:Company
+<span class="token keyword">return</span> n<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//加入额外属性</span>
+<span class="token keyword">match</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token keyword">where</span> id<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">100</span>
+<span class="token keyword">set</span> n<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'id100'</span>
+<span class="token keyword">return</span> n<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 设置多个属性</span>
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Andres' &amp;#125;) SET n.position = 'Developer', n.surname = 'Taylor'</span>
+
+<span class="token comment" spellcheck="true">## 通过set来进行额外加入标签与属性。同时，已有的关系可以通过set赋值上去。</span>
+在节点和关系之间复制属性：
+<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>at <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: 'Andres' &amp;#125;),(pn &amp;#123; name: 'Peter' &amp;#125;) </span>
+<span class="token keyword">SET</span> at <span class="token operator">=</span> pn 
+<span class="token keyword">RETURN</span> at<span class="token punctuation">,</span> pn<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">## merge-on match</span>
+<span class="token keyword">MERGE</span> <span class="token punctuation">(</span>person:Person<span class="token punctuation">)</span>
+<span class="token keyword">ON</span> <span class="token keyword">MATCH</span> <span class="token keyword">SET</span> person<span class="token punctuation">.</span>found <span class="token operator">=</span> <span class="token boolean">TRUE</span> <span class="token punctuation">,</span> person<span class="token punctuation">.</span>lastAccessed <span class="token operator">=</span> <span class="token keyword">timestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">RETURN</span> person<span class="token punctuation">.</span>name<span class="token punctuation">,</span> person<span class="token punctuation">.</span>found<span class="token punctuation">,</span> person<span class="token punctuation">.</span>lastAccessed</code></pre>
+<h2 id="统计与集合函数"><a href="#统计与集合函数" class="headerlink" title="统计与集合函数"></a>统计与集合函数</h2><pre class=" language-sql"><code class="language-sql">统计函数
+常见的有：abs<span class="token punctuation">(</span><span class="token punctuation">)</span>，acos<span class="token punctuation">(</span><span class="token punctuation">)</span>，asin<span class="token punctuation">(</span><span class="token punctuation">)</span>，atan<span class="token punctuation">(</span><span class="token punctuation">)</span>，atan2<span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>，cos<span class="token punctuation">(</span><span class="token punctuation">)</span>，cot<span class="token punctuation">(</span><span class="token punctuation">)</span>，degree<span class="token punctuation">(</span><span class="token punctuation">)</span>，<span class="token number">e</span><span class="token punctuation">(</span><span class="token punctuation">)</span>返回一个常量，exp<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token number">e</span>的二次方，floor<span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">0.0</span>，
+haversin<span class="token punctuation">(</span><span class="token punctuation">)</span>，log<span class="token punctuation">(</span><span class="token punctuation">)</span>，log10<span class="token punctuation">(</span><span class="token punctuation">)</span>，pi<span class="token punctuation">(</span><span class="token punctuation">)</span>常量PI，radians<span class="token punctuation">(</span><span class="token number">180</span><span class="token punctuation">)</span>，rand<span class="token punctuation">(</span><span class="token punctuation">)</span>返回<span class="token number">0</span>到<span class="token number">1.0</span>的值，<span class="token function">round</span><span class="token punctuation">(</span><span class="token number">3.14</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token number">3.0</span>，sign<span class="token punctuation">(</span><span class="token punctuation">)</span>，sin<span class="token punctuation">(</span><span class="token punctuation">)</span>，sqrt<span class="token punctuation">(</span><span class="token punctuation">)</span>，tan<span class="token punctuation">(</span><span class="token punctuation">)</span>
+count：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: ‘A’ &amp;#125;)–>(x) RETURN n, count(*)</span>
+sum：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> <span class="token function">sum</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+avg：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> <span class="token function">avg</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+percentileDisc：计算百分位。<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> percentileDisc<span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+percentileCont：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> percentileCont<span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">,</span> <span class="token number">0.4</span><span class="token punctuation">)</span>
+stdev：计算标准偏差。<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">WHERE</span> n<span class="token punctuation">.</span>name <span class="token operator">IN</span> <span class="token punctuation">[</span>‘A’<span class="token punctuation">,</span> ‘B’<span class="token punctuation">,</span> ‘C’<span class="token punctuation">]</span> <span class="token keyword">RETURN</span> stdev<span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+stdevp：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">WHERE</span> n<span class="token punctuation">.</span>name <span class="token operator">IN</span> <span class="token punctuation">[</span>‘A’<span class="token punctuation">,</span> ‘B’<span class="token punctuation">,</span> ‘C’<span class="token punctuation">]</span> <span class="token keyword">RETURN</span> stdevp<span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+max：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> <span class="token function">max</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+min：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> <span class="token function">min</span><span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+collect：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span>n:Person<span class="token punctuation">)</span> <span class="token keyword">RETURN</span> collect<span class="token punctuation">(</span>n<span class="token punctuation">.</span>property<span class="token punctuation">)</span>
+<span class="token keyword">distinct</span>：<span class="token keyword">MATCH</span> <span class="token punctuation">(</span><span class="token number">a</span>:Person <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123; name: ‘A’ &amp;#125;)–>(b) RETURN</span>
+<span class="token keyword">coalesce</span>：返回第一个<span class="token operator">not</span> <span class="token boolean">null</span>值。<span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span> <span class="token keyword">where</span> <span class="token number">a</span><span class="token punctuation">.</span>name<span class="token operator">=</span>’Alice’ <span class="token keyword">return</span> <span class="token keyword">coalesce</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>hairColor<span class="token punctuation">,</span><span class="token number">a</span><span class="token punctuation">.</span>eyes<span class="token punctuation">)</span>
+head：返回集合的第一个元素。<span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span> <span class="token keyword">where</span> <span class="token number">a</span><span class="token punctuation">.</span>name<span class="token operator">=</span>’Alic’ <span class="token keyword">return</span> <span class="token number">a</span><span class="token punctuation">.</span>array<span class="token punctuation">,</span>head<span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">last</span>：返回集合的最后一个元素。<span class="token keyword">match</span> <span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">)</span> <span class="token keyword">where</span> <span class="token number">a</span><span class="token punctuation">.</span>name<span class="token operator">=</span>’Alic’ <span class="token keyword">return</span> <span class="token number">a</span><span class="token punctuation">.</span>array<span class="token punctuation">,</span><span class="token function">last</span><span class="token punctuation">(</span><span class="token number">a</span><span class="token punctuation">.</span>array<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">timestamp</span>：返回当前时间的毫秒
+startNode：返回一个关系的开始节点。<span class="token keyword">match</span> <span class="token punctuation">(</span>x:foo<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">return</span> startNode<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+endNode：返回一个关系的结束节点。<span class="token keyword">match</span> <span class="token punctuation">(</span>x:foo<span class="token punctuation">)</span><span class="token operator">-</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">return</span> endNode<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+toInt<span class="token punctuation">,</span>toFloat<span class="token punctuation">,</span>toString</code></pre>
+<h2 id="py2neo"><a href="#py2neo" class="headerlink" title="py2neo"></a>py2neo</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> py2neo <span class="token keyword">import</span> Node<span class="token punctuation">,</span> Relationship<span class="token punctuation">,</span> Graph<span class="token punctuation">,</span> NodeMatcher
+
+<span class="token triple-quoted-string string">"""1 创建节点与关系"""</span>
+a <span class="token operator">=</span> Node<span class="token punctuation">(</span><span class="token string">"Person"</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"Alice"</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> Node<span class="token punctuation">(</span><span class="token string">"Person"</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"Bob"</span><span class="token punctuation">)</span>
+ab <span class="token operator">=</span> Relationship<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token string">"KNOWS"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## 节点添加属性</span>
+a<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">20</span>
+b<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">34</span>
+ab<span class="token punctuation">[</span><span class="token string">'time'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'2027/08/31'</span>
+
+<span class="token comment" spellcheck="true">## 通过 setdefault() 方法赋值默认属性</span>
+a<span class="token punctuation">.</span>setdefault<span class="token punctuation">(</span><span class="token string">'location'</span><span class="token punctuation">,</span> <span class="token string">'beijing'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## update批量更新</span>
+data <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">"Amy"</span><span class="token punctuation">,</span>
+    <span class="token string">"age"</span> <span class="token punctuation">:</span> <span class="token number">22</span>
+<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+a<span class="token punctuation">.</span>update<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># print(a.labels, b, ab)</span>
+<span class="token comment" spellcheck="true">## 节点其他属性</span>
+<span class="token triple-quoted-string string">"""
+  - hash 
+  - node[key]
+  - node[key] = value
+  - del node[key] 
+  - len(node)
+  - dict(node)
+  - wake(node)
+  - labels
+  - has_label("label")
+  - add_label("label")
+  - remove_label('label')
+  - clear_labels()
+  - update_labels('iter_label')
+"""</span>
+<span class="token comment" spellcheck="true">## 连接的属性</span>
+<span class="token triple-quoted-string string">"""
+  - hash(relationship)
+  - relationship[key]
+  - relationship[key] = value
+  - del relationship[key]
+  - len(relationship)
+  - dict(relationship)
+  - walk(relationship)
+  - type()
+
+"""</span>
+
+
+<span class="token triple-quoted-string string">"""2 子图Subgraphs"""</span>
+s <span class="token operator">=</span> a <span class="token operator">|</span> b <span class="token operator">|</span> ab
+s1 <span class="token operator">=</span> a <span class="token operator">|</span> b <span class="token operator">|</span> ab
+s2 <span class="token operator">=</span> a <span class="token operator">|</span> b
+<span class="token keyword">print</span><span class="token punctuation">(</span>s1 <span class="token operator">&amp;</span> s2<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""3 Walkable Types"""</span>
+a <span class="token operator">=</span> Node<span class="token punctuation">(</span><span class="token string">'Person'</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'Alice'</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> Node<span class="token punctuation">(</span><span class="token string">'Person'</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'Bob'</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> Node<span class="token punctuation">(</span><span class="token string">'Person'</span><span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">'Mike'</span><span class="token punctuation">)</span>
+ab <span class="token operator">=</span> Relationship<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token string">"KNOWS"</span><span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+ac <span class="token operator">=</span> Relationship<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token string">"KNOWS"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+w <span class="token operator">=</span> ab <span class="token operator">+</span> Relationship<span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token string">"LIKES"</span><span class="token punctuation">,</span> c<span class="token punctuation">)</span> <span class="token operator">+</span> ac
+<span class="token comment" spellcheck="true">## 遍历</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> w<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## 其他属性</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>start_node<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>end_node<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>nodes<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>w<span class="token punctuation">.</span>relationships<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""4 连接已有图数据库 - .Graph()"""</span>
+graph <span class="token operator">=</span> Graph<span class="token punctuation">(</span><span class="token string">"http://localhost:7474"</span><span class="token punctuation">,</span>  username<span class="token operator">=</span><span class="token string">"neo4j"</span><span class="token punctuation">,</span>  password<span class="token operator">=</span><span class="token string">"123456"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># test_graph,就连接上了电脑中默认的图数据库，就可以进行查询了。</span>
+
+<span class="token comment" spellcheck="true">##利用 create() 方法传入 Subgraph 对象来将关系图添加到数据库</span>
+
+<span class="token comment" spellcheck="true"># graph.create(s)</span>
+
+<span class="token comment" spellcheck="true">## 单独添加单个 Node 或 Relationship</span>
+<span class="token comment" spellcheck="true"># graph.create(a)</span>
+<span class="token comment" spellcheck="true"># graph.create(b)</span>
+<span class="token comment" spellcheck="true"># graph.create(ab)</span>
+
+<span class="token triple-quoted-string string">"""其他应用"""</span>
+<span class="token comment" spellcheck="true">## 查找是否存在节点 - exists(subgraph)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>graph<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">"""二、查询方式"""</span>
+<span class="token triple-quoted-string string">"""2.1 结果查询-.run/.data/.match"""</span>
+<span class="token comment" spellcheck="true">## 比较传统的方式：通过nodes的ID进行检索</span>
+<span class="token comment" spellcheck="true"># 其中的数字对应的是节点，ID</span>
+<span class="token comment" spellcheck="true"># 这个ID不按顺序来的，要注意</span>
+graph<span class="token punctuation">.</span>nodes<span class="token punctuation">[</span><span class="token number">1234</span><span class="token punctuation">]</span>
+graph<span class="token punctuation">.</span>nodes<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token number">1234</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## match的方式</span>
+data <span class="token operator">=</span> graph<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"MATCH (a:Person &amp;#123;name:'Alice'&amp;#125;) return a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+data1 <span class="token operator">=</span> graph<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"MATCH (a:Person &amp;#123;name:'Alice'&amp;#125;) -[b:KNOWS]-> (c:Person &amp;#123;name:'Bob'&amp;#125;) return a, b, c"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## graph.run()，之中填写的是查询语句。查询的结果也可以转换为dataframe的格式 查询出来的结果是dict/list格式的，并不是graph型，于是不能进行后续查询</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data1<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## 标准化成一些表格的格式</span>
+df1 <span class="token operator">=</span> graph<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"MATCH (a:Person &amp;#123;name:'Alice'&amp;#125;) return a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>data<span class="token punctuation">(</span><span class="token punctuation">)</span>  # list型
+df2 <span class="token operator">=</span> graph<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"MATCH (a:Person &amp;#123;name:'Alice'&amp;#125;) return a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_data_frame<span class="token punctuation">(</span><span class="token punctuation">)</span>  # dataframe型
+df3 <span class="token operator">=</span> graph<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token string">"MATCH (a:Person &amp;#123;name:'Alice'&amp;#125;) return a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to_table<span class="token punctuation">(</span><span class="token punctuation">)</span>  # table
+
+<span class="token triple-quoted-string string">"""更灵活的查询 - NodeMatcher"""</span>
+selector <span class="token operator">=</span> NodeMatcher<span class="token punctuation">(</span>graph<span class="token punctuation">)</span>
+nodematch <span class="token operator">=</span> selector<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"Person"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>nodematch<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#另外也可以使用 where() 进行更复杂的查询，例如查找 name 是 A 开头的 Person Node，实例如下：</span>
+nodematch1 <span class="token operator">=</span> list<span class="token punctuation">(</span>selector<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"Person"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>where<span class="token punctuation">(</span><span class="token string">"_.name =~ 'B.*'"</span><span class="token punctuation">,</span> <span class="token string">"1960 &lt;= _.born &lt; 1970"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>nodematch1<span class="token punctuation">)</span>
+persons <span class="token operator">=</span> selector<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">'Person'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>where<span class="token punctuation">(</span><span class="token string">"_.name =~ 'B.*'"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>persons<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">## 另外也可以使用 order_by() 进行排序：</span>
+persons <span class="token operator">=</span> selector<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">'Person'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>order_by<span class="token punctuation">(</span><span class="token string">'_.age'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>list<span class="token punctuation">(</span>persons<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+first()返回单个节点
+limit(amount)返回底部节点的限值条数
+skip(amount)返回顶部节点的限值条数
+order_by(*fields)排序
+where(*conditions, **properties)筛选条件
+"""</span>
+
+<span class="token triple-quoted-string string">"""2.4 match() 或 match_one() 查找Relationship
+match 匹配关系
+.match_one，匹配并返回所有满足条件的一条关系
+"""</span>
+nodematcher<span class="token operator">=</span>NodeMatcher<span class="token punctuation">(</span>graph<span class="token punctuation">)</span>
+findnode<span class="token operator">=</span>nodematcher<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">'Person'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>first<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># p = graph.match(nodes=(findnode,), r_type='KNOWS')</span>
+<span class="token comment" spellcheck="true"># print(list(p))</span>
+
+<span class="token comment" spellcheck="true"># graph.match_one(nodes=(findnode,), r_type='KNOWS')</span>
+
+<span class="token triple-quoted-string string">""" 删除 - .delete()/.delete_all()"""</span>
+s <span class="token operator">=</span> graph<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># graph.delete(findnode)</span>
+<span class="token comment" spellcheck="true"># graph.delete_all()</span>
+</code></pre>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_26917383/article/details/79883503">neo4j︱图数据库基本概念、操作罗列与整理（一）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_26917383/article/details/79850412">neo4j︱Cypher 查询语言简单案例（二）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_26917383/article/details/79852596">neo4j︱Cypher完整案例csv导入、关系联通、高级查询（三）</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_26917383/article/details/79901207">neo4j︱与python结合的py2neo使用教程（四）</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.yuque.com/yahan/mztcmb/lszfiv">Py2neo v4 使用笔记</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">daiyizheng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com/2020/05/11/neo4j/">http://yoursite.com/2020/05/11/neo4j/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">daiyizheng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%9B%BE%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">图数据</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%AE%89%E8%A3%85/">
+                                    <span class="chip bg-color">安装</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '4UATY1Wl6PiOAJtLDeI11JPG-9Nh9j0Va',
+        appKey: 'm8JJMe4Ok7crFRmTthEbo48R',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/15/docker/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="docker">
+                        
+                        <span class="card-title">docker</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker相关命令
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-15
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BF%90%E7%BB%B4/" class="post-category">
+                                    运维
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/06/zhun-que-lu-jing-que-lu-zhao-hui-lu-f1-score/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="准确率、精确率、召回率、F1-score">
+                        
+                        <span class="card-title">准确率、精确率、召回率、F1-score</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            机器学习常见任务评价指标
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/nlp/" class="post-category">
+                                    nlp
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87/">
+                        <span class="chip bg-color">评估指标</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BB%9F%E8%AE%A1/">
+                        <span class="chip bg-color">统计</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">机器学习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">daiyizheng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
