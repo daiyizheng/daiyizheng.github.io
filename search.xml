@@ -4,6 +4,106 @@
   
     
     <entry>
+      <title>sklearn机器学习原理汇总</title>
+      <link href="/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/"/>
+      <url>/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="sklearn机器学习汇总"><a href="#sklearn机器学习汇总" class="headerlink" title="sklearn机器学习汇总"></a>sklearn机器学习汇总</h1><h2 id="sklearn-建模流程"><a href="#sklearn-建模流程" class="headerlink" title="sklearn 建模流程"></a>sklearn 建模流程</h2><p>数据集处理</p><ul><li><strong>数据集加载</strong> X=[],标签Y=[] , 比例X:Y=1:1</li><li><strong>数据集分类</strong> <code>train_test_split</code> -&gt;（X_train,X_test,y_train,y_test）</li></ul><p>特征提取</p><ul><li><strong>特征提取</strong>（直方图、轮廓描述子…特征数组）</li></ul><p>训练模型</p><ul><li><strong>特征分类</strong>（构造分类器（lr线性分类，svm支持向量机分类，beyes贝叶斯分类…））</li><li>用<strong>训练</strong>数据（X_train,y_train）拟合分类器<strong>模型</strong> 、<strong>保存模型</strong></li></ul><p>预测</p><ul><li>预测 <code>result = predit(X_test)</code></li><li>分析 <code>classification_report (result)</code></li></ul><h2 id="sklearn中的常规模型"><a href="#sklearn中的常规模型" class="headerlink" title="sklearn中的常规模型"></a>sklearn中的常规模型</h2><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><a href="/2020/09/17/jue-ce-shu-yuan-li/" title="决策树原理">决策树原理</a><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>决策树原理</title>
+      <link href="/2020/09/17/jue-ce-shu-yuan-li/"/>
+      <url>/2020/09/17/jue-ce-shu-yuan-li/</url>
+      
+        <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 树模型 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Transformers中使用TorchScript</title>
+      <link href="/2020/09/17/transformers-zhong-shi-yong-torchscript/"/>
+      <url>/2020/09/17/transformers-zhong-shi-yong-torchscript/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Transformers中使用TorchScript"><a href="#Transformers中使用TorchScript" class="headerlink" title="Transformers中使用TorchScript"></a>Transformers中使用TorchScript</h1><p>转载：<a href="https://www.cnblogs.com/panchuangai/p/12567841.html">https://www.cnblogs.com/panchuangai/p/12567841.html</a></p><p>根据Pytorch的文档：“TorchScript是一种从PyTorch代码创建可序列化和可优化模型的方法”。Pytorch的两个模块<code>JIT和TRACE</code>允许开发人员导出他们的模型，这些模型可以在其他程序中重用，例如面向效率的C++程序。</p><p>我们提供了一个接口，该接口允许将<em>transformers</em>模型导出到TorchScript，以便他们可在与基于Pytorch的python程序不同的环境中重用。在这里，我们解释如何使用我们的模型，以便可以导出它们，以及将这些模型与TorchScript一起使用时要注意的事项。</p><p>导出模型需要两件事：</p><ul><li>虚拟化输入以执行模型正向传播。</li><li>需要使用<code>torchscript</code>标志实例化该模型。</li></ul><p>这些必要性意味着开发人员应注意几件事。这些在下面详细说明。</p><h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><h4 id="TorchScript标志和解绑权重"><a href="#TorchScript标志和解绑权重" class="headerlink" title="TorchScript标志和解绑权重"></a>TorchScript标志和解绑权重</h4><p>该标志是必需的，因为该存储库中的大多数语言模型都在它们的<code>Embedding</code>层及其<code>Decoding</code>层具有绑定权重关系。TorchScript不允许导出绑定权重的模型，因此，有必要事先解绑权重。</p><p>这意味着以<code>torchscript</code>标志实例化的模型使得<code>Embedding</code>层和<code>Decoding</code>层分开，这意味着不应该对他们进行同时训练，导致意外的结果。</p><p>对于没有语言模型头(Language Model head)的模型，情况并非如此，因为那些模型没有绑定权重。这些型号可以在没有<code>torchscript</code>标志的情况下安全地导出。</p><h4 id="虚拟-dummy-输入和标准长度"><a href="#虚拟-dummy-输入和标准长度" class="headerlink" title="虚拟(dummy)输入和标准长度"></a>虚拟(dummy)输入和标准长度</h4><p>虚拟输入用于进行模型前向传播。当输入值在各层中传播时，Pytorch跟踪在每个张量上执行的不同操作。然后使用这些记录的操作创建模型的“迹”。</p><p>迹是相对于输入的尺寸创建的。因此，它受到虚拟输入尺寸的限制，并且不适用于任何其他序列长度或批次大小。尝试使用其他尺寸时，会出现如下错误，如：</p><pre><code>The expanded size of the tensor (3) must match the existing size (7) at non-singleton dimension 2</code></pre><p>因此，建议使用至少与最大输入大小相同的虚拟输入大小来跟踪模型。在推理期间对于模型的输入，可以执行填充来填充缺少的值。作为模型<br>将以较大的输入大小来进行跟踪，但是，不同矩阵的尺寸也将很大，从而导致更多的计算。</p><p>建议注意每个输入上完成的操作总数，并密切关注各种序列长度对应性能的变化。</p><h3 id="在Python中使用TorchScript"><a href="#在Python中使用TorchScript" class="headerlink" title="在Python中使用TorchScript"></a>在Python中使用TorchScript</h3><p>以下是使用Python保存，加载模型以及如何使用”迹”进行推理的示例。</p><h4 id="保存模型"><a href="#保存模型" class="headerlink" title="保存模型"></a>保存模型</h4><p>该代码段显示了如何使用TorchScript导出<code>BertModel</code>。在这里实例化<code>BertModel</code>，根据<code>BertConfig</code>类，然后以文件名<code>traced_bert.pt</code>保存到磁盘</p><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> transformers <span class="token keyword">import</span> BertModel<span class="token punctuation">,</span> BertTokenizer<span class="token punctuation">,</span> BertConfig<span class="token keyword">import</span> torchenc <span class="token operator">=</span> BertTokenizer<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span><span class="token string">"bert-base-uncased"</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 标记输入文本</span>text <span class="token operator">=</span> <span class="token string">"[CLS] Who was Jim Henson ? [SEP] Jim Henson was a puppeteer [SEP]"</span>tokenized_text <span class="token operator">=</span> enc<span class="token punctuation">.</span>tokenize<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 输入标记之一进行掩码</span>masked_index <span class="token operator">=</span> <span class="token number">8</span>tokenized_text<span class="token punctuation">[</span>masked_index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'[MASK]'</span>indexed_tokens <span class="token operator">=</span> enc<span class="token punctuation">.</span>convert_tokens_to_ids<span class="token punctuation">(</span>tokenized_text<span class="token punctuation">)</span>segments_ids <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 创建虚拟输入</span>tokens_tensor <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span>indexed_tokens<span class="token punctuation">]</span><span class="token punctuation">)</span>segments_tensors <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span>segments_ids<span class="token punctuation">]</span><span class="token punctuation">)</span>dummy_input <span class="token operator">=</span> <span class="token punctuation">[</span>tokens_tensor<span class="token punctuation">,</span> segments_tensors<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># 使用torchscript标志初始化模型</span><span class="token comment" spellcheck="true"># 标志被设置为True，即使没有必要，因为该型号没有LM Head。</span>config <span class="token operator">=</span> BertConfig<span class="token punctuation">(</span>vocab_size_or_config_json_file<span class="token operator">=</span><span class="token number">32000</span><span class="token punctuation">,</span> hidden_size<span class="token operator">=</span><span class="token number">768</span><span class="token punctuation">,</span>    num_hidden_layers<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span> num_attention_heads<span class="token operator">=</span><span class="token number">12</span><span class="token punctuation">,</span> intermediate_size<span class="token operator">=</span><span class="token number">3072</span><span class="token punctuation">,</span> torchscript<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 实例化模型</span>model <span class="token operator">=</span> BertModel<span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 模型设置为评估模式</span>model<span class="token punctuation">.</span>eval<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 如果您要使用from_pretrained实例化模型，则还可以设置TorchScript标志</span>model <span class="token operator">=</span> BertModel<span class="token punctuation">.</span>from_pretrained<span class="token punctuation">(</span><span class="token string">"bert-base-uncased"</span><span class="token punctuation">,</span> torchscript<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># 创建迹</span>traced_model <span class="token operator">=</span> torch<span class="token punctuation">.</span>jit<span class="token punctuation">.</span>trace<span class="token punctuation">(</span>model<span class="token punctuation">,</span> <span class="token punctuation">[</span>tokens_tensor<span class="token punctuation">,</span> segments_tensors<span class="token punctuation">]</span><span class="token punctuation">)</span>torch<span class="token punctuation">.</span>jit<span class="token punctuation">.</span>save<span class="token punctuation">(</span>traced_model<span class="token punctuation">,</span> <span class="token string">"traced_bert.pt"</span><span class="token punctuation">)</span></code></pre><h4 id="载入模型"><a href="#载入模型" class="headerlink" title="载入模型"></a>载入模型</h4><p>该代码段显示了如何加载以前以名称<code>traced_bert.pt</code>保存到磁盘的<code>BertModel</code>。<br>我们重新使用之前初始化的<code>dummy_input</code>。</p><pre class=" language-python"><code class="language-python">loaded_model <span class="token operator">=</span> torch<span class="token punctuation">.</span>jit<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"traced_model.pt"</span><span class="token punctuation">)</span>loaded_model<span class="token punctuation">.</span>eval<span class="token punctuation">(</span><span class="token punctuation">)</span>all_encoder_layers<span class="token punctuation">,</span> pooled_output <span class="token operator">=</span> loaded_model<span class="token punctuation">(</span>dummy_input<span class="token punctuation">)</span></code></pre><h4 id="使用跟踪模型进行推理"><a href="#使用跟踪模型进行推理" class="headerlink" title="使用跟踪模型进行推理"></a>使用跟踪模型进行推理</h4><p>使用跟踪模型进行推理就像使用其<code>__call__</code> 方法一样简单：</p><pre class=" language-python"><code class="language-python">traced_model<span class="token punctuation">(</span>tokens_tensor<span class="token punctuation">,</span> segments_tensors<span class="token punctuation">)</span></code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -部署 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>TorchServe部署方法及注意事项</title>
+      <link href="/2020/09/17/torchserve-bu-shu-zhu-yi-shi-xiang/"/>
+      <url>/2020/09/17/torchserve-bu-shu-zhu-yi-shi-xiang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="TorchServe部署方法及问题"><a href="#TorchServe部署方法及问题" class="headerlink" title="TorchServe部署方法及问题"></a>TorchServe部署方法及问题</h1><ul><li><p>Java 环境问题</p><p>一定要安装JDK11（官网要求最低8，但是我不能使用，打包一定要再部署的环境打包，避免java版本不同，部署报错）</p></li><li><p>在别的地方使用cuda训练的模型在其他只有cpu的环境可能在加载模型时报错</p><p> raise RuntimeError(‘Attempting to deserialize object on a CUDA ‘<br>RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device(‘cpu’) to map your storages to the CPU.</p><p>解决办法　现在原来地方加载，然后使用cpu保存</p></li><li><p>torchserve 模型的入口是</p><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">handle</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">pass</span></code></pre></li><li><p>返回必须是数组，并且需要多加一列数组，返回的数据会少一维数组</p><p>不然报错信息：b’{\n  “code”: 503,\n  “type”: “InternalServerException”,\n  “message”: “Invalid model predict output”\n}\n</p></li><li><p>若使用了transformers，docker镜像没有安装transformers（目前所有可用的镜像<a href="https://hub.docker.com/r/pytorch/torchserve/tags%EF%BC%89">https://hub.docker.com/r/pytorch/torchserve/tags）</a></p><p>若要使用docker自己制作：</p><ol><li>Create TorchServe docker image  <a href="https://github.com/pytorch/serve/tree/master/docker">https://github.com/pytorch/serve/tree/master/docker</a></li><li>Create TorchServe docker image from source   <a href="https://github.com/pytorch/serve/tree/master/docker">https://github.com/pytorch/serve/tree/master/docker</a></li></ol></li></ul><p><strong>打包脚本</strong></p><pre class=" language-shell"><code class="language-shell">torch-model-archiver     --model-name chatbotBERT     --version 1.0 --serialized-file ./pytorch_model.bin     --extra-files "./config.json,./best_ner.bin,./config.json,./vocab.txt"     --handler "chatbot_medical_qa_ner_handler.py"</code></pre><p><strong>启动</strong></p><pre class=" language-shell"><code class="language-shell">torchserve --start --ncs --model-store model-store --models chatbotBERT.mar --ts-config ./model-store/config.properties</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 部署 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>curl命令</title>
       <link href="/2020/09/15/curl-ming-ling/"/>
       <url>/2020/09/15/curl-ming-ling/</url>
