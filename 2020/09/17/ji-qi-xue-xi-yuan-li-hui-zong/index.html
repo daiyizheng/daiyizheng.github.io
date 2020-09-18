@@ -491,7 +491,137 @@
 <li>预测 <code>result = predit(X_test)</code></li>
 <li>分析 <code>classification_report (result)</code></li>
 </ul>
-<h2 id="sklearn中的常规模型"><a href="#sklearn中的常规模型" class="headerlink" title="sklearn中的常规模型"></a>sklearn中的常规模型</h2><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><a href="/2020/09/17/jue-ce-shu-yuan-li/" title="决策树原理">决策树原理</a><script>
+<h2 id="sklearn-API"><a href="#sklearn-API" class="headerlink" title="sklearn API"></a>sklearn API</h2><p>Key_Word</p>
+<p>数据获取: sklearn, <strong>datasets</strong>, DataFrame, load_*</p>
+<p>数据标准化**: preprocessing**, <strong>MinMaxScaler</strong>, scaler, <strong>fit</strong>, <strong>transform</strong>, data, target</p>
+<p>划分测试集: model_selection, <strong>train_test_split</strong>, test_size</p>
+<p>训练模型: fit ,predict, <strong>kernel=”linear”</strong>, <strong>probability=True</strong></p>
+<p>模型评估: <strong>score,</strong> <strong>predict_proba</strong></p>
+<p>使用metrics模块评估: classification_report</p>
+<p>使用交叉验证方法评估: cross_val_score</p>
+<p>模型的优化: <strong>GridSearchCV</strong>, C, kernel, gamma, param_grid, svc, cv</p>
+<p>模型持久化: pikle, joblib, dump, load</p>
+<h2 id="总体流程"><a href="#总体流程" class="headerlink" title="总体流程"></a>总体流程</h2><h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>数据集处理中我们常用到：</p>
+<ul>
+<li>datasets ： 是sklearn库自带的数据集（iris鸢尾花数据等），前期学习非常友好</li>
+<li>train_test_split 将数据分为测试集和训练集</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn <span class="token keyword">import</span> datasets<span class="token comment" spellcheck="true">#引入数据集,sklearn包含众多数据集</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split<span class="token comment" spellcheck="true">#将数据分为测试集和训练集</span>
+
+iris <span class="token operator">=</span> datasets<span class="token punctuation">.</span>load_iris<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#引入iris鸢尾花数据,iris数据包含4个特征变量</span>
+X <span class="token operator">=</span> iris<span class="token punctuation">.</span>data <span class="token comment" spellcheck="true"># 特征变量</span>
+y <span class="token operator">=</span> iris<span class="token punctuation">.</span>target <span class="token comment" spellcheck="true"># 目标值</span>
+X_train<span class="token punctuation">,</span>X_test<span class="token punctuation">,</span>y_train<span class="token punctuation">,</span>y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>X<span class="token punctuation">,</span>y<span class="token punctuation">,</span>test_size<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#利用train_test_split进行将训练集和测试集进行分开，test_size占30%</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>y_train<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#我们看到训练数据的特征值分为3类</span>
+<span class="token number">12345678</span></code></pre>
+<h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>Sklearn的模型导出本质上是利用Python的Pickle机制。对Python的函数进行序列化，也就是把训练好的Transformer函数序列化并存为文件。</p>
+<p><strong>.pkl</strong></p>
+<p>pkl文件是python里面保存文件的一种格式，如果直接打开会显示一堆序列化的东西。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pickle
+
+<span class="token comment" spellcheck="true"># 重点是rb和r的区别，rb是打开2进制文件，文本文件用r</span>
+f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'test.pkl'</span><span class="token punctuation">,</span><span class="token string">'rb'</span><span class="token punctuation">)</span>
+data <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+<span class="token number">123456</span></code></pre>
+<blockquote>
+<p>参考这篇文章：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Allen-rg/p/9548539.html">sklearn 中模型保存的两种方法</a><br>既然joblib在使用上比较容易，读取速度也相对pickle快，那么我们后面就用joblib进行讨论。</p>
+</blockquote>
+<p><strong>.m</strong></p>
+<p>保存 、读取、预测</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>externals <span class="token keyword">import</span> joblib
+
+joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>lr<span class="token punctuation">,</span> <span class="token string">'lr.model'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 保存   lr是一个LogisticRegression模型</span>
+
+lr <span class="token operator">=</span> joblib<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">'lr.model'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 加载</span>
+
+lr<span class="token punctuation">.</span>predit<span class="token punctuation">(</span>test_X<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 预测    此处test_X为特征集</span>
+<span class="token number">1234567</span></code></pre>
+<h4 id="一个完整的svm分类例子"><a href="#一个完整的svm分类例子" class="headerlink" title="一个完整的svm分类例子"></a>一个完整的svm分类例子</h4><ol>
+<li>dataset：特征数组X，标签Y，比例X:Y=1:1</li>
+<li>clf ： 构造分类器（lr线性分类，svm支持向量机分类，beyes贝叶斯分类…）</li>
+<li>clf.fit()：用训练数据拟合分类器模型</li>
+<li>joblib.dump：保存模型</li>
+<li>joblib.load：加载模型</li>
+<li>clf.predit()：预测</li>
+</ol>
+<pre class=" language-python"><code class="language-python">os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">"workspace/model_save"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 保存Model(注:model_save文件夹要预先建立，否则会报错)</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>externals <span class="token keyword">import</span> joblib
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> svm
+X <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+y <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+clf <span class="token operator">=</span> svm<span class="token punctuation">.</span>SVC<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># clf是训练的分类器</span>
+clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X<span class="token punctuation">,</span> y<span class="token punctuation">)</span>  
+clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_X<span class="token punctuation">,</span>train_y<span class="token punctuation">)</span>
+joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> <span class="token string">"train_model.m"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 保存</span>
+
+clf <span class="token operator">=</span> joblib<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"train_model.m"</span><span class="token punctuation">)</span>
+clf<span class="token punctuation">.</span>predit<span class="token punctuation">(</span>test_X<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#此处test_X为特征集</span>
+<span class="token number">123456789101112</span></code></pre>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>externals <span class="token keyword">import</span> joblib
+
+Class <span class="token class-name">classificationTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#保存模型</span>
+    <span class="token keyword">def</span> <span class="token function">Save_Model</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> model<span class="token punctuation">,</span> filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>model<span class="token punctuation">,</span> filename<span class="token operator">=</span>filepath<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">SVM_classifier</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x_train<span class="token punctuation">,</span>y_train<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        clf <span class="token operator">=</span> svm<span class="token punctuation">.</span>SVC<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># clf是训练的分类器</span>
+        clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span>y_train<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>Save_Model<span class="token punctuation">(</span>clf<span class="token punctuation">,</span><span class="token string">"train_model.m"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 保存模型</span>
+        <span class="token keyword">return</span> clf
+
+    <span class="token keyword">def</span> <span class="token function">Load_Model</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> joblib<span class="token punctuation">.</span>load<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> model
+
+    <span class="token keyword">def</span> <span class="token function">Predict_Model</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x_test<span class="token punctuation">,</span> filpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        model <span class="token operator">=</span> self<span class="token punctuation">.</span>Load_Model<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
+        result <span class="token operator">=</span> model<span class="token punctuation">.</span>predit<span class="token punctuation">(</span>x_test<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 预测</span>
+        <span class="token keyword">return</span> result
+<span class="token number">123456789101112131415161718192021</span></code></pre>
+<h3 id="其他模型"><a href="#其他模型" class="headerlink" title="其他模型"></a>其他模型</h3><p>其他几种模型后缀的对比：</p>
+<ul>
+<li><p>.pb<br>MetaGraph的protocol buffer格式的文件，MetaGraph包括计算图，数据流，以及相关的变量和输入输出。</p>
+<p>在tensorflow训练中直接保存为pb为格式，保存pb的好处就是使用场景是实现创建模型与使用模型的解耦，使得创建模型与使用模型的解耦，使得前向推导inference代码统一。另外的好处就是保存为pb的时候，模型的变量会变成固定的，导致模型的大小会大大减小。</p>
+</li>
+<li><p>.dat<br>.dat并不是一种标准文件。DATA的意思，即数据文件，这类文件并没有进行绝对化的定义。<br>在深度学习里指存放数据的文件。</p>
+</li>
+<li><p>.h5即（.hdf5）<br>HDF5是一种全新的分层数据格式产品，由数据格式规范和支持库实现组成。</p>
+</li>
+<li><p>.ckpt<br>这种模型文件是依赖 TensorFlow 的，只能在其框架下使用。</p>
+<p>checkpoint文件：用于告知某些TF函数，这是最新的检查点文件。<br>.data文件：保存图中所有变量的值，没有结构。<br>.index文件：保存索引。<br>.meta文件：保存计算图的结构，但是不包含里面变量的值。</p>
+</li>
+</ul>
+<h3 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h3><p>介绍一个sklearn中高效的分析函数：<code>classification_report ()</code></p>
+<p>使用：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> classification_report
+clf <span class="token operator">=</span> BernoulNB<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>XX_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 伯努利贝叶斯分类器</span>
+os<span class="token punctuation">.</span>chdir<span class="token punctuation">(</span><span class="token string">"model/"</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>externals <span class="token keyword">import</span> joblib
+<span class="token keyword">import</span> time
+ticks <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y_%m_%d_%H_%M_%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> ticks<span class="token operator">+</span><span class="token string">"train_model.m"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#joblib.dump(clf, ticks+"train_model.pkl")</span>
+
+clf <span class="token operator">=</span> joblib<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token string">"train_model.m"</span><span class="token punctuation">)</span>
+predictions_lables <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>XX_test<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 使用测试集预测结果</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>u<span class="token string">"预测结果"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>predictions_lables<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">## 生成文本行分类报告</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>u<span class="token string">"算法报告"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span>classification_report<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> predictions_labels<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#生成字典报告</span>
+report <span class="token operator">=</span> classifcation_report<span class="token punctuation">(</span>y_test<span class="token punctuation">,</span> predictions_labels<span class="token punctuation">,</span> output_dict<span class="token operator">=</span>true<span class="token punctuation">)</span></code></pre>
+<h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><h2 id="sklearn中的常规模型"><a href="#sklearn中的常规模型" class="headerlink" title="sklearn中的常规模型"></a>sklearn中的常规模型</h2><h3 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h3><a href="/2020/09/17/jue-ce-shu-yuan-li/" title="决策树原理">决策树原理</a>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考　"></a>参考　</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/draven123/p/11408086.html">https://www.cnblogs.com/draven123/p/11408086.html</a></p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1004,48 +1134,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/">
+                <a href="/2020/09/18/rasa-shi-yong-zhi-nan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="sklearn机器学习原理汇总">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="rasa使用指南">
                         
-                        <span class="card-title">sklearn机器学习原理汇总</span>
+                        <span class="card-title">rasa使用指南</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            机器学习目录
+                            rasa使用指南
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
+                            <a href="/categories/nlp/" class="post-category">
+                                    nlp
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">总结</span>
+                    <a href="/tags/%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">聊天系统</span>
+                    </a>
+                    
+                    <a href="/tags/rasa/">
+                        <span class="chip bg-color">rasa</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-17T12:54:09.201Z</updated>
+  <updated>2020-09-18T04:19:26.113Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>word2vec实战：获取和预处理中文维基百科(Wikipedia)语料库，并训练成word2vec模型</title>
+    <link href="http://yoursite.com/2020/09/18/word2vec-shi-zhan-huo-qu-he-yu-chu-li-zhong-wen-wei-ji-bai-ke-wikipedia-yu-liao-ku-bing-xun-lian-cheng-word2vec-mo-xing/"/>
+    <id>http://yoursite.com/2020/09/18/word2vec-shi-zhan-huo-qu-he-yu-chu-li-zhong-wen-wei-ji-bai-ke-wikipedia-yu-liao-ku-bing-xun-lian-cheng-word2vec-mo-xing/</id>
+    <published>2020-09-18T04:13:02.000Z</published>
+    <updated>2020-09-18T04:19:26.113Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;word2vec实战：获取和预处理中文维基百科-Wikipedia-语料库，并训练成word2vec模型&quot;&gt;&lt;a href=&quot;#word2vec实战：获取和预处理中文维基百科-Wikipedia-语料库，并训练成word2vec模型&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="语言模型" scheme="http://yoursite.com/tags/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="词向量" scheme="http://yoursite.com/tags/%E8%AF%8D%E5%90%91%E9%87%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rasa使用指南</title>
+    <link href="http://yoursite.com/2020/09/18/rasa-shi-yong-zhi-nan/"/>
+    <id>http://yoursite.com/2020/09/18/rasa-shi-yong-zhi-nan/</id>
+    <published>2020-09-18T01:38:04.000Z</published>
+    <updated>2020-09-18T04:04:33.534Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;转载：&lt;a href=&quot;https://www.jianshu.com/u/fd743bd5ad2d&quot;&gt;https://www.jianshu.com/u/fd743bd5ad2d&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Rasa&quot;&gt;&lt;a href=&quot;#Rasa&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="聊天系统" scheme="http://yoursite.com/tags/%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="rasa" scheme="http://yoursite.com/tags/rasa/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sklearn机器学习原理汇总</title>
     <link href="http://yoursite.com/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/"/>
     <id>http://yoursite.com/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/</id>
     <published>2020-09-17T12:27:51.000Z</published>
-    <updated>2020-09-17T12:54:09.201Z</updated>
+    <updated>2020-09-17T15:46:57.566Z</updated>
     
     <summary type="html">
     
@@ -48,7 +107,7 @@
     <link href="http://yoursite.com/2020/09/17/jue-ce-shu-yuan-li/"/>
     <id>http://yoursite.com/2020/09/17/jue-ce-shu-yuan-li/</id>
     <published>2020-09-17T11:26:50.000Z</published>
-    <updated>2020-09-17T12:54:28.865Z</updated>
+    <updated>2020-09-17T16:23:47.282Z</updated>
     
     <summary type="html">
     
@@ -56,11 +115,7 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;h1 id=&quot;决策树&quot;&gt;&lt;a href=&quot;#决策树&quot; class=&quot;headerlink&quot; title=&quot;决策树&quot;&gt;&lt;/a&gt;决策树&lt;/h1&gt;&lt;p&gt;
         
       
     
@@ -524,63 +579,6 @@
       <category term="序列" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97/"/>
     
       <category term="Seq2Seq" scheme="http://yoursite.com/tags/Seq2Seq/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GNN</title>
-    <link href="http://yoursite.com/2020/09/03/gnn/"/>
-    <id>http://yoursite.com/2020/09/03/gnn/</id>
-    <published>2020-09-03T15:36:32.000Z</published>
-    <updated>2020-09-03T15:36:32.302Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>markdown数学公式</title>
-    <link href="http://yoursite.com/2020/09/03/markdown-shu-xue-gong-shi/"/>
-    <id>http://yoursite.com/2020/09/03/markdown-shu-xue-gong-shi/</id>
-    <published>2020-09-03T13:42:47.000Z</published>
-    <updated>2020-09-03T14:28:24.352Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;markdown支持完整LaTex数学公式语法&lt;/p&gt;
-&lt;h4 id=&quot;1-上标和下标&quot;&gt;&lt;a href=&quot;#1-上标和下标&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
-    
-      <category term="数学公式" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     
   </entry>
   

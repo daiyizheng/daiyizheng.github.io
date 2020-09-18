@@ -472,7 +472,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h1><p> (Tree)是一种非参数的有监督学习方法,它能够从一系列有特征和标签的数据中总结出决策规则,并用树状图的结构来呈现这些规则,以解决分类和回归问题。</p>
+<p>这些算法基本都执行”贪心策略“,即通过局部的最优来达到我们相信是最接近全局最优的结果。只考虑当前纯度差最大的情况作为分割点。</p>
+<p>Hunt算法是许多决策树算法的基础,包括ID3、C4.5和CART等。</p>
+<p><strong>决策树构建基本步骤</strong></p>
+<p> 1） 开始，所有记录看作一个节点</p>
+<p> 2）遍历每个变量的每一种分割方式，找到最好的分割点</p>
+<p> 3）分割成两个节点N1和N2</p>
+<ol start="4">
+<li>对N1和N2分别继续执行2-3步，直到每个节点足够“纯”为止</li>
+</ol>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
