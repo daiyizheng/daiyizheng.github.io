@@ -489,6 +489,12 @@
 <pre class=" language-shell"><code class="language-shell">pip install rasa_nlu
 pip install rasa_core[tensorflow]</code></pre>
 <h2 id="响应消息的基本步骤："><a href="#响应消息的基本步骤：" class="headerlink" title="响应消息的基本步骤："></a>响应消息的基本步骤：</h2><p><img src="/2020/09/18/rasa-shi-yong-zhi-nan/1.png"></p>
+<ul>
+<li>首先，将用户输入的Message传递到Interpreter(Rasa NLU模块)，该模块负责识别Message中的”意图(intent)“和提取所有”实体”(entity)数据；</li>
+<li>其次，Rasa Core会将Interpreter提取到的意图和识别传给Tracker对象，该对象的主要作用是跟踪会话状态(conversation state)；</li>
+<li>第三，利用policy记录Tracker对象的当前状态，并选择执行相应的action，其中，这个action是被记录在Track对象中的；</li>
+<li>最后，将执行action返回的结果输出即完成一次人机交互。</li>
+</ul>
 <h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
 <li><code>intents</code>：意图</li>
 <li><code>pipeline</code>：</li>
@@ -649,6 +655,85 @@ $ python setup.py install  // 安装依赖</code></pre>
 <td align="center">动作</td>
 </tr>
 </tbody></table>
+<p><strong>Story格式大致包含三个部分：</strong></p>
+<ul>
+<li><strong>1. 用户输入</strong>（<code>User Messages</code>）</li>
+</ul>
+<p> 使用<code>*</code>开头的语句表示用户的输入消息，我们无需使用包含某个具体内容的输入，而是使用NLU管道输出的intent和entities来表示可能的输入。需要注意的是，如果用户的输入可能包含entities，建议将其包括在内，将有助于policies预测下一步action。这部分大致包含三种形式，示例如下：</p>
+<p>（1）<code>* greet</code> 表示用户输入没有entity情况；<br>（2）<code>* inform{"people": "six"}</code> 表示用户输入包含entity情况，响应这类intent为普通action；<br>（3）<code>* request_weather</code> 表示用户输入Message对应的intent为form action情况；</p>
+<ul>
+<li><strong>2. 动作</strong>（<code>Actions</code>）</li>
+</ul>
+<p> 使用<code>-</code>开头的语句表示要执行动作(<code>Action</code>)，可分为<code>utterance actions</code>和<code>custom actions</code>，其中，前者在domain.yaml中定义以<code>utter_</code>为前缀，比如名为greet的意图，它的回复应为<code>utter_greet</code>；后者为自定义动作，具体逻辑由我们自己实现，虽然在定义action名称的时候没有限制，但是还是建议以<code>action_</code>为前缀，比如名为inform的意图fetch_profile的意图，它的response可为<code>action_fetch_profile</code>。</p>
+<ul>
+<li><strong>3. 事件</strong>（<code>Events</code>）</li>
+</ul>
+<p> Events也是使用<code>-</code>开头，主要包含槽值设置(<code>SlotSet</code>)和激活/注销表单(<code>Form</code>)，它是是Story的一部分，并且必须显示的写出来。Slot Events和Form Events的作用如下：</p>
+<p>（1）Slot Events</p>
+<p> <code>Slot Events</code>的作用当我们在自定义Action中设置了某个槽值，那么我们就需要在Story中Action执行之后显著的将这个SlotSet事件标注出来，格式为<code>- slot{"slot_name": "value"}</code>。比如，我们在action_fetch_profile中设置了Slot名为account_type的值，代码如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rasa_sdk<span class="token punctuation">.</span>actions <span class="token keyword">import</span> Action
+<span class="token keyword">from</span> rasa_sdk<span class="token punctuation">.</span>events <span class="token keyword">import</span> SlotSet
+<span class="token keyword">import</span> requests
+
+<span class="token keyword">class</span> <span class="token class-name">FetchProfileAction</span><span class="token punctuation">(</span>Action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"fetch_profile"</span>
+
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dispatcher<span class="token punctuation">,</span> tracker<span class="token punctuation">,</span> domain<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string">"http://myprofileurl.com"</span>
+        data <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>json
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>SlotSet<span class="token punctuation">(</span><span class="token string">"account_type"</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"account_type"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
+<p> 那么，就需要在Story中执行<code>action_fetch_profile</code>之后，添加<code>- slot{"account_type" : "premium"}</code>。虽然，这么做看起来有点多余，但是Rasa规定这么做必须的，目的是提高训练时准确度。</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> fetch_profile</span>
+<span class="token list punctuation">*</span> fetch_profile
+   <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>fetch<span class="token punctuation">_</span></span>profile
+   <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"account_type" : "premium"<span class="token entity" title="&#125;">&amp;#125;</span>
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>welcome<span class="token punctuation">_</span></span>premium</code></pre>
+<p> 当然，如果您的自定义Action中将槽值重置为None，则对应的事件为<code>-slot{"slot_name": null}</code>。</p>
+<p>（2）Form Events</p>
+<p> 在Story中主要存在三种形式的表单事件(Form Events)，它们可表述为：</p>
+<ul>
+<li><code>Form Action</code>事件</li>
+</ul>
+<p> Form Action即表单动作事件，是自定义Action的一种，用于一个表单操作。示例如下：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> restaurant_form</code></pre>
+<ul>
+<li><code>Form activation</code>事件</li>
+</ul>
+<p> form activation即激活表单事件，当form action事件执行后，会立马执行该事件。示例如下：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> form<span class="token entity" title="&#123;">&amp;#123;</span>"name": "restaurant_form"<span class="token entity" title="&#125;">&amp;#125;</span></code></pre>
+<ul>
+<li><code>Form deactivation</code>事件</li>
+</ul>
+<p> form deactivation即注销表单事件，作用与form activation相反。示例如下：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> form<span class="token entity" title="&#123;">&amp;#123;</span>"name": null<span class="token entity" title="&#125;">&amp;#125;</span></code></pre>
+<p> 总之，我们在构建Story时，可以说是多种多样的，因为设计的故事情节是多种多样的，这就意味着上述三种内容的组合也是非常灵活的。另外，在设计Story时Rasa还提供了<a target="_blank" rel="noopener" href="https://rasa.com/docs/rasa/core/stories/#id9">Checkpoints </a>和<a target="_blank" rel="noopener" href="https://rasa.com/docs/rasa/core/stories/#id9">OR statements</a>两种功能，来提升构建Story的灵活度，但是需要注意的是，东西虽好，但是不要太贪了，过多的使用不仅增加了复杂度，同时也会拖慢训练的速度。其中，<a target="_blank" rel="noopener" href="https://rasa.com/docs/rasa/core/stories/#id10">Checkpoints</a>用于模块化和简化训练数据，示例如下：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> first story</span>
+<span class="token list punctuation">*</span> greet
+   <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>ask<span class="token punctuation">_</span></span>user_question
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>asked<span class="token punctuation">_</span></span>question
+
+<span class="token title important"><span class="token punctuation">##</span> user affirms question</span>
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>asked<span class="token punctuation">_</span></span>question
+<span class="token list punctuation">*</span> affirm
+  <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>handle<span class="token punctuation">_</span></span>affirmation
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>handled<span class="token punctuation">_</span></span>affirmation
+
+<span class="token title important"><span class="token punctuation">##</span> user denies question</span>
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>asked<span class="token punctuation">_</span></span>question
+<span class="token list punctuation">*</span> deny
+  <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>handle<span class="token punctuation">_</span></span>denial
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>handled<span class="token punctuation">_</span></span>denial
+
+<span class="token title important"><span class="token punctuation">##</span> user leaves</span>
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>handled<span class="token punctuation">_</span></span>denial
+<span class="token blockquote punctuation">></span> check<span class="token italic"><span class="token punctuation">_</span>handled<span class="token punctuation">_</span></span>affirmation
+<span class="token list punctuation">*</span> goodbye
+  <span class="token list punctuation">-</span> utter_goodbye</code></pre>
+<p> 在上面的例子中，可以使用<code>&gt; check_asked_question</code>表示first story，这样在其他story中，如果有相同的first story部分，可以直接用<code>&gt; check_asked_question</code>代替。而<a target="_blank" rel="noopener" href="https://rasa.com/docs/rasa/core/stories/#id11">OR Statements</a>主要用于实现某一个action可同时响应多个意图的情况，比如下面的例子：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> story</span>
+<span class="token list punctuation">*</span> affirm OR thankyou
+  <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>handle<span class="token punctuation">_</span></span>affirmation</code></pre>
 <p>示例：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">## simple_story_with_multiple_turns</span>
 * affirm OR thank_you
@@ -955,6 +1040,7 @@ templates:
 <p><img src="/2020/09/18/rasa-shi-yong-zhi-nan/6.png"></p>
 <p>加入<code>--debug</code>参数后打印出的调试信息如下：</p>
 <p><img src="/2020/09/18/rasa-shi-yong-zhi-nan/7.png"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5d9aa2a444a3">rasa对话系统踩坑记</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
