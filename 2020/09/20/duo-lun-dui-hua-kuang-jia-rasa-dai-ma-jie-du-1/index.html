@@ -1,0 +1,1723 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="多轮对话框架Rasa代码解读-1, 呆小症日记">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>多轮对话框架Rasa代码解读-1 | 呆小症日记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="呆小症日记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">呆小症日记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">呆小症日记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">多轮对话框架Rasa代码解读-1</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Rasa/">
+                                <span class="chip bg-color">Rasa</span>
+                            </a>
+                        
+                            <a href="/tags/QA/">
+                                <span class="chip bg-color">QA</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/nlp/" class="post-category">
+                                nlp
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-09-20
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Rasa"><a href="#Rasa" class="headerlink" title="Rasa"></a>Rasa</h1><h2 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h2><p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/1.png"></p>
+<p>两个核心的子模块：core和nlu</p>
+<h2 id="Nlu模块"><a href="#Nlu模块" class="headerlink" title="Nlu模块"></a>Nlu模块</h2><p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/2.png"></p>
+<ul>
+<li>component：在我们做任何自然语言处理的任务时，不止是用单纯模型去做一些分类或者标注任务，在此之前，有相当一部分工作是对文本做一些预处理工作，包括但不限于：分词（尤其是中文文本），词性标注，特征提取（传统ML或者统计型方法），词库构建等等。在rasa中，这些不同的预处理工作以及后续的意图分类和实体识别都是通过单独的组件来完成，因此component在NLU中承担着完成NLU不同阶段任务的责任。component类型大致有以下几种：tokenizer,featurizer,extractor,classifier。当然还有emulators，这个主要用于进行对话仿真测试，我目前还没使用过，就不多描述这个组件了。</li>
+<li>pipeline：有了组件之后，如何将组件按部就班，井然有序地拼装起来，并正常工作呢？因此就有了pipeline这个概念，其实在机器学习领域，pipeline这个概念已经存在很长时间了，它在很多框架中都有，比如大名鼎鼎的sklearn。使用pipeline的好处在于可以合理有序管理不同任务阶段的不同组件工具，当组件数量较多时，pipeline的好处就非常明显了。而在rasa中，pipeline的使用更为便捷，是通过yml配置文件实现。即开发者只需要定义好自己的组件，然后将组件配置在配置文件中就可以，即插即用。</li>
+</ul>
+<blockquote>
+<p>tips1:这里注意一点，配置的组件名称name对应的是组件类的类名。而后面跟着的key-value键值对，对应的是组件类需要传入的初始的参数。参考</p>
+</blockquote>
+<ul>
+<li>message：在rasa中，用户发送到chatbot的所有对话内容，都需要被封装在一个对象中，这个对象就是Message.而在整个rasa工作流中，存在两个不同的message封装对象，一个是UserMessage，另一个是Message。其中UserMessage是最上层的封装对象，即直接接收用户从某个平台接口传送过来的消息。而Message则是当用户消息流到NLU模块时，将用户消息进行封装。关于UserMessage的内容在后面代码详解时会涉及到，这里先解释一下Message对象。看一下它的类部分定义，其实很简单，就是将用户的对话文本，以及时间进行封装，由于这个Message是贯穿整个NLU工作流的统一数据对象，因此还承载着记忆各个组件临时生成的中间结果（比如分词和词性标注的结果）以及最终得到的意图和实体信息。其中data存放的是意图和实体信息，在后续组件处理时，还会再Message中增加一些变量存储中间结果，即set成员方法的职责。</li>
+</ul>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Message</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span> text<span class="token punctuation">:</span> Text<span class="token punctuation">,</span> data<span class="token operator">=</span>None<span class="token punctuation">,</span> output_properties<span class="token operator">=</span>None<span class="token punctuation">,</span> time<span class="token operator">=</span>None
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>text <span class="token operator">=</span> text
+        self<span class="token punctuation">.</span>time <span class="token operator">=</span> time
+        self<span class="token punctuation">.</span>data <span class="token operator">=</span> data <span class="token keyword">if</span> data <span class="token keyword">else</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+
+        <span class="token keyword">if</span> output_properties<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>output_properties <span class="token operator">=</span> output_properties
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>output_properties <span class="token operator">=</span> set<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">set</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> info<span class="token punctuation">,</span> add_to_output<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>data<span class="token punctuation">[</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> info
+        <span class="token keyword">if</span> add_to_output<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>output_properties<span class="token punctuation">.</span>add<span class="token punctuation">(</span>prop<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">get</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> default<span class="token operator">=</span>None<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Any<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> prop <span class="token operator">==</span> TEXT<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>text
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>data<span class="token punctuation">.</span>get<span class="token punctuation">(</span>prop<span class="token punctuation">,</span> default<span class="token punctuation">)</span></code></pre>
+<p>对上面三个概念明确以后，下面列出不同组件的代码结构：</p>
+<p>rasa中，已经预置了一些组件，方便用户直接使用。当然有些组件是需要先进行训练，得到模型后，才能使用，而有些则是使用正则表达式或者关键词等规则，直接就可以使用。</p>
+<p>以CRFEntityExtractor为例，讲解一下Component的主要核心要素。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CRFEntityExtractor</span><span class="token punctuation">(</span>EntityExtractor<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    @classmethod
+    <span class="token keyword">def</span> <span class="token function">required_components</span><span class="token punctuation">(</span>cls<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>Type<span class="token punctuation">[</span>Component<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>Tokenizer<span class="token punctuation">]</span>
+
+ <span class="token keyword">class</span> <span class="token class-name">EntityExtractor</span><span class="token punctuation">(</span>Component<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">add_extractor_name</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span> entities<span class="token punctuation">:</span> List<span class="token punctuation">[</span>Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> entity <span class="token keyword">in</span> entities<span class="token punctuation">:</span>
+            entity<span class="token punctuation">[</span>EXTRACTOR<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>name
+        <span class="token keyword">return</span> entities
+
+    <span class="token keyword">class</span> <span class="token class-name">Component</span><span class="token punctuation">(</span>metaclass<span class="token operator">=</span>ComponentMetaclass<span class="token punctuation">)</span><span class="token punctuation">:</span>
+         <span class="token keyword">pass</span>
+</code></pre>
+<ul>
+<li>首先看到，该类继承了一个EntityExtractor，这是一个二级组件抽象类（我自己定义的说法），这个二层抽象类继承自Component这个一级抽象类。因为不同组件承担的任务不同，有些组件任务比较单一，可以直接继承Component比如tokenizer,classifier，而有些组件的任务比较复杂，则需要制定这一类型的二级接口，方便扩展，如featurizer,extractor。</li>
+<li>对于CRFEntityExtractor来说，它提供了实体的抽取，同时为了进行实体抽取，需要先对文本进行分词，因此需要上游任务先完成tokenizer任务，提供tokens的中间成果。</li>
+<li>train方法。既然是使用条件随机场来进行实体抽取，那么就需要进行模型训练。因此需要定义train方法，来训练模型。关注train方法的两个参数training_data和config。其中，config就是之前提到的配置pipeline的配置文件的读取对象。training_data是TrainingData类型的对象。你可以将其类比于pytorch中的data_loader功能，它的主要作用是对训练数据进行封装，拆分训练集验证集，做数据校验等工作。说到这里，提一下rasa支持的原始训练数据的存放格式，主要支持markdown，wit，luis等文件格式，当然也可以提供json格式的数据。rasa如何读取这些格式的训练数据则是在如下代码包里定义：</li>
+</ul>
+<p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/4.png"></p>
+<ul>
+<li>persist和load方法。当模型训练完成后，需要保存和加载模型，对生产环境上的实时业务流进行处理，因此需要定义persist和load方法加载模型。</li>
+<li>process方法。这个可以说是组件里面最重要的一个方法。当前面一通操作之后，只得到了模型，如何调用这个模型并处理文本，就是process方法的工作了。最后在message中增加一个dict，名为entities，用来存放提取的实体信息，包括实体的类型，实体的在文本中的start和end的位置信息等。</li>
+</ul>
+<pre class=" language-python"><code class="language-python">    <span class="token keyword">def</span> <span class="token function">process</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> message<span class="token punctuation">:</span> Message<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">:</span> Any<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        entities <span class="token operator">=</span> self<span class="token punctuation">.</span>extract_entities<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+        entities <span class="token operator">=</span> self<span class="token punctuation">.</span>add_extractor_name<span class="token punctuation">(</span>entities<span class="token punctuation">)</span>
+        message<span class="token punctuation">.</span>set<span class="token punctuation">(</span>ENTITIES<span class="token punctuation">,</span> message<span class="token punctuation">.</span>get<span class="token punctuation">(</span>ENTITIES<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> entities<span class="token punctuation">,</span> add_to_output<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<p>tips2：对于对话中，涉及到的所有intent和实体，均需要在配置文件中进行定义，方便各个组件在做相应的文本分析时进行lookup-table查找。这个配置文件叫domain.yml，一个简单的实例如下：</p>
+</blockquote>
+<p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/6.png"></p>
+<pre class=" language-python"><code class="language-python">tips3：这里说一个实用技巧。在实际的对话场景中，用户的一个utterance（表达）通常会带有不止一个意图，有的人会将这种情况当做一个复合型单意图，将其添加到domain配置文件中。但是实际上大可以不必这么麻烦，此时相当于从一个意图多分类问题，转变为一个意图多标签分类问题，即每条数据可能不止一个标签，此时只需要将模型的最后一层softmax层，替换为n个sigmoid分类器就可以。在训练数据中，我则需要配置这种训练数据，将多个意图使用某个符号<span class="token string">"+"</span>或者<span class="token string">"_"</span>等进行字符串拼接。在classifier中进行处理。这样就无需在domain配置文件中配置诸如inform_affirm这样冗余的意图了。</code></pre>
+<p>rasa中已经集成了许多有用的组件，可以看到针对中文文本，有jieba分词，另外还有专门对时间信息进行提取的组件ducklingHTTPExctractor,要使用这些组件都需要安装相应的依赖包。</p>
+<h2 id="core"><a href="#core" class="headerlink" title="core"></a>core</h2><p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/3.png"></p>
+<p>除去core根路径下的一些公共资源和入口方法外，可以看出core根据包名大概分成以下几个部分：</p>
+<ul>
+<li>actions,该包下面主要存放的是action具体的实现类。关于action的具体定义和描述在后面会有详细讲解，简单说就是chatbot执行的一些动作。</li>
+<li>channels,该包下面主要存放的是rasa与前端平台进行对接的接口。因为rasa本身只提供对话系统的功能服务，具体还需要与用户在前端界面进行交互，这个包里定义了不同的接口和不同平台进行对接。例如，console.py，定义了最简单的直接在shell命令行中进行对话交互的接口。</li>
+<li>events，这个是rasa中定义的chatbot能执行的最小粒度的动作。与action有一些关系，我们可以通过action调用不同的events来实现不同的操作。events的实例有“SlotSet”(槽位填充),”Restarted”（重启对话，将所有状态重置）等等。</li>
+<li>nlg，rasa的response生成模块，即生产chatbot返回给用户的消息。目前，rasa支持通过模板生成话术，也支持通过machine learning的方式做NLG。nlg模块中定义了方法读取domain.yml中的预定义的话术模板，然后生成具体的消息。</li>
+<li>policies，此模块是core最上层的对话管理控制模块。该包中，定义了不同类型的对话管理策略，rasa将依据这些策略，执行不同actions，完成多轮对话任务。这些策略包括人工规则策略如form_policy,memoization等，也包括通过机器学习、深度学习进行训练得到策略模型，如sklearn_policy,keras_policy等。</li>
+<li>schemas，这里主要放置core的配置文件domian.yml，这个配置文件主要配置槽位定义，实体定义，话术模板，使用的actions的名称定义以及其他系统配置。开发者在开发自己的对话系统时，需要自定义这个配置文件来覆盖源码中预定义的配置。</li>
+<li>training,这里主要存放的是如何将准备的数据转化为对话系统可训练的转化方法以及可视化方法。</li>
+</ul>
+<p>根路径上也有很多重要的类文件，这里就不全部拿出来说了，挑几个重点的说一下。</p>
+<ul>
+<li>agent，这是core专门设计的一个接口，可以将其视作bot主体，主要作用是封装和调用rasa中最重要的一些功能方法，包括上述提到的几个包里的功能模块。</li>
+<li>featurizers: 这个文件主要是定义了一些方法将对话数据特征化，目的是为了将对话数据用于机器学习的训练。</li>
+<li>interpreter: 这个方法是core与nlu的一个纽带，rasa管理模块通过定义interpreter类方法，调用nlu中的parser方法来对用户的发送到bot的消息文本进行实体抽取、意图识别等操作。</li>
+<li>processor：定义了MessageProcess类，供agent调用，功能是有序得调用不同对话功能组件，例如调用interpreter解析用户文本、调用本轮对话的action完成一些操作、根据policy得到下一步的action、记录对话状态等。</li>
+<li>trackers：这个也是rasa中比较重要的一个对象，它的作用是rasa对话系统中的状态记录器，每一轮对话中，对话的状态信息都会进行更新并保存在这个对象中。例如当前已填充的槽位、用户最后一次发送的文本、当前用户的意图等等。</li>
+</ul>
+<p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/7.png"></p>
+<p>这次，我们以core为主视角，将这个图重新解析一遍，着重描述core在对话系统中的功能与作用。</p>
+<img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/8.png" alt="8" style="zoom:75%;">
+
+<h3 id="InputChannel和OutputChannel"><a href="#InputChannel和OutputChannel" class="headerlink" title="InputChannel和OutputChannel"></a>InputChannel和OutputChannel</h3><p>OutputChannel封装了chatbot需要返回给用户的信息，需要注意，chatbot返回的消息不一定是纯文本，还可能是html，json，文件附件等等，因此需要OutputChannel这个统一接口进行封装处理，因此chatbot可以支持让用户进行点选功能（当然，前提是前端界面支持点选的适配）。</p>
+<p>InputChannel主要负责将用户输入连同用户的身份信息封装成UserMessage对象，方便后面的Processor处理。对应的，如果在上一轮对话中，OutputChannel是点选或者其他非单纯文本输出，那么本轮对话中的InputChannel也需要接受用户点选或者其他非单纯文本的输入，封装成最终的UserMessage。</p>
+<h3 id="UserMessage"><a href="#UserMessage" class="headerlink" title="UserMessage"></a>UserMessage</h3><p>关于UserMessage对象，上一篇文章中已经有过介绍，这里给出其具体的成员变量封装情况</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">UserMessage</span><span class="token punctuation">:</span>
+    DEFAULT_SENDER_ID <span class="token operator">=</span> <span class="token string">"default"</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span>
+        text<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        output_channel<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span><span class="token string">"OutputChannel"</span><span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        sender_id<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        parse_data<span class="token punctuation">:</span> Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        input_channel<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        message_id<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        metadata<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Dict<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span></code></pre>
+<p>可以看到作为贯穿整个core处理流程的用户消息对象，它的成员结构还是比较清晰的，包括了用户发送的文本，定义的OutputChannel类型，用户的id，parse_data(主要存放用户自己定义的实体键值对，开发调试用),inputChannel类型，以及message的id。</p>
+<h3 id="policy"><a href="#policy" class="headerlink" title="policy"></a>policy</h3><p>对话管理策略是多轮对话系统的核心功能，相当于对话系统的大脑，它负责根据当前用户的反馈，告诉Processor当前轮对话中需要采取的后续action，以及如何更新对话状态信息等。rasa支持人工规则的策略，也支持机器学习、深度学习得到的数据驱动策略。</p>
+<p>以Form_policy为例，这个策略是一种表单策略，对应的rasa预置了一种类型的action，叫form的action。这种action会将所有槽位作为表单的属性column，每一轮对话，都会去主动询问用户，引导用户将这些表单的属性填充，直到所有属性填充完成。而form_policy的核心就是检索当前是否配置了form类型的action，如果是，则将下一步的action置为form。有关action的描述将在后面详细给出。可以看出这是一个典型的人工规则策略。</p>
+<p>在一次对话任务中，可以使用多个policy的组合来帮助bot完成既定的任务。比如策略A是一个使用深度学习训练得到的一个策略模型，但是一般使用data-driven得到的模型不会达到100%的准确率，总会有bad case的情况，此时如果只是用该策略，那么会话极有可能会陷入到bad case中，因此需要一个兜底的策略在策略A的bad case发生时，让对话能够平稳进行下去。rasa就预置了这样一个策略，叫fall_back，将fall_back与策略A进行组合，就能得到一个更加鲁棒的一个对话策略。</p>
+<p>在实际项目生产中，如果在项目初期，领域数据比较少的情况下，通常会选择form policy或者其他规则型策略。当产品上线，在积累到一定的数据后，可以使用一些data-driven的模型来做策略。</p>
+<h3 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h3><p>这个对象的数据来自于前述章节提到的配置文件domain.yml。该对象定义不同的方法，从配置文件domain.yml读取槽位模板，话术模板，定义的action名称,自定义的policy名称等信息，并封装到domain对象中。domain对象可以在action执行时为其提供槽位信息以及话术模板等字段。</p>
+<p>设计domain的好处在哪儿呢？</p>
+<p>个人认为主要是方便管理对话系统需要使用的模板信息。这里的模板信息包含定义的槽位，意图、实体、话术模板、自定义action、自定义policy。如果需要添加或者修改这些信息，只需要修改domain.yml里面的信息就可以了，不需要去修改任何代码，让配置和代码解耦。</p>
+<p>列举一个本人在做项目时的一个domain使用实例。做对话系统的对话记录保存时，需要保存每一轮对话中chatbot发送给用户的信息。但是因为很多bot message都是读取的domain.yml中的话术模板再配置参数动态生成的。因此可以直接使用Domain的load方法读取yml中的键值对，生成一个字典。然后可以从字典中读取相应的话术模板得到bot message。</p>
+<h3 id="CollectionDispatcher"><a href="#CollectionDispatcher" class="headerlink" title="CollectionDispatcher"></a>CollectionDispatcher</h3><p>这个对象的主要作用是设计了各种魔法函数，处理不同类型的bot输出，并将其输出到OutputChannel中。看一下它的成员方法就能知道它的作用：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">CollectingDispatcher</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Send messages back to user"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+
+        self<span class="token punctuation">.</span>messages <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">def</span> <span class="token function">utter_message</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span>
+        text<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        image<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        json_message<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        template<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        attachment<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        buttons<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>List<span class="token punctuation">[</span>Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        elements<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>List<span class="token punctuation">[</span>Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        <span class="token operator">**</span>kwargs<span class="token punctuation">:</span> Any<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+
+     <span class="token comment" spellcheck="true"># noinspection PyUnusedLocal</span>
+    <span class="token keyword">def</span> <span class="token function">utter_template</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span> template<span class="token punctuation">:</span> Text<span class="token punctuation">,</span> tracker<span class="token punctuation">:</span> Tracker<span class="token punctuation">,</span> silent_fail<span class="token punctuation">:</span> bool <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">:</span> Any
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">""""Send a message to the client based on a template."""</span>
+        warnings<span class="token punctuation">.</span>warn<span class="token punctuation">(</span>
+            <span class="token string">"Use of `utter_template` is deprecated. "</span>
+            <span class="token string">"Use `utter_message(template=&lt;template_name>)` instead."</span><span class="token punctuation">,</span>
+            FutureWarning<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span>
+
+        self<span class="token punctuation">.</span>utter_message<span class="token punctuation">(</span>template<span class="token operator">=</span>template<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span></code></pre>
+<p>根据方法名就能知道不同方法的作用，例如utter_message，接受text字符串参数，可以直接输出我们定义的文本。utter_template则是从domain中的话术模板读取相应的template，**kwargs表示如果话术模板中预留了参数槽位，则使用该参数进行填充，生成最终的bot message。</p>
+<h2 id="Processor"><a href="#Processor" class="headerlink" title="Processor"></a>Processor</h2><p>这个对象是对话系统的核心处理模块。它通过execute_action完成bot处理对话的流程。</p>
+<blockquote>
+<p>这里需要注意一点，在processor执行action之前，agent将会调用processor的log_message方法，使用nlu_interpreter来对用户发送的文本做实体识别和意图识别，然后将信息保存在tracker中，这个逻辑比较简单，nlu模块也在前一篇文章中详细解析过了，因此这里就不详细展开了。</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"> <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">execute_action</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span>
+        sender_id<span class="token punctuation">:</span> Text<span class="token punctuation">,</span>
+        action_name<span class="token punctuation">:</span> Text<span class="token punctuation">,</span>
+        output_channel<span class="token punctuation">:</span> OutputChannel<span class="token punctuation">,</span>
+        nlg<span class="token punctuation">:</span> NaturalLanguageGenerator<span class="token punctuation">,</span>
+        policy<span class="token punctuation">:</span> Text<span class="token punctuation">,</span>
+        confidence<span class="token punctuation">:</span> float<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Optional<span class="token punctuation">[</span>DialogueStateTracker<span class="token punctuation">]</span><span class="token punctuation">:</span>
+
+        <span class="token comment" spellcheck="true"># we have a Tracker instance for each user</span>
+        <span class="token comment" spellcheck="true"># which maintains conversation state</span>
+        tracker <span class="token operator">=</span> <span class="token keyword">await</span> self<span class="token punctuation">.</span>get_tracker_with_session_start<span class="token punctuation">(</span>sender_id<span class="token punctuation">,</span> output_channel<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#---------->获取历史状态信息</span>
+        <span class="token keyword">if</span> tracker<span class="token punctuation">:</span>
+            action <span class="token operator">=</span> self<span class="token punctuation">.</span>_get_action<span class="token punctuation">(</span>action_name<span class="token punctuation">)</span>
+            <span class="token keyword">await</span> self<span class="token punctuation">.</span>_run_action<span class="token punctuation">(</span><span class="token comment" spellcheck="true">#------------------->执行action</span>
+                action<span class="token punctuation">,</span> tracker<span class="token punctuation">,</span> output_channel<span class="token punctuation">,</span> nlg<span class="token punctuation">,</span> policy<span class="token punctuation">,</span> confidence
+            <span class="token punctuation">)</span>
+
+            <span class="token comment" spellcheck="true"># save tracker state to continue conversation from this state</span>
+            self<span class="token punctuation">.</span>_save_tracker<span class="token punctuation">(</span>tracker<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#------------->更新对话状态</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span>
+                f<span class="token string">"Failed to retrieve or create tracker for conversation ID "</span>
+                f<span class="token string">"'&amp;#123;sender_id&amp;#125;'."</span>
+            <span class="token punctuation">)</span>
+        <span class="token keyword">return</span> tracker</code></pre>
+<p>可以看到，该模块涉及的核心对象有两个，action和tracker（当然还有其他对象如OutputChannel,policy等）。下面分别解析这两个对象。</p>
+<h3 id="DialogueStateTracker"><a href="#DialogueStateTracker" class="headerlink" title="DialogueStateTracker"></a>DialogueStateTracker</h3><p>从名字上就可以看到这个对象的功能：在多轮对话过程中全程记录对话状态信息。这个对象在开发自己的对话系统时，作用可是非常大的。很多对话状态信息，都可以从它这里得到。当然， 我们并不能直接去读写其定义的成员变量信息，需要通过其成员方法来操作成员变量，例如current_sate()，其核心内容如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">DialogueStateTracker</span><span class="token punctuation">:</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span>
+        sender_id<span class="token punctuation">:</span> Text<span class="token punctuation">,</span>
+        slots<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Iterable<span class="token punctuation">[</span>Slot<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        max_event_history<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>int<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+        sender_source<span class="token punctuation">:</span> Optional<span class="token punctuation">[</span>Text<span class="token punctuation">]</span> <span class="token operator">=</span> None<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># maximum number of events to store</span>
+        self<span class="token punctuation">.</span>_max_event_history <span class="token operator">=</span> max_event_history
+        <span class="token comment" spellcheck="true"># list of previously seen events</span>
+        self<span class="token punctuation">.</span>events <span class="token operator">=</span> self<span class="token punctuation">.</span>_create_events<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># id of the source of the messages</span>
+        self<span class="token punctuation">.</span>sender_id <span class="token operator">=</span> sender_id
+        <span class="token comment" spellcheck="true"># slots that can be filled in this domain</span>
+        <span class="token keyword">if</span> slots <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>slots <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;slot.name: copy.copy(slot) for slot in slots&amp;#125;</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>slots <span class="token operator">=</span> AnySlotDict<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># file source of the messages</span>
+        self<span class="token punctuation">.</span>sender_source <span class="token operator">=</span> sender_source
+        <span class="token comment" spellcheck="true"># if tracker is paused, no actions should be taken</span>
+        self<span class="token punctuation">.</span>_paused <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token comment" spellcheck="true"># A deterministically scheduled action to be executed next</span>
+        self<span class="token punctuation">.</span>followup_action <span class="token operator">=</span> ACTION_LISTEN_NAME
+        self<span class="token punctuation">.</span>latest_action_name <span class="token operator">=</span> None
+        <span class="token comment" spellcheck="true"># Stores the most recent message sent by the user</span>
+        self<span class="token punctuation">.</span>latest_message <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>latest_bot_utterance <span class="token operator">=</span> None
+        self<span class="token punctuation">.</span>_reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>active_form <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;&amp;#125;</span>
+
+    <span class="token comment" spellcheck="true">###</span>
+    <span class="token comment" spellcheck="true"># Public tracker interface</span>
+    <span class="token comment" spellcheck="true">###</span>
+    <span class="token keyword">def</span> <span class="token function">current_state</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span> event_verbosity<span class="token punctuation">:</span> EventVerbosity <span class="token operator">=</span> EventVerbosity<span class="token punctuation">.</span>NONE
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Return the current tracker state as an object."""</span>
+
+        <span class="token keyword">if</span> event_verbosity <span class="token operator">==</span> EventVerbosity<span class="token punctuation">.</span>ALL<span class="token punctuation">:</span>
+            evts <span class="token operator">=</span> <span class="token punctuation">[</span>e<span class="token punctuation">.</span>as_dict<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> e <span class="token keyword">in</span> self<span class="token punctuation">.</span>events<span class="token punctuation">]</span>
+        <span class="token keyword">elif</span> event_verbosity <span class="token operator">==</span> EventVerbosity<span class="token punctuation">.</span>AFTER_RESTART<span class="token punctuation">:</span>
+            evts <span class="token operator">=</span> <span class="token punctuation">[</span>e<span class="token punctuation">.</span>as_dict<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> e <span class="token keyword">in</span> self<span class="token punctuation">.</span>events_after_latest_restart<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">elif</span> event_verbosity <span class="token operator">==</span> EventVerbosity<span class="token punctuation">.</span>APPLIED<span class="token punctuation">:</span>
+            evts <span class="token operator">=</span> <span class="token punctuation">[</span>e<span class="token punctuation">.</span>as_dict<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> e <span class="token keyword">in</span> self<span class="token punctuation">.</span>applied_events<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            evts <span class="token operator">=</span> None
+
+        latest_event_time <span class="token operator">=</span> None
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>self<span class="token punctuation">.</span>events<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+            latest_event_time <span class="token operator">=</span> self<span class="token punctuation">.</span>events<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>timestamp
+
+        <span class="token keyword">return</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+            <span class="token string">"sender_id"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>sender_id<span class="token punctuation">,</span>
+            <span class="token string">"slots"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>current_slot_values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"latest_message"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>latest_message<span class="token punctuation">.</span>parse_data<span class="token punctuation">,</span>
+            <span class="token string">"latest_event_time"</span><span class="token punctuation">:</span> latest_event_time<span class="token punctuation">,</span>
+            <span class="token string">"followup_action"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>followup_action<span class="token punctuation">,</span>
+            <span class="token string">"paused"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>is_paused<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"events"</span><span class="token punctuation">:</span> evts<span class="token punctuation">,</span>
+            <span class="token string">"latest_input_channel"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>get_latest_input_channel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">"active_form"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>active_form<span class="token punctuation">,</span>
+            <span class="token string">"latest_action_name"</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>latest_action_name<span class="token punctuation">,</span>
+        <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span></code></pre>
+<p>注意该方法的返回对象是一个字典，其包含了丰富的对话信息，例如用户的id、当前所有的槽位键值对（包括已填充和未被填充的）、用户最近一次发送的消息等等。</p>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>下面将解析对话管理中最重要的一个概念——Action。前面已经说到，event对象是rasa中定义的chatbot能执行的最小粒度的动作。而Action则是比event更高层次的对象，会根据用户发送过来的消息，执行一些操作，这些操作可以是自定义的一些逻辑，也可以是系统预置的events。rasa中，action可以分为三大类：</p>
+<p><strong>utterance actions</strong>：直接发送文本给用户，action文本模板是在domain.yml中进行定义。</p>
+<p><strong>custom actions</strong>: 自定义action，由开发者自定义功能的action。个人认为这个是功能最强大的action，因为开发自由度很大，支持使用任何开发语言进行开发。最后只需要将其打包成一个restful服务接口暴露出来即可。因此这种action是可以和对话主系统分离部署的。下面给出自定义action server与bot agent和用户的交互流程图：</p>
+<p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/9.png"></p>
+<p>rasa action支持node.js, .NET, java等开发语言，当然也支持Python。但是对于Python来说，需要安装rasa-sdk工具包。这个工具包里预置了一些有用的action模板。例如form action。</p>
+<p>当然，form action以及其他预置的action模板只能实现最简单的场景，如果要实现复杂的场景，需要根据不同场景，自定义action，可以选择继承这些模板，在上面进行功能的添加和完善。</p>
+<p><strong>default action</strong>: rasa系统内置的粒度较小的action。与rasa_sdk中的action不同，这个是直接在core/actions下面的。相对于上面的form action来说，这里的action功能更单一，与events比较像，但是还是略有不同，下面举个实例ActionRestart</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ActionRestart</span><span class="token punctuation">(</span>ActionUtterTemplate<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Resets the tracker to its initial state.
+
+    Utters the restart template if available."""</span>
+
+    <span class="token keyword">def</span> <span class="token function">name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Text<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> ACTION_RESTART_NAME
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token string">"utter_restart"</span><span class="token punctuation">,</span> silent_fail<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">async</span> <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>
+        self<span class="token punctuation">,</span>
+        output_channel<span class="token punctuation">:</span> <span class="token string">"OutputChannel"</span><span class="token punctuation">,</span>
+        nlg<span class="token punctuation">:</span> <span class="token string">"NaturalLanguageGenerator"</span><span class="token punctuation">,</span>
+        tracker<span class="token punctuation">:</span> <span class="token string">"DialogueStateTracker"</span><span class="token punctuation">,</span>
+        domain<span class="token punctuation">:</span> <span class="token string">"Domain"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>Event<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">from</span> rasa<span class="token punctuation">.</span>core<span class="token punctuation">.</span>events <span class="token keyword">import</span> Restarted
+
+        <span class="token comment" spellcheck="true"># only utter the template if it is available</span>
+        evts <span class="token operator">=</span> <span class="token keyword">await</span> super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>run<span class="token punctuation">(</span>output_channel<span class="token punctuation">,</span> nlg<span class="token punctuation">,</span> tracker<span class="token punctuation">,</span> domain<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#*****</span>
+
+        <span class="token keyword">return</span> evts <span class="token operator">+</span> <span class="token punctuation">[</span>Restarted<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
+<p>可以看到它使用了一个Restarted()的event，这个event的功能是重启整个对话流程，重置对话状态。除此之外，该action需要先执行读取话术模板组装bot message，并将其发送给用户后，才去重启整个会话。</p>
+<p>所有default action的列表如下，它们的命名都非常简单直接：</p>
+<p><img src="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/10.png"></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">daiyizheng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/">http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">daiyizheng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Rasa/">
+                                    <span class="chip bg-color">Rasa</span>
+                                </a>
+                            
+                                <a href="/tags/QA/">
+                                    <span class="chip bg-color">QA</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '4UATY1Wl6PiOAJtLDeI11JPG-9Nh9j0Va',
+        appKey: 'm8JJMe4Ok7crFRmTthEbo48R',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="多轮对话框架Rasa代码解读-1">
+                        
+                        <span class="card-title">多轮对话框架Rasa代码解读-1</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            多轮对话框架Rasa代码解读
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/nlp/" class="post-category">
+                                    nlp
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Rasa/">
+                        <span class="chip bg-color">Rasa</span>
+                    </a>
+                    
+                    <a href="/tags/QA/">
+                        <span class="chip bg-color">QA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="多轮对话框架Rasa代码解读-2">
+                        
+                        <span class="card-title">多轮对话框架Rasa代码解读-2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            多轮对话框架Rasa代码解读
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/nlp/" class="post-category">
+                                    nlp
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Rasa/">
+                        <span class="chip bg-color">Rasa</span>
+                    </a>
+                    
+                    <a href="/tags/QA/">
+                        <span class="chip bg-color">QA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="song"
+                   id="1297742167"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">daiyizheng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

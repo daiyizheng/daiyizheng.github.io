@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-18T04:19:26.113Z</updated>
+  <updated>2020-09-20T10:30:18.139Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多轮对话框架Rasa代码解读-1</title>
+    <link href="http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/"/>
+    <id>http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/</id>
+    <published>2020-09-20T07:08:02.000Z</published>
+    <updated>2020-09-20T10:30:18.139Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Rasa&quot;&gt;&lt;a href=&quot;#Rasa&quot; class=&quot;headerlink&quot; title=&quot;Rasa&quot;&gt;&lt;/a&gt;Rasa&lt;/h1&gt;&lt;h2 id=&quot;整体架构&quot;&gt;&lt;a href=&quot;#整体架构&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+      <category term="QA" scheme="http://yoursite.com/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多轮对话框架Rasa代码解读-2</title>
+    <link href="http://yoursite.com/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/"/>
+    <id>http://yoursite.com/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/</id>
+    <published>2020-09-19T10:37:21.000Z</published>
+    <updated>2020-09-20T09:08:36.504Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Rasa源码解读&quot;&gt;&lt;a href=&quot;#Rasa源码解读&quot; class=&quot;headerlink&quot; title=&quot;Rasa源码解读&quot;&gt;&lt;/a&gt;Rasa源码解读&lt;/h1&gt;&lt;h2 id=&quot;脚本总入口&quot;&gt;&lt;a href=&quot;#脚本总入口&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+      <category term="QA" scheme="http://yoursite.com/tags/QA/"/>
+    
+  </entry>
   
   <entry>
     <title>word2vec实战：获取和预处理中文维基百科(Wikipedia)语料库，并训练成word2vec模型</title>
@@ -520,65 +578,6 @@
       <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
     
       <category term="注意力机制" scheme="http://yoursite.com/tags/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GRAPH-BERT: Only Attention is Needed for Learning Graph Representations</title>
-    <link href="http://yoursite.com/2020/09/03/graph-bert-only-attention-is-needed-for-learning-graph-representations/"/>
-    <id>http://yoursite.com/2020/09/03/graph-bert-only-attention-is-needed-for-learning-graph-representations/</id>
-    <published>2020-09-03T15:46:57.000Z</published>
-    <updated>2020-09-16T01:00:15.847Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;GRAPH-BERT-Only-Attention-is-Needed-for-Learning-Graph-Representations&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="论文" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87/"/>
-    
-    
-      <category term="Bert" scheme="http://yoursite.com/tags/Bert/"/>
-    
-      <category term="GNN" scheme="http://yoursite.com/tags/GNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>beam search 算法</title>
-    <link href="http://yoursite.com/2020/09/03/beam-search-suan-fa/"/>
-    <id>http://yoursite.com/2020/09/03/beam-search-suan-fa/</id>
-    <published>2020-09-03T15:45:36.000Z</published>
-    <updated>2020-09-04T05:01:54.800Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;转载至&lt;a href=&quot;https://www.zhihu.com/question/54356960&quot;&gt;https://www.zhihu.com/question/54356960&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;beam-search-原理&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="序列" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97/"/>
-    
-      <category term="Seq2Seq" scheme="http://yoursite.com/tags/Seq2Seq/"/>
     
   </entry>
   
