@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="curl命令, 呆小症日记">
+    <meta name="keywords" content="中文医学文本实体关系抽取, 呆小症日记">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>curl命令 | 呆小症日记</title>
+    <title>中文医学文本实体关系抽取 | 呆小症日记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">curl命令</h1>
+                    <h1 class="description center-align post-title">中文医学文本实体关系抽取</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                                <span class="chip bg-color">命令</span>
+                            <a href="/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/">
+                                <span class="chip bg-color">关系抽取</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/shell/" class="post-category">
-                                shell
+                            <a href="/categories/nlp/" class="post-category">
+                                nlp
                             </a>
                         
                     </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-15
+                    2020-09-14
                 </div>
                 
 
@@ -472,186 +472,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h1><h2 id="命令：curl"><a href="#命令：curl" class="headerlink" title="命令：curl"></a>命令：curl</h2><p>​      原地址：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/duhuo/p/5695256.html">https://www.cnblogs.com/duhuo/p/5695256.html</a></p>
-<p>​       在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。</p>
-<pre><code>语法：# curl [option] [url]</code></pre>
-<p>常见参数：</p>
-<pre class=" language-shell"><code class="language-shell">-A/--user-agent <string>              设置用户代理发送给服务器
--b/--cookie <name=string/file>    cookie字符串或文件读取位置
--c/--cookie-jar <file>                    操作结束后把cookie写入到这个文件中
--C/--continue-at <offset>            断点续转
--D/--dump-header <file>              把header信息写入到该文件中
--e/--referer                                  来源网址
--f/--fail                                          连接失败时不显示http错误
--o/--output                                  把输出写到该文件中
--O/--remote-name                      把输出写到该文件中，保留远程文件的文件名
--r/--range <range>                      检索来自HTTP/1.1或FTP服务器字节范围
--s/--silent                                    静音模式。不输出任何东西
--T/--upload-file <file>                  上传文件
--u/--user <user[:password]>      设置服务器的用户和密码
--w/--write-out [format]                什么输出完成后
--x/--proxy <host[:port]>              在给定的端口上使用HTTP代理
--#/--progress-bar                        进度条显示当前的传送状态</code></pre>
-<p>例子：<br>1、基本用法</p>
-<pre class=" language-shell"><code class="language-shell"># curl http://www.linux.com</code></pre>
-<p>执行后，<a target="_blank" rel="noopener" href="http://www.linux.com/">www.linux.com</a> 的html就会显示在屏幕上了<br>Ps：由于安装linux的时候很多时候是没有安装桌面的，也意味着没有浏览器，因此这个方法也经常用于测试一台服务器是否可以到达一个网站</p>
-<p>2、保存访问的网页<br>2.1:使用linux的重定向功能保存</p>
-<pre class=" language-shell"><code class="language-shell"># curl http://www.linux.com >> linux.html</code></pre>
-<p>2.2:可以使用curl的内置option:-o(小写)保存网页</p>
-<pre class=" language-shell"><code class="language-shell">$ curl -o linux.html http://www.linux.com</code></pre>
-<p>执行完成后会显示如下界面，显示100%则表示保存成功</p>
-<pre class=" language-shell"><code class="language-shell">% Total    % Received % Xferd  Average Speed  Time    Time    Time  Current
-                                Dload  Upload  Total  Spent    Left  Speed
-100 79684    0 79684    0    0  3437k      0 --:--:-- --:--:-- --:--:-- 7781k</code></pre>
-<p>2.3:可以使用curl的内置option:-O(大写)保存网页中的文件<br>要注意这里后面的url要具体到某个文件，不然抓不下来</p>
-<pre class=" language-shell"><code class="language-shell"># curl -O http://www.linux.com/hello.sh</code></pre>
-<p>3、测试网页返回值</p>
-<pre class=" language-shell"><code class="language-shell"># curl -o /dev/null -s -w %&#123;http_code&#125; www.linux.com</code></pre>
-<p>Ps:在脚本中，这是很常见的测试网站是否正常的用法</p>
-<p>4、指定proxy服务器以及其端口<br>很多时候上网需要用到代理服务器(比如是使用代理服务器上网或者因为使用curl别人网站而被别人屏蔽IP地址的时候)，幸运的是curl通过使用内置option：-x来支持设置代理</p>
-<pre class=" language-shell"><code class="language-shell"># curl -x 192.168.100.100:1080 http://www.linux.com</code></pre>
-<p>5、cookie<br>有些网站是使用cookie来记录session信息。对于chrome这样的浏览器，可以轻易处理cookie信息，但在curl中只要增加相关参数也是可以很容易的处理cookie<br>5.1:保存http的response里面的cookie信息。内置option:-c（小写）</p>
-<pre class=" language-shell"><code class="language-shell"># curl -c cookiec.txt  http://www.linux.com</code></pre>
-<p>执行后cookie信息就被存到了cookiec.txt里面了</p>
-<p>5.2:保存http的response里面的header信息。内置option: -D</p>
-<pre class=" language-shell"><code class="language-shell"># curl -D cookied.txt http://www.linux.com</code></pre>
-<p>执行后cookie信息就被存到了cookied.txt里面了</p>
-<p>注意：-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
-<p>5.3:使用cookie<br>很多网站都是通过监视你的cookie信息来判断你是否按规矩访问他们的网站的，因此我们需要使用保存的cookie信息。内置option: -b</p>
-<pre class=" language-shell"><code class="language-shell"># curl -b cookiec.txt http://www.linux.com</code></pre>
-<p>6、模仿浏览器<br>有些网站需要使用特定的浏览器去访问他们，有些还需要使用某些特定的版本。curl内置option:-A可以让我们指定浏览器去访问网站</p>
-<pre class=" language-shell"><code class="language-shell"># curl -A "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.0)" http://www.linux.com</code></pre>
-<p>这样服务器端就会认为是使用IE8.0去访问的</p>
-<p>7、伪造referer（盗链）<br>很多服务器会检查http访问的referer从而来控制访问。比如：你是先访问首页，然后再访问首页中的邮箱页面，这里访问邮箱的referer地址就是访问首页成功后的页面地址，如果服务器发现对邮箱页面访问的referer地址不是首页的地址，就断定那是个盗连了<br>curl中内置option：-e可以让我们设定referer</p>
-<pre class=" language-shell"><code class="language-shell"># curl -e "www.linux.com" http://mail.linux.com</code></pre>
-<p>这样就会让服务器其以为你是从<a target="_blank" rel="noopener" href="http://www.linux.com点击某个链接过来的/">www.linux.com点击某个链接过来的</a></p>
-<p>8、下载文件<br>8.1：利用curl下载文件。<br>#使用内置option：-o(小写)</p>
-<pre class=" language-shell"><code class="language-shell"># curl -o dodo1.jpg http:www.linux.com/dodo1.JPG</code></pre>
-<p>#使用内置option：-O（大写)</p>
-<pre class=" language-shell"><code class="language-shell"># curl -O http://www.linux.com/dodo1.JPG</code></pre>
-<p>这样就会以服务器上的名称保存文件到本地</p>
-<p>8.2：循环下载<br>有时候下载图片可以能是前面的部分名称是一样的，就最后的尾椎名不一样</p>
-<pre class=" language-shell"><code class="language-shell"># curl -O http://www.linux.com/dodo[1-5].JPG</code></pre>
-<p>这样就会把dodo1，dodo2，dodo3，dodo4，dodo5全部保存下来</p>
-<p>8.3：下载重命名</p>
-<pre class=" language-shell"><code class="language-shell"># curl -O http://www.linux.com/&#123;hello,bb&#125;/dodo[1-5].JPG</code></pre>
-<p>由于下载的hello与bb中的文件名都是dodo1，dodo2，dodo3，dodo4，dodo5。因此第二次下载的会把第一次下载的覆盖，这样就需要对文件进行重命名。</p>
-<pre class=" language-shell"><code class="language-shell"># curl -o #1_#2.JPG http://www.linux.com/&#123;hello,bb&#125;/dodo[1-5].JPG</code></pre>
-<p>这样在hello/dodo1.JPG的文件下载下来就会变成hello_dodo1.JPG,其他文件依此类推，从而有效的避免了文件被覆盖</p>
-<p>8.4：分块下载<br>有时候下载的东西会比较大，这个时候我们可以分段下载。使用内置option：-r</p>
-<pre class=" language-shell"><code class="language-shell"># curl -r 0-100 -o dodo1_part1.JPG http://www.linux.com/dodo1.JPG
-# curl -r 100-200 -o dodo1_part2.JPG http://www.linux.com/dodo1.JPG
-# curl -r 200- -o dodo1_part3.JPG http://www.linux.com/dodo1.JPG
-# cat dodo1_part* > dodo1.JPG</code></pre>
-<p>这样就可以查看dodo1.JPG的内容了</p>
-<p>8.5：通过ftp下载文件<br>curl可以通过ftp下载文件，curl提供两种从ftp中下载的语法</p>
-<pre class=" language-shell"><code class="language-shell"># curl -O -u 用户名:密码 ftp://www.linux.com/dodo1.JPG
-# curl -O ftp://用户名:密码@www.linux.com/dodo1.JPG</code></pre>
-<p>8.6：显示下载进度条</p>
-<pre class=" language-shell"><code class="language-shell"># curl -# -O http://www.linux.com/dodo1.JPG</code></pre>
-<p>8.7：不会显示下载进度信息</p>
-<pre class=" language-shell"><code class="language-shell"># curl -s -O http://www.linux.com/dodo1.JPG</code></pre>
-<p>9、断点续传<br>在windows中，我们可以使用迅雷这样的软件进行断点续传。curl可以通过内置option:-C同样可以达到相同的效果<br>如果在下载dodo1.JPG的过程中突然掉线了，可以使用以下的方式续传</p>
-<pre class=" language-shell"><code class="language-shell"># curl -C -O http://www.linux.com/dodo1.JPG</code></pre>
-<p>10、上传文件<br>curl不仅仅可以下载文件，还可以上传文件。通过内置option:-T来实现</p>
-<pre class=" language-shell"><code class="language-shell"># curl -T dodo1.JPG -u 用户名:密码 ftp://www.linux.com/img/</code></pre>
-<p>这样就向ftp服务器上传了文件dodo1.JPG</p>
-<p>11、显示抓取错误</p>
-<pre class=" language-shell"><code class="language-shell"># curl -f http://www.linux.com/error</code></pre>
-<p>其他参数(此处翻译为转载)：</p>
-<pre class=" language-shell"><code class="language-shell">-a/--append                        上传文件时，附加到目标文件
---anyauth                            可以使用“任何”身份验证方法
---basic                                使用HTTP基本验证
--B/--use-ascii                      使用ASCII文本传输
--d/--data <data>                  HTTP POST方式传送数据
---data-ascii <data>            以ascii的方式post数据
---data-binary <data>          以二进制的方式post数据
---negotiate                          使用HTTP身份验证
---digest                        使用数字身份验证
---disable-eprt                  禁止使用EPRT或LPRT
---disable-epsv                  禁止使用EPSV
---egd-file <file>              为随机数据(SSL)设置EGD socket路径
---tcp-nodelay                  使用TCP_NODELAY选项
--E/--cert <cert[:passwd]>      客户端证书文件和密码 (SSL)
---cert-type <type>              证书文件类型 (DER/PEM/ENG) (SSL)
---key <key>                    私钥文件名 (SSL)
---key-type <type>              私钥文件类型 (DER/PEM/ENG) (SSL)
---pass  <pass>                  私钥密码 (SSL)
---engine <eng>                  加密引擎使用 (SSL). "--engine list" for list
---cacert <file>                CA证书 (SSL)
---capath <directory>            CA目   (made using c_rehash) to verify peer against (SSL)
---ciphers <list>                SSL密码
---compressed                    要求返回是压缩的形势 (using deflate or gzip)
---connect-timeout <seconds>    设置最大请求时间
---create-dirs                  建立本地目录的目录层次结构
---crlf                          上传是把LF转变成CRLF
---ftp-create-dirs              如果远程目录不存在，创建远程目录
---ftp-method [multicwd/nocwd/singlecwd]    控制CWD的使用
---ftp-pasv                      使用 PASV/EPSV 代替端口
---ftp-skip-pasv-ip              使用PASV的时候,忽略该IP地址
---ftp-ssl                      尝试用 SSL/TLS 来进行ftp数据传输
---ftp-ssl-reqd                  要求用 SSL/TLS 来进行ftp数据传输
--F/--form <name=content>        模拟http表单提交数据
--form-string <name=string>      模拟http表单提交数据
--g/--globoff                    禁用网址序列和范围使用&#123;&#125;和[]
--G/--get                        以get的方式来发送数据
--h/--help                      帮助
--H/--header <line>              自定义头信息传递给服务器
---ignore-content-length        忽略的HTTP头信息的长度
--i/--include                    输出时包括protocol头信息
--I/--head                      只显示文档信息
--j/--junk-session-cookies      读取文件时忽略session cookie
---interface <interface>        使用指定网络接口/地址
---krb4 <level>                  使用指定安全级别的krb4
--k/--insecure                  允许不使用证书到SSL站点
--K/--config                    指定的配置文件读取
--l/--list-only                  列出ftp目录下的文件名称
---limit-rate <rate>            设置传输速度
---local-port<NUM>              强制使用本地端口号
--m/--max-time <seconds>        设置最大传输时间
---max-redirs <num>              设置最大读取的目录数
---max-filesize <bytes>          设置最大下载的文件总量
--M/--manual                    显示全手动
--n/--netrc                      从netrc文件中读取用户名和密码
---netrc-optional                使用 .netrc 或者 URL来覆盖-n
---ntlm                          使用 HTTP NTLM 身份验证
--N/--no-buffer                  禁用缓冲输出
--p/--proxytunnel                使用HTTP代理
---proxy-anyauth                选择任一代理身份验证方法
---proxy-basic                  在代理上使用基本身份验证
---proxy-digest                  在代理上使用数字身份验证
---proxy-ntlm                    在代理上使用ntlm身份验证
--P/--ftp-port <address>        使用端口地址，而不是使用PASV
--Q/--quote <cmd>                文件传输前，发送命令到服务器
---range-file                    读取（SSL）的随机文件
--R/--remote-time                在本地生成文件时，保留远程文件时间
---retry <num>                  传输出现问题时，重试的次数
---retry-delay <seconds>        传输出现问题时，设置重试间隔时间
---retry-max-time <seconds>      传输出现问题时，设置最大重试时间
--S/--show-error                显示错误
---socks4 <host[:port]>          用socks4代理给定主机和端口
---socks5 <host[:port]>          用socks5代理给定主机和端口
--t/--telnet-option <OPT=val>    Telnet选项设置
---trace <file>                  对指定文件进行debug
---trace-ascii <file>            Like --跟踪但没有hex输出
---trace-time                    跟踪/详细输出时，添加时间戳
---url <URL>                    Spet URL to work with
--U/--proxy-user <user[:password]>  设置代理用户名和密码
--V/--version                    显示版本信息
--X/--request <command>          指定什么命令
--y/--speed-time                放弃限速所要的时间。默认为30
--Y/--speed-limit                停止传输速度的限制，速度时间'秒
--z/--time-cond                  传送时间设置
--0/--http1.0                    使用HTTP 1.0
--1/--tlsv1                      使用TLSv1（SSL）
--2/--sslv2                      使用SSLv2的（SSL）
--3/--sslv3                      使用的SSLv3（SSL）
---3p-quote                      like -Q for the source URL for 3rd party transfer
---3p-url                        使用url，进行第三方传送
---3p-user                      使用用户名和密码，进行第三方传送
--4/--ipv4                      使用IP4
--6/--ipv6                      使用IP6</code></pre>
-<script>
+                <h1 id="中文医学文本实体关系抽取总结"><a href="#中文医学文本实体关系抽取总结" class="headerlink" title="中文医学文本实体关系抽取总结"></a>中文医学文本实体关系抽取总结</h1><h2 id="任务简介"><a href="#任务简介" class="headerlink" title="任务简介"></a>任务简介</h2><p>实体和关系抽取作为信息抽取的重要子任务，近些年众多学者利用多种技术在该领域开展深入研究。将这些技术应用于医学领域，抽取非结构化和半结构化的医学文本构建成医学知识图谱，可服务于下游子任务。非结构化的医学文本，如医学教材每一个自然段落，临床实践中每种疾病下的主题，电子病历数据中的主诉、现病史、鉴别诊断等，都是由中文自然语言句子或句子集合组成。实体关系抽取是从非结构化医学文本中找出医学实体，并确定实体对关系事实的过程。</p>
+<h2 id="任务详情"><a href="#任务详情" class="headerlink" title="任务详情"></a>任务详情</h2><p>给定schema约束集合及句子sentence，其中schema定义了关系Predicate以及其对应的主体Subject和客体Object的类别，例如：</p>
+<pre class=" language-json"><code class="language-json">（“subject_type”<span class="token operator">:</span>“疾病”，“predicate”<span class="token operator">:</span> “药物治疗”，“object_type”<span class="token operator">:</span>“药物”）
+（“subject_type”<span class="token operator">:</span>“疾病”，“predicate”<span class="token operator">:</span> “实验室检查”，“object_type”<span class="token operator">:</span>“检查”）</code></pre>
+<p><strong>输入/输出:</strong><br>(1) 输入:schema约束集合及句子sentence<br>(2) 输出:句子sentence中包含的符合给定schema约束的三元组知识Triples</p>
+<h2 id="评价标准"><a href="#评价标准" class="headerlink" title="评价标准"></a>评价标准</h2><p>采用Precision，Recall和F1值作为评价指标。</p>
+<h2 id="数据简介"><a href="#数据简介" class="headerlink" title="数据简介"></a>数据简介</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -694,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/09/15/curl-ming-ling/">http://yoursite.com/2020/09/15/curl-ming-ling/</a>
+                    <a href="http://yoursite.com/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/">http://yoursite.com/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -732,8 +559,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                                    <span class="chip bg-color">命令</span>
+                                <a href="/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/">
+                                    <span class="chip bg-color">关系抽取</span>
                                 </a>
                             
                         </div>
@@ -1168,25 +995,74 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/17/torchserve-bu-shu-zhu-yi-shi-xiang/">
+                <a href="/2020/09/15/curl-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="TorchServe部署方法及注意事项">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="curl命令">
                         
-                        <span class="card-title">TorchServe部署方法及注意事项</span>
+                        <span class="card-title">curl命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            TorchServe部署问题
+                            curl命令
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-15
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/shell/" class="post-category">
+                                    shell
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">命令</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/09/14/torchserve/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="TorchServe">
+                        
+                        <span class="card-title">TorchServe</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            TorchServe安装使用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1204,55 +1080,6 @@
                     
                     <a href="/tags/%E9%83%A8%E7%BD%B2/">
                         <span class="chip bg-color">部署</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="中文医学文本实体关系抽取">
-                        
-                        <span class="card-title">中文医学文本实体关系抽取</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            中文医学文本实体关系抽取总结
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/nlp/" class="post-category">
-                                    nlp
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/">
-                        <span class="chip bg-color">关系抽取</span>
                     </a>
                     
                 </div>
@@ -1390,6 +1217,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

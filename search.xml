@@ -237,6 +237,31 @@
     
     
     <entry>
+      <title>中文医学文本实体关系抽取</title>
+      <link href="/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/"/>
+      <url>/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="中文医学文本实体关系抽取总结"><a href="#中文医学文本实体关系抽取总结" class="headerlink" title="中文医学文本实体关系抽取总结"></a>中文医学文本实体关系抽取总结</h1><h2 id="任务简介"><a href="#任务简介" class="headerlink" title="任务简介"></a>任务简介</h2><p>实体和关系抽取作为信息抽取的重要子任务，近些年众多学者利用多种技术在该领域开展深入研究。将这些技术应用于医学领域，抽取非结构化和半结构化的医学文本构建成医学知识图谱，可服务于下游子任务。非结构化的医学文本，如医学教材每一个自然段落，临床实践中每种疾病下的主题，电子病历数据中的主诉、现病史、鉴别诊断等，都是由中文自然语言句子或句子集合组成。实体关系抽取是从非结构化医学文本中找出医学实体，并确定实体对关系事实的过程。</p><h2 id="任务详情"><a href="#任务详情" class="headerlink" title="任务详情"></a>任务详情</h2><p>给定schema约束集合及句子sentence，其中schema定义了关系Predicate以及其对应的主体Subject和客体Object的类别，例如：</p><pre class=" language-json"><code class="language-json">（“subject_type”<span class="token operator">:</span>“疾病”，“predicate”<span class="token operator">:</span> “药物治疗”，“object_type”<span class="token operator">:</span>“药物”）（“subject_type”<span class="token operator">:</span>“疾病”，“predicate”<span class="token operator">:</span> “实验室检查”，“object_type”<span class="token operator">:</span>“检查”）</code></pre><p><strong>输入/输出:</strong><br>(1) 输入:schema约束集合及句子sentence<br>(2) 输出:句子sentence中包含的符合给定schema约束的三元组知识Triples</p><h2 id="评价标准"><a href="#评价标准" class="headerlink" title="评价标准"></a>评价标准</h2><p>采用Precision，Recall和F1值作为评价指标。</p><h2 id="数据简介"><a href="#数据简介" class="headerlink" title="数据简介"></a>数据简介</h2><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> nlp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关系抽取 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TorchServe</title>
       <link href="/2020/09/14/torchserve/"/>
       <url>/2020/09/14/torchserve/</url>

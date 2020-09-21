@@ -269,6 +269,33 @@
   </entry>
   
   <entry>
+    <title>中文医学文本实体关系抽取</title>
+    <link href="http://yoursite.com/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/"/>
+    <id>http://yoursite.com/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/</id>
+    <published>2020-09-14T12:08:59.000Z</published>
+    <updated>2020-09-21T12:19:45.383Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;中文医学文本实体关系抽取总结&quot;&gt;&lt;a href=&quot;#中文医学文本实体关系抽取总结&quot; class=&quot;headerlink&quot; title=&quot;中文医学文本实体关系抽取总结&quot;&gt;&lt;/a&gt;中文医学文本实体关系抽取总结&lt;/h1&gt;&lt;h2 id=&quot;任务简介&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="关系抽取" scheme="http://yoursite.com/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>TorchServe</title>
     <link href="http://yoursite.com/2020/09/14/torchserve/"/>
     <id>http://yoursite.com/2020/09/14/torchserve/</id>
@@ -549,35 +576,6 @@
       <category term="falsk" scheme="http://yoursite.com/tags/falsk/"/>
     
       <category term="ngnix" scheme="http://yoursite.com/tags/ngnix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bahdanau 和 Luong 两种 Attention 机制的区别</title>
-    <link href="http://yoursite.com/2020/09/05/bahdanau-he-luong-liang-chong-attention-ji-zhi-de-qu-bie/"/>
-    <id>http://yoursite.com/2020/09/05/bahdanau-he-luong-liang-chong-attention-ji-zhi-de-qu-bie/</id>
-    <published>2020-09-05T05:50:29.000Z</published>
-    <updated>2020-09-05T06:26:40.781Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Bahdanau-和-Luong-两种-Attention-机制的区别&quot;&gt;&lt;a href=&quot;#Bahdanau-和-Luong-两种-Attention-机制的区别&quot; class=&quot;headerlink&quot; title=&quot;Bahdanau 和 Luong 两种
-        
-      
-    
-    </summary>
-    
-    
-      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
-    
-    
-      <category term="attention" scheme="http://yoursite.com/tags/attention/"/>
-    
-      <category term="注意力机制" scheme="http://yoursite.com/tags/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     
   </entry>
   
