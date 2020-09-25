@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-20T10:30:18.139Z</updated>
+  <updated>2020-09-22T06:13:06.176Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于Conditional Layer Normalization的条件文本生成</title>
+    <link href="http://yoursite.com/2020/09/22/ji-yu-conditional-layer-normalization-de-tiao-jian-wen-ben-sheng-cheng/"/>
+    <id>http://yoursite.com/2020/09/22/ji-yu-conditional-layer-normalization-de-tiao-jian-wen-ben-sheng-cheng/</id>
+    <published>2020-09-22T05:39:34.000Z</published>
+    <updated>2020-09-22T06:13:06.176Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基于Conditional-Layer-Normalization的条件文本生成&quot;&gt;&lt;a href=&quot;#基于Conditional-Layer-Normalization的条件文本生成&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="归一化" scheme="http://yoursite.com/tags/%E5%BD%92%E4%B8%80%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中文医学文本命名实体识别</title>
+    <link href="http://yoursite.com/2020/09/22/zhong-wen-yi-xue-wen-ben-ming-ming-shi-ti-shi-bie/"/>
+    <id>http://yoursite.com/2020/09/22/zhong-wen-yi-xue-wen-ben-ming-ming-shi-ti-shi-bie/</id>
+    <published>2020-09-22T01:47:51.000Z</published>
+    <updated>2020-09-22T07:10:01.794Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;中文医学文本命名实体识别&quot;&gt;&lt;a href=&quot;#中文医学文本命名实体识别&quot; class=&quot;headerlink&quot; title=&quot;中文医学文本命名实体识别&quot;&gt;&lt;/a&gt;中文医学文本命名实体识别&lt;/h1&gt;&lt;h2 id=&quot;任务简介&quot;&gt;&lt;a href=&quot;#任务简介&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="序列标注" scheme="http://yoursite.com/tags/%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8/"/>
+    
+      <category term="实体识别" scheme="http://yoursite.com/tags/%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>多轮对话框架Rasa代码解读-1</title>
@@ -468,7 +524,7 @@
     <link href="http://yoursite.com/2020/09/10/ccks2020-mian-xiang-zhong-wen-duan-wen-ben-de-shi-ti-lian-zhi-ren-wu/"/>
     <id>http://yoursite.com/2020/09/10/ccks2020-mian-xiang-zhong-wen-duan-wen-ben-de-shi-ti-lian-zhi-ren-wu/</id>
     <published>2020-09-10T14:51:24.000Z</published>
-    <updated>2020-09-21T17:44:30.029Z</updated>
+    <updated>2020-09-22T00:36:49.840Z</updated>
     
     <summary type="html">
     
@@ -516,64 +572,6 @@
       <category term="开放数据" scheme="http://yoursite.com/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE/"/>
     
       <category term="图神经" scheme="http://yoursite.com/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>几种常见激活函数</title>
-    <link href="http://yoursite.com/2020/09/10/ji-huo-han-shu/"/>
-    <id>http://yoursite.com/2020/09/10/ji-huo-han-shu/</id>
-    <published>2020-09-10T02:49:48.000Z</published>
-    <updated>2020-09-10T10:38:31.634Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;几种常见激活函数&quot;&gt;&lt;a href=&quot;#几种常见激活函数&quot; class=&quot;headerlink&quot; title=&quot;几种常见激活函数&quot;&gt;&lt;/a&gt;几种常见激活函数&lt;/h1&gt;&lt;h2 id=&quot;为什么需要激活函数&quot;&gt;&lt;a href=&quot;#为什么需要激活函数&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>标注精灵</title>
-    <link href="http://yoursite.com/2020/09/07/biao-zhu-jing-ling/"/>
-    <id>http://yoursite.com/2020/09/07/biao-zhu-jing-ling/</id>
-    <published>2020-09-07T12:50:30.000Z</published>
-    <updated>2020-09-07T12:58:11.849Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;标注精灵（ubantu）&quot;&gt;&lt;a href=&quot;#标注精灵（ubantu）&quot; class=&quot;headerlink&quot; title=&quot;标注精灵（ubantu）&quot;&gt;&lt;/a&gt;标注精灵（ubantu）&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;下载标注精灵&lt;/p&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="脚本" scheme="http://yoursite.com/tags/%E8%84%9A%E6%9C%AC/"/>
-    
-      <category term="lniux" scheme="http://yoursite.com/tags/lniux/"/>
     
   </entry>
   

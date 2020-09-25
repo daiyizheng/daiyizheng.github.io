@@ -680,6 +680,15 @@ TYPE_TO_IDX              &amp;#123;"type":idx...｝</code></pre>
     <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_ids<span class="token punctuation">,</span> attention_mask<span class="token punctuation">,</span> token_type_ids<span class="token punctuation">)</span><span class="token punctuation">:</span>
         outputs <span class="token operator">=</span> self<span class="token punctuation">.</span>bert<span class="token punctuation">(</span>input_ids<span class="token operator">=</span>input_ids<span class="token punctuation">,</span> attention_mask<span class="token operator">=</span>attention_mask<span class="token punctuation">,</span> token_type_ids<span class="token operator">=</span>token_type_ids<span class="token punctuation">)</span>
         <span class="token keyword">return</span> outputs</code></pre>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><pre><code>text_id entity offset short_text type   result
+1  林平之    0  林平之答应岳灵珊报仇之事，从长计议，师娘想令狐冲了  Other  Person
+1  岳灵珊    5  林平之答应岳灵珊报仇之事，从长计议，师娘想令狐冲了  Other  Person
+1  师娘 18 林平之答应岳灵珊报仇之事，从长计议，师娘想令狐冲了  Other  Other
+1  令狐冲    21 林平之答应岳灵珊报仇之事，从长计议，师娘想令狐冲了  Other  Person
+2  思追 0  思追原来是个超级妹控，不愿妹妹嫁人，然而妹妹却喜欢一博老师  Other  Person
+2  妹控 8  思追原来是个超级妹控，不愿妹妹嫁人，然而妹妹却喜欢一博老师  Other  Other
+2  妹妹 13 思追原来是个超级妹控，不愿妹妹嫁人，然而妹妹却喜欢一博老师  Other  Other
+2  妹妹 20 思追原来是个超级妹控，不愿妹妹嫁人，然而妹妹却喜欢一博老师  Other  Other</code></pre>
 <p>最终模型评估：</p>
 <p>f1:0.828 0.837</p>
 <script>
