@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-22T06:13:06.176Z</updated>
+  <updated>2020-09-25T14:34:14.382Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>XgBoost原理</title>
+    <link href="http://yoursite.com/2020/09/25/xgboost-yuan-li/"/>
+    <id>http://yoursite.com/2020/09/25/xgboost-yuan-li/</id>
+    <published>2020-09-25T14:34:14.000Z</published>
+    <updated>2020-09-25T14:34:14.382Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>基于Conditional Layer Normalization的条件文本生成</title>
@@ -73,6 +100,37 @@
   </entry>
   
   <entry>
+    <title>SVM原理</title>
+    <link href="http://yoursite.com/2020/09/20/svm-yuan-li/"/>
+    <id>http://yoursite.com/2020/09/20/svm-yuan-li/</id>
+    <published>2020-09-20T14:33:49.000Z</published>
+    <updated>2020-09-25T14:57:27.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>多轮对话框架Rasa代码解读-1</title>
     <link href="http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/"/>
     <id>http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/</id>
@@ -102,6 +160,33 @@
   </entry>
   
   <entry>
+    <title>聚类算法原理</title>
+    <link href="http://yoursite.com/2020/09/19/ju-lei-suan-fa-yuan-li/"/>
+    <id>http://yoursite.com/2020/09/19/ju-lei-suan-fa-yuan-li/</id>
+    <published>2020-09-19T10:39:57.000Z</published>
+    <updated>2020-09-25T13:43:11.799Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;聚类算法原理&quot;&gt;&lt;a href=&quot;#聚类算法原理&quot; class=&quot;headerlink&quot; title=&quot;聚类算法原理&quot;&gt;&lt;/a&gt;聚类算法原理&lt;/h1&gt;&lt;h2 id=&quot;无监督学习与聚类算法&quot;&gt;&lt;a href=&quot;#无监督学习与聚类算法&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="树模型" scheme="http://yoursite.com/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>多轮对话框架Rasa代码解读-2</title>
     <link href="http://yoursite.com/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/"/>
     <id>http://yoursite.com/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/</id>
@@ -127,6 +212,33 @@
       <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
     
       <category term="QA" scheme="http://yoursite.com/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随机森林原理</title>
+    <link href="http://yoursite.com/2020/09/18/sui-ji-sen-lin-yuan-li/"/>
+    <id>http://yoursite.com/2020/09/18/sui-ji-sen-lin-yuan-li/</id>
+    <published>2020-09-18T08:01:26.000Z</published>
+    <updated>2020-09-25T10:40:21.697Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;随机森林原理&quot;&gt;&lt;a href=&quot;#随机森林原理&quot; class=&quot;headerlink&quot; title=&quot;随机森林原理&quot;&gt;&lt;/a&gt;随机森林原理&lt;/h1&gt;&lt;h2 id=&quot;集成算法概述&quot;&gt;&lt;a href=&quot;#集成算法概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="树模型" scheme="http://yoursite.com/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
@@ -194,7 +306,7 @@
     <link href="http://yoursite.com/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/"/>
     <id>http://yoursite.com/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/</id>
     <published>2020-09-17T12:27:51.000Z</published>
-    <updated>2020-09-17T15:46:57.566Z</updated>
+    <updated>2020-09-25T14:22:26.078Z</updated>
     
     <summary type="html">
     
@@ -221,7 +333,7 @@
     <link href="http://yoursite.com/2020/09/17/jue-ce-shu-yuan-li/"/>
     <id>http://yoursite.com/2020/09/17/jue-ce-shu-yuan-li/</id>
     <published>2020-09-17T11:26:50.000Z</published>
-    <updated>2020-09-17T16:23:47.282Z</updated>
+    <updated>2020-09-25T07:46:09.843Z</updated>
     
     <summary type="html">
     
@@ -460,118 +572,6 @@
     
     
       <category term="关系抽取" scheme="http://yoursite.com/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python argparse参数解析模块</title>
-    <link href="http://yoursite.com/2020/09/12/python-argparse-can-shu-jie-xi-mo-kuai/"/>
-    <id>http://yoursite.com/2020/09/12/python-argparse-can-shu-jie-xi-mo-kuai/</id>
-    <published>2020-09-12T03:53:37.000Z</published>
-    <updated>2020-09-12T03:59:11.798Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;argparse&quot;&gt;&lt;a href=&quot;#argparse&quot; class=&quot;headerlink&quot; title=&quot;argparse&quot;&gt;&lt;/a&gt;argparse&lt;/h1&gt;&lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://yoursite.com/categories/python/"/>
-    
-    
-      <category term="python基础" scheme="http://yoursite.com/tags/python%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="参数模块" scheme="http://yoursite.com/tags/%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9D%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Pytorch两种模型保存方式</title>
-    <link href="http://yoursite.com/2020/09/11/pytorch-liang-chong-mo-xing-bao-cun-fang-shi/"/>
-    <id>http://yoursite.com/2020/09/11/pytorch-liang-chong-mo-xing-bao-cun-fang-shi/</id>
-    <published>2020-09-11T14:39:26.000Z</published>
-    <updated>2020-09-11T14:49:00.335Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Torch模型保存&quot;&gt;&lt;a href=&quot;#Torch模型保存&quot; class=&quot;headerlink&quot; title=&quot;Torch模型保存&quot;&gt;&lt;/a&gt;Torch模型保存&lt;/h1&gt;&lt;h2 id=&quot;只保存模型参数&quot;&gt;&lt;a href=&quot;#只保存模型参数&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="torch" scheme="http://yoursite.com/categories/torch/"/>
-    
-    
-      <category term="torch基础" scheme="http://yoursite.com/tags/torch%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CCKS2020面向中文短文本的实体链指任务</title>
-    <link href="http://yoursite.com/2020/09/10/ccks2020-mian-xiang-zhong-wen-duan-wen-ben-de-shi-ti-lian-zhi-ren-wu/"/>
-    <id>http://yoursite.com/2020/09/10/ccks2020-mian-xiang-zhong-wen-duan-wen-ben-de-shi-ti-lian-zhi-ren-wu/</id>
-    <published>2020-09-10T14:51:24.000Z</published>
-    <updated>2020-09-22T00:36:49.840Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;实体链指&quot;&gt;&lt;a href=&quot;#实体链指&quot; class=&quot;headerlink&quot; title=&quot;实体链指&quot;&gt;&lt;/a&gt;实体链指&lt;/h1&gt;&lt;h2 id=&quot;任务介绍&quot;&gt;&lt;a href=&quot;#任务介绍&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="比赛" scheme="http://yoursite.com/categories/%E6%AF%94%E8%B5%9B/"/>
-    
-    
-      <category term="实体歧义消解" scheme="http://yoursite.com/tags/%E5%AE%9E%E4%BD%93%E6%AD%A7%E4%B9%89%E6%B6%88%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图神经网络开放数据集</title>
-    <link href="http://yoursite.com/2020/09/10/tu-shen-jing-wang-luo-kai-fang-shu-ju-ji/"/>
-    <id>http://yoursite.com/2020/09/10/tu-shen-jing-wang-luo-kai-fang-shu-ju-ji/</id>
-    <published>2020-09-10T06:17:13.000Z</published>
-    <updated>2020-09-12T01:53:01.516Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;图神经网络开放数据集&quot;&gt;&lt;a href=&quot;#图神经网络开放数据集&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="数据集" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-    
-      <category term="开放数据" scheme="http://yoursite.com/tags/%E5%BC%80%E6%94%BE%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="图神经" scheme="http://yoursite.com/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F/"/>
     
   </entry>
   
