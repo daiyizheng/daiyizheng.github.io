@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-28T14:43:42.356Z</updated>
+  <updated>2020-10-03T12:56:57.224Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rasa文档指南(2)</title>
+    <link href="http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-2/"/>
+    <id>http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-2/</id>
+    <published>2020-10-03T12:22:35.000Z</published>
+    <updated>2020-10-03T12:56:57.224Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Rasa文档指南&quot;&gt;&lt;a href=&quot;#Rasa文档指南&quot; class=&quot;headerlink&quot; title=&quot;Rasa文档指南&quot;&gt;&lt;/a&gt;Rasa文档指南&lt;/h1&gt;&lt;h2 id=&quot;命令行接口&quot;&gt;&lt;a href=&quot;#命令行接口&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(1)</title>
+    <link href="http://yoursite.com/2020/10/02/rasa-zhi-nan/"/>
+    <id>http://yoursite.com/2020/10/02/rasa-zhi-nan/</id>
+    <published>2020-10-02T13:37:09.000Z</published>
+    <updated>2020-10-03T12:22:06.596Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Rasa文档指南&quot;&gt;&lt;a href=&quot;#Rasa文档指南&quot; class=&quot;headerlink&quot; title=&quot;Rasa文档指南&quot;&gt;&lt;/a&gt;Rasa文档指南&lt;/h1&gt;&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PaddleOCR Docker化部署服务</title>
+    <link href="http://yoursite.com/2020/10/02/paddleocr-docker-hua-bu-shu-fu-wu/"/>
+    <id>http://yoursite.com/2020/10/02/paddleocr-docker-hua-bu-shu-fu-wu/</id>
+    <published>2020-10-02T12:07:24.000Z</published>
+    <updated>2020-10-02T13:37:16.467Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;PaddleOCR-Docker化部署服务&quot;&gt;&lt;a href=&quot;#PaddleOCR-Docker化部署服务&quot; class=&quot;headerlink&quot; title=&quot;PaddleOCR Docker化部署服务&quot;&gt;&lt;/a&gt;PaddleOCR
+        
+      
+    
+    </summary>
+    
+    
+      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="OCR" scheme="http://yoursite.com/tags/OCR/"/>
+    
+  </entry>
   
   <entry>
     <title>算法基础</title>
@@ -98,7 +179,7 @@
     <link href="http://yoursite.com/2020/09/25/xgboost-yuan-li/"/>
     <id>http://yoursite.com/2020/09/25/xgboost-yuan-li/</id>
     <published>2020-09-25T14:34:14.000Z</published>
-    <updated>2020-09-28T13:46:47.345Z</updated>
+    <updated>2020-10-02T08:02:14.207Z</updated>
     
     <summary type="html">
     
@@ -106,17 +187,17 @@
       
         
         
-          &lt;p&gt;留着国庆时间&lt;/p&gt;
-&lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) {
+          &lt;h1 id=&quot;XgBoost原理&quot;&gt;&lt;a href=&quot;#XgBoost原理&quot; class=&quot;headerlink&quot; title=&quot;XgBoost原理&quot;&gt;&lt;/a&gt;XgBoost原理&lt;/h1&gt;&lt;p&gt;​         XGBoost全称是eXtreme Gradient
         
       
     
     </summary>
     
     
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="树模型" scheme="http://yoursite.com/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
@@ -181,7 +262,7 @@
     <link href="http://yoursite.com/2020/09/20/svm-yuan-li/"/>
     <id>http://yoursite.com/2020/09/20/svm-yuan-li/</id>
     <published>2020-09-20T14:33:49.000Z</published>
-    <updated>2020-09-25T14:57:27.040Z</updated>
+    <updated>2020-10-01T13:40:33.152Z</updated>
     
     <summary type="html">
     
@@ -189,11 +270,8 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;p&gt;#　支持向量机&lt;/p&gt;
+&lt;p&gt;支持向量机（support vector machines,
         
       
     
@@ -473,87 +551,6 @@
         
         
           &lt;h1 id=&quot;TorchServe部署方法及问题&quot;&gt;&lt;a href=&quot;#TorchServe部署方法及问题&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    
-      <category term="部署" scheme="http://yoursite.com/tags/%E9%83%A8%E7%BD%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>curl命令</title>
-    <link href="http://yoursite.com/2020/09/15/curl-ming-ling/"/>
-    <id>http://yoursite.com/2020/09/15/curl-ming-ling/</id>
-    <published>2020-09-15T03:04:55.000Z</published>
-    <updated>2020-09-15T03:15:23.143Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;curl&quot;&gt;&lt;a href=&quot;#curl&quot; class=&quot;headerlink&quot; title=&quot;curl&quot;&gt;&lt;/a&gt;curl&lt;/h1&gt;&lt;h2 id=&quot;命令：curl&quot;&gt;&lt;a href=&quot;#命令：curl&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="shell" scheme="http://yoursite.com/categories/shell/"/>
-    
-    
-      <category term="命令" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中文医学文本实体关系抽取</title>
-    <link href="http://yoursite.com/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/"/>
-    <id>http://yoursite.com/2020/09/14/zhong-wen-yi-xue-wen-ben-shi-ti-guan-xi-chou-qu/</id>
-    <published>2020-09-14T12:08:59.000Z</published>
-    <updated>2020-09-21T14:38:18.685Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;中文医学文本实体关系抽取总结&quot;&gt;&lt;a href=&quot;#中文医学文本实体关系抽取总结&quot; class=&quot;headerlink&quot; title=&quot;中文医学文本实体关系抽取总结&quot;&gt;&lt;/a&gt;中文医学文本实体关系抽取总结&lt;/h1&gt;&lt;h2 id=&quot;任务简介&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
-    
-    
-      <category term="关系抽取" scheme="http://yoursite.com/tags/%E5%85%B3%E7%B3%BB%E6%8A%BD%E5%8F%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TorchServe</title>
-    <link href="http://yoursite.com/2020/09/14/torchserve/"/>
-    <id>http://yoursite.com/2020/09/14/torchserve/</id>
-    <published>2020-09-14T07:29:51.000Z</published>
-    <updated>2020-09-15T07:35:13.851Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;TorchServe&quot;&gt;&lt;a href=&quot;#TorchServe&quot; class=&quot;headerlink&quot; title=&quot;TorchServe&quot;&gt;&lt;/a&gt;TorchServe&lt;/h1&gt;&lt;h2 id=&quot;什么是TorchServe&quot;&gt;&lt;a
         
       
     

@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/">
+                                <span class="chip bg-color">树模型</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                机器学习
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -459,7 +472,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>留着国庆时间</p>
+                <h1 id="XgBoost原理"><a href="#XgBoost原理" class="headerlink" title="XgBoost原理"></a>XgBoost原理</h1><p>​         XGBoost全称是eXtreme Gradient Boosting,可译为极限梯度提升算法。它由陈天奇所设计,致力于让提升树突破自身的计算极限,以实现运算快速,性能优秀的工程目标。和传统的梯度提升算法相比,XGBoost进行了许多改进,它能够比其他使用梯度提升的集成算法更加快速,并且已经被认为是在分类和回归上都拥有超高性能的先进评估器。除了比赛之中,高科技行业和数据咨询等行业也已经开始逐步使用XGBoost,了解这个算法,已经成为学习机器学习中必要的一环。</p>
+<p>​        除了比赛之中,高科技行业和数据咨询等行业也已经开始逐步使用XGBoost,了解这个算法,已经成为学习机器学习中必要的一环。 性能超强的算法往往有着复杂的原理,XGBoost也不能免俗,因此它背后的数学深奥复杂。除此之外,XGBoost与多年前就已经研发出来的算法,比如决策树,SVM等不同,它是一个集大成的机器学习算法,对大家掌握机器学习中各 种概念的程度有较高的要求。虽然要听懂今天这堂课,你不需要是一个机器学习专家,但你至少需要了解树模型是什么。如果你对机器学习比较好的了解,基础比较牢,那今天的课将会是使你融会贯通的一节课。理解XGBoost,一定能让你在机器学习上更上一层楼 。</p>
+<h2 id="xgboost库与XGB的sklearn-API"><a href="#xgboost库与XGB的sklearn-API" class="headerlink" title="xgboost库与XGB的sklearn API"></a>xgboost库与XGB的sklearn API</h2><p>​       现在,我们有两种方式可以来使用我们的xgboost库。第一种方式,是直接使用xgboost库自己的建模流程。<br>​       xgboost documents:<a target="_blank" rel="noopener" href="https://xgboost.readthedocs.io/en/latest/index.html">https://xgboost.readthedocs.io/en/latest/index.html</a></p>
+<pre class=" language-shell"><code class="language-shell">#windows
+pip install xgboost #安装xgboost库
+pip install --upgrade xgboost #更新xgboost库
+#MAC
+brew install gcc@7
+pip3 install xgboost
+
+import xgboost as xgb</code></pre>
+<p>​        其中最核心的，是DMtarix这个读取数据的类，以及train()这个用于训练的类。与sklearn把所有的参数都写在类中的方式不同，xgboost库中必须先使用字典设定参数集，再使用train来将参数及输入，然后进行训练。会这样设计的原因，是因为XGB所涉及到的参数实在太多，全部写在xgb.train()中太长也容易出错。在这里，我为大家准备了params可能的取值以及xgboost.train的列表，给大家一个印象。</p>
+<pre class=" language-json"><code class="language-json">params  &amp;#<span class="token number">123</span><span class="token punctuation">;</span>eta<span class="token punctuation">,</span> gamma<span class="token punctuation">,</span> max_depth<span class="token punctuation">,</span> min_child_weight<span class="token punctuation">,</span> max_delta_step<span class="token punctuation">,</span> subsample<span class="token punctuation">,</span> colsample_bytree<span class="token punctuation">,</span>
+colsample_bylevel<span class="token punctuation">,</span> colsample_bynode<span class="token punctuation">,</span> lambda<span class="token punctuation">,</span> alpha<span class="token punctuation">,</span> tree_method string<span class="token punctuation">,</span> sketch_eps<span class="token punctuation">,</span> scale_pos_weight<span class="token punctuation">,</span> updater<span class="token punctuation">,</span>
+refresh_leaf<span class="token punctuation">,</span> process_type<span class="token punctuation">,</span> grow_policy<span class="token punctuation">,</span> max_leaves<span class="token punctuation">,</span> max_bin<span class="token punctuation">,</span> predictor<span class="token punctuation">,</span> num_parallel_tree&amp;#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-python"><code class="language-python">xgboost<span class="token punctuation">.</span>train <span class="token punctuation">(</span>params<span class="token punctuation">,</span> dtrain<span class="token punctuation">,</span> num_boost_round<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> evals<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> obj<span class="token operator">=</span>None<span class="token punctuation">,</span> feval<span class="token operator">=</span>None<span class="token punctuation">,</span> maximize<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+early_stopping_rounds<span class="token operator">=</span>None<span class="token punctuation">,</span> evals_result<span class="token operator">=</span>None<span class="token punctuation">,</span> verbose_eval<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> xgb_model<span class="token operator">=</span>None<span class="token punctuation">,</span> callbacks<span class="token operator">=</span>None<span class="token punctuation">,</span>
+learning_rates<span class="token operator">=</span>None<span class="token punctuation">)</span></code></pre>
+<p>​       或者，我们也可以选择第二种方法，使用xgboost库中的sklearn的API。这是说，我们可以调用如下的类，并用我们sklearn当中惯例的实例化，ﬁt和predict的流程来运行XGB，并且也可以调用属性比如coef_等等。当然，这是我们回归的类，我们也有用于分类，用于排序的类。他们与回归的类非常相似，因此了解一个类即可。</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">xgboost</span><span class="token punctuation">.</span>XGBRegressor <span class="token punctuation">(</span>max_depth<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> learning_rate<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">,</span> n_estimators<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span> silent<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+objective<span class="token operator">=</span><span class="token string">'reg:linear'</span><span class="token punctuation">,</span> booster<span class="token operator">=</span><span class="token string">'gbtree'</span><span class="token punctuation">,</span> n_jobs<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> nthread<span class="token operator">=</span>None<span class="token punctuation">,</span> gamma<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> min_child_weight<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> max_delta_step<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>subsample<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> colsample_bytree<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> colsample_bylevel<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> reg_alpha<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> reg_lambda<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> scale_pos_weight<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>base_score<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> seed<span class="token operator">=</span>None<span class="token punctuation">,</span> missing<span class="token operator">=</span>None<span class="token punctuation">,</span> importance_type<span class="token operator">=</span><span class="token string">'gain'</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span></code></pre>
+<p>​      看到这长长的参数条目，可能大家会感到头晕眼花——没错XGB就是这门复杂。但是眼尖的小伙伴可能已经发现了，调用xgboost.train和调用sklearnAPI中的类XGBRegressor，需要输入的参数是不同的，而且看起来相当的不同。但其实，<strong>这些参数只是写法不同，功能是相同的</strong>。比如说，我们的params字典中的第一个参数eta，其实就是我们XGBRegressor里面的参数learning_rate，他们的含义和实现的功能是一模一样的。只不过在sklearnAPI中，开发团队友好地帮助我们将参数的名称调节成了与sklearn中其他的算法类更相似的样子。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -540,7 +574,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/">
+                                    <span class="chip bg-color">树模型</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1183,6 +1221,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

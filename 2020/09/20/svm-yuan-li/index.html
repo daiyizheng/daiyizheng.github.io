@@ -472,7 +472,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <p>#　支持向量机</p>
+<p>支持向量机（support vector machines, SVM）是一种二分类模型，它的基本模型是定义在特征空间上的<strong>间隔最大的线性分类器</strong>，间隔最大使它有别于感知机；SVM还包括<strong>核技巧</strong>，这使它成为实质上的非线性分类器。SVM的的学习策略就是间隔最大化，可形式化为一个求解凸二次规划的问题，也等价于正则化的合页损失函数的最小化问题。SVM的的学习算法就是求解凸二次规划的最优化算法。</p>
+<h2 id="SVM算法原理"><a href="#SVM算法原理" class="headerlink" title="SVM算法原理"></a>SVM算法原理</h2><p>SVM学习的基本想法是求解能够正确划分训练数据集并且几何间隔最大的分离超平面。如下图所示， $W \dot x + b = 0$ 即为分离超平面，对于线性可分的数据集来说，这样的超平面有无穷多个（即感知机），但是几何间隔最大的分离超平面却是唯一的。</p>
+<p><img src="/2020/09/20/svm-yuan-li/1.jpg"></p>
+<p>公式推导</p>
+<p>参考李航&lt;&lt;统计学原理&gt;&gt;</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1219,6 +1225,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

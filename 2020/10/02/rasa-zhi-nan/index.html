@@ -1,0 +1,2432 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Rasa文档指南(1), 呆小症日记">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Rasa文档指南(1) | 呆小症日记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="呆小症日记" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">呆小症日记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">呆小症日记</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Rasa文档指南(1)</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Rasa/">
+                                <span class="chip bg-color">Rasa</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/nlp/" class="post-category">
+                                nlp
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-02
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Rasa文档指南"><a href="#Rasa文档指南" class="headerlink" title="Rasa文档指南"></a>Rasa文档指南</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>快速安装</li>
+</ul>
+<p>您可以使用pip安装Rasa Open Source（需要Python 3.6或3.7）。</p>
+<pre class=" language-shell"><code class="language-shell">pip3 install rasa</code></pre>
+<ul>
+<li>从源代码构建</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+git clone https://github.com/RasaHQ/rasa.git
+cd rasa
+poetry install</code></pre>
+<ul>
+<li><p>spaCy的依赖关系</p>
+<p>有关spaCy的更多信息，请查看<a target="_blank" rel="noopener" href="https://spacy.io/usage/models">spaCy文档</a>。</p>
+</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">pip install rasa[spacy]
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_md en</code></pre>
+<ul>
+<li><p>MITIE的依赖项</p>
+<p>然后下载 <a target="_blank" rel="noopener" href="https://github.com/mit-nlp/MITIE/releases/download/v0.4/MITIE-models-v0.2.tar.bz2">MITIE模型</a>。您需要的文件是<code>total_word_feature_extractor.dat</code>。将此保存在任何地方。如果要使用MITIE，则需要告诉它在哪里可以找到此文件（在本示例中，该<code>data</code>文件已保存在项目目录的 文件夹中）。</p>
+</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">pip install git+https://github.com/mit-nlp/MITIE.git
+pip install rasa[mitie]</code></pre>
+<h2 id="教程：Rasa基础"><a href="#教程：Rasa基础" class="headerlink" title="教程：Rasa基础"></a>教程：Rasa基础</h2><h3 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h3><ol>
+<li><p>创建一个新项目</p>
+</li>
+<li><p>查看您的NLU培训数据</p>
+</li>
+<li><p>定义模型配置</p>
+</li>
+<li><p>写你的第一篇故事</p>
+</li>
+<li><p>定义域</p>
+</li>
+<li><p>训练模型</p>
+</li>
+<li><p>测试您的助手</p>
+</li>
+<li><p>与您的助手交谈</p>
+</li>
+</ol>
+<p>在本教程中，您将构建一个简单友好的助手，该助手将询问您的工作状况，并向您发送有趣的图片以在您难过时为您加油。</p>
+<p><img src="/2020/10/02/rasa-zhi-nan/1.png"></p>
+<h3 id="1-创建一个新项目"><a href="#1-创建一个新项目" class="headerlink" title="1.创建一个新项目"></a>1.创建一个新项目</h3><p>第一步是创建一个新的Rasa项目。为此，请运行：</p>
+<pre class=" language-shell"><code class="language-shell">rasa init --no-prompt</code></pre>
+<p>该命令创建Rasa项目所需的所有文件，并在一些示例数据上训练一个简单的bot。如果您不做任何标记，系统将询问您一些有关如何设置项目的问题。<code>rasa init --no-prompt</code></p>
+<p>这将创建以下文件：</p>
+<table>
+<thead>
+<tr>
+<th><code>__init__.py</code></th>
+<th>一个空文件，可帮助python查找您的操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>actions.py</code></td>
+<td>您的自定义操作的代码</td>
+</tr>
+<tr>
+<td><code>config.yml</code> ‘*’</td>
+<td>您的NLU和Core模型的配置</td>
+</tr>
+<tr>
+<td><code>credentials.yml</code></td>
+<td>连接其他服务的详细信息</td>
+</tr>
+<tr>
+<td><code>data/nlu.md</code> ‘*’</td>
+<td>您的NLU训练数据</td>
+</tr>
+<tr>
+<td><code>data/stories.md</code> ‘*’</td>
+<td>你的故事</td>
+</tr>
+<tr>
+<td><code>domain.yml</code> ‘*’</td>
+<td>您助手的域名</td>
+</tr>
+<tr>
+<td><code>endpoints.yml</code></td>
+<td>连接到fb Messenger等频道的详细信息</td>
+</tr>
+<tr>
+<td><code>models/&lt;timestamp&gt;.tar.gz</code></td>
+<td>您的初始模型</td>
+</tr>
+</tbody></table>
+<p>最重要的文件标有“ *”。您将在本教程中了解所有这些内容。</p>
+<h3 id="2-查看您的NLU培训数据"><a href="#2-查看您的NLU培训数据" class="headerlink" title="2.查看您的NLU培训数据"></a>2.查看您的NLU培训数据</h3><p>Rasa助手的第一部分是NLU模型。NLU代表自然语言理解，这意味着将用户消息转换为结构化数据。要使用Rasa做到这一点，您需要提供训练示例，这些示例说明Rasa应该如何理解用户消息，然后通过显示这些示例来训练模型。</p>
+<p>运行下面的代码单元以查看该命令创建的NLU训练数据：<code>rasa init</code></p>
+<pre class=" language-text"><code class="language-text">## intent:greet
+- hey
+- hello
+- hi
+- good morning
+- good evening
+- hey there
+
+## intent:goodbye
+- bye
+- goodbye
+- see you around
+- see you later
+
+## intent:affirm
+- yes
+- indeed
+- of course
+- that sounds good
+- correct
+
+## intent:deny
+- no
+- never
+- I don't think so
+- don't like that
+- no way
+- not really
+
+## intent:mood_great
+- perfect
+- very good
+- great
+- amazing
+- wonderful
+- I am feeling very good
+- I am great
+- I'm good
+
+## intent:mood_unhappy
+- sad
+- very sad
+- unhappy
+- bad
+- very bad
+- awful
+- terrible
+- not very good
+- extremely sad
+- so sad
+
+## intent:bot_challenge
+- are you a bot?
+- are you a human?
+- am I talking to a bot?
+- am I talking to a human?</code></pre>
+<p>以开头的行<code>##</code>定义your的名称<code>intents</code>，它们是具有相同含义的消息组。当您的用户向您的助手发送看不见的新消息时，Rasa的工作将是预测正确的意图。您可以在<a href="#">训练数据格式</a>中找到该数据格式的所有详细信息。</p>
+<h3 id="3-定义你的模型配置"><a href="#3-定义你的模型配置" class="headerlink" title="3.定义你的模型配置"></a>3.定义你的模型配置</h3><p>配置文件定义了模型将使用的NLU和Core组件。在此示例中，您的NLU模型将使用 <code>supervised_embeddings</code>管道。您可以<a href="#">在此处</a>了解不同的NLU管道 。</p>
+<p>让我们看一下您的模型配置文件。</p>
+<pre class=" language-text"><code class="language-text"># Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 10
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 10
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 10
+  - name: MappingPolicy</code></pre>
+<p>在<code>language</code>和<code>pipeline</code>主键指定的NLU模型应该如何构建。该<code>policies</code>键定义<a href="#">策略</a>的核心车型将采用。</p>
+<h3 id="4-编写第一个故事"><a href="#4-编写第一个故事" class="headerlink" title="4.编写第一个故事"></a>4.编写第一个故事</h3><p>在此阶段，您将教您的助手如何回复您的消息。这称为对话管理，由您的Core模型处理。</p>
+<p>核心模型以训练“故事”的形式从真实的对话数据中学习。故事是用户和助手之间的真实对话。具有意图和实体的行反映了用户的输入，而动作名称则显示了助手应该做出的响应。</p>
+<p>下面是一个简单对话的示例。用户打个招呼，助手打个招呼。这就是一个故事：</p>
+<pre><code>## story1
+* greet
+   - utter_greet</code></pre>
+<p>您可以在“<a href="#">故事”中</a>查看完整的详细信息。</p>
+<p>开头的行是<code>-</code>助手执行的操作。在本教程中，我们所有的动作都是发送回用户的消息，例如<code>utter_greet</code>，但是一般而言，动作可以执行任何操作，包括调用API和与外界互动。</p>
+<p>运行以下命令以查看文件中的示例故事<code>data/stories.md</code>：</p>
+<pre class=" language-text"><code class="language-text">## happy path
+* greet
+  - utter_greet
+* mood_great
+  - utter_happy
+
+## sad path 1
+* greet
+  - utter_greet
+* mood_unhappy
+  - utter_cheer_up
+  - utter_did_that_help
+* affirm
+  - utter_happy
+
+## sad path 2
+* greet
+  - utter_greet
+* mood_unhappy
+  - utter_cheer_up
+  - utter_did_that_help
+* deny
+  - utter_goodbye
+
+## say goodbye
+* goodbye
+  - utter_goodbye
+
+## bot challenge
+* bot_challenge
+  - utter_iamabot</code></pre>
+<h3 id="5-定义一个域"><a href="#5-定义一个域" class="headerlink" title="5.定义一个域"></a>5.定义一个域</h3><p>我们需要做的下一件事是定义一个<a href="#">Domain</a>。该域定义了您的助手所生活的世界：应该期望得到什么用户输入，应该能够预测什么操作，如何响应以及要存储什么信息。我们助手的域保存在一个名为的文件中<code>domain.yml</code>：</p>
+<pre class=" language-text"><code class="language-text">intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true</code></pre>
+<p>那么不同的部分是什么意思呢？</p>
+<table>
+<thead>
+<tr>
+<th><code>intents</code></th>
+<th>您希望用户说的话</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>actions</code></td>
+<td>您的助手可以说的事情</td>
+</tr>
+<tr>
+<td><code>responses</code></td>
+<td>您的助手可以说的话的回应字符串</td>
+</tr>
+</tbody></table>
+<p><strong>这如何搭配在一起？</strong> Rasa Core的工作是选择正确的动作，以便在对话的每个步骤中执行。在这种情况下，我们的操作只会向用户发送一条消息。这些简单的发声动作是以<code>actions</code>开头的域<code>utter_</code>。助手将根据此<code>responses</code>部分的响应以一条消息进行响应。请参阅<a href="#">自定义操作</a> ，以构建除发送消息以外还可以做的事情。</p>
+<h3 id="6-训练模型"><a href="#6-训练模型" class="headerlink" title="6.训练模型"></a>6.训练模型</h3><p>每当我们添加新的NLU或Core数据，或更新域或配置时，我们都需要根据示例故事和NLU数据重新训练神经网络。为此，请运行以下命令。该命令将调用Rasa Core和NLU训练函数，并将训练后的模型存储到<code>models/</code>目录中。如果不同模型零件的数据或配置有所更改，该命令将仅自动重新训练它们。</p>
+<pre class=" language-shell"><code class="language-shell">rasa train</code></pre>
+<p>该命令将同时查找NLU和Core数据，并训练组合模型。<code>rasa train</code></p>
+<h3 id="7-测试您的助手"><a href="#7-测试您的助手" class="headerlink" title="7.测试您的助手"></a>7.测试您的助手</h3><p>训练模型后，您始终希望检查助手的行为是否仍然符合您的期望。在Rasa开放源代码中，您可以使用<code>tests/</code>目录中定义的端到端测试来运行测试对话，以确保NLU和Core都能做出正确的预测。</p>
+<pre class=" language-shell"><code class="language-shell">rasa test</code></pre>
+<p>请参阅<a href="#">测试您的助手</a>以了解有关在改进模型时如何评估模型的更多信息。</p>
+<h3 id="8-与您的助手交谈"><a href="#8-与您的助手交谈" class="headerlink" title="8.与您的助手交谈"></a>8.与您的助手交谈</h3><p>恭喜你！🚀您刚刚构建了一个完全由机器学习驱动的助手。</p>
+<p>下一步就是尝试一下！如果您在本地计算机上遵循本教程，请运行以下命令开始与助手交谈：</p>
+<pre class=" language-shell"><code class="language-shell">rasa shell</code></pre>
+<h2 id="教程：构建助理"><a href="#教程：构建助理" class="headerlink" title="教程：构建助理"></a>教程：构建助理</h2><p>在遵循了<a href="#">Rasa教程</a>中设置助手的基础之后，我们现在将逐步构建一个基本的FAQ聊天机器人，然后构建一个可以处理上下文对话的机器人。</p>
+<ul>
+<li><a href="#">构建一个简单的FAQ助手</a><ul>
+<li><a href="#">记忆政策</a></li>
+<li><a href="#">响应选择器</a></li>
+</ul>
+</li>
+<li><a href="#">构建上下文助理</a><ul>
+<li><a href="#">处理业务逻辑</a></li>
+<li><a href="#">处理意外的用户输入</a><ul>
+<li><a href="#">普通感叹词</a></li>
+<li><a href="#">情境问题</a></li>
+</ul>
+</li>
+<li><a href="#">优雅失败</a><ul>
+<li><a href="#">后备政策</a></li>
+<li><a href="#">超出范围意图</a></li>
+</ul>
+</li>
+<li><a href="#">更复杂的上下文对话</a><ul>
+<li><a href="#">增强记忆政策</a></li>
+<li><a href="#">使用ML进行概括</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="构建一个简单的FAQ助手"><a href="#构建一个简单的FAQ助手" class="headerlink" title="构建一个简单的FAQ助手"></a>构建一个简单的FAQ助手</h3><p>FAQ助手是最简单的助手，也是入门的好地方。这些助手允许用户提出一个简单的问题并得到答复。我们将使用专门为此类助手设计的Rasa功能来构建基本的FAQ助手。</p>
+<p>在本节中，我们将介绍以下主题：</p>
+<ul>
+<li>通过MemoizationPolicy<a href="#">响应简单的意图</a></li>
+<li>使用ResponseSelector<a href="#">处理常见问题</a></li>
+</ul>
+<p>为了准备本教程，我们将创建一个新目录并启动一个新的Rasa项目。</p>
+<pre class=" language-shell"><code class="language-shell">mkdir rasa-assistant
+rasa init</code></pre>
+<p>让我们从bot中删除默认内容，以便<code>nlu.md</code>，<code>stories.md</code> 和<code>domain.yml</code>文件为空。</p>
+<h4 id="Memoization-Policy"><a href="#Memoization-Policy" class="headerlink" title="Memoization Policy"></a>Memoization Policy</h4><p>MemoizationPolicy最多可以记住训练故事中的示例<code>max_history</code> 。“turns”次数包括用户发送的消息以及助手执行的操作。出于简单，无上下文的FAQ机器人的目的，我们只需要注意用户发送的最后一条消息，因此我们将其设置为<code>1</code>。</p>
+<p>您可以按照以下步骤编辑<code>config.yml</code>文件来完成此操作（现在可以删除<code>TEDPolicy</code>）：</p>
+<pre class=" language-shell"><code class="language-shell">policies:
+- name: MemoizationPolicy
+  max_history: 1
+- name: MappingPolicy</code></pre>
+<blockquote>
+<p>注意</p>
+<p>MappingPolicy之所以存在，是因为它处理了<code>/restart</code>意图的逻辑，这使您可以清除对话历史记录并重新开始。</p>
+</blockquote>
+<p>现在，我们已经定义了策略，我们可以为文件添加一些故事<code>goodbye</code>，<code>thank</code>并向文件添加<code>greet</code> 意图<code>stories.md</code>：</p>
+<pre class=" language-text"><code class="language-text">## greet
+* greet
+  - utter_greet
+
+## thank
+* thank
+  - utter_noworries
+
+## goodbye
+* bye
+  - utter_bye</code></pre>
+<p>我们还需要<code>domain.yml</code>在以下各节中向文件添加意图，操作和响应：</p>
+<pre class=" language-shell"><code class="language-shell">intents:
+  - greet
+  - bye
+  - thank
+
+responses:
+  utter_noworries:
+    - text: No worries!
+  utter_greet:
+    - text: Hi
+  utter_bye:
+    - text: Bye!</code></pre>
+<p>最后，我们将从Sara复制一些NLU数据到我们的<code>nlu.md</code>文件中（更多信息可以在<a href="#">这里</a>找到）：</p>
+<pre class=" language-text"><code class="language-text">## intent:greet
+- Hi
+- Hey
+- Hi bot
+- Hey bot
+- Hello
+- Good morning
+- hi again
+- hi folks
+
+## intent:bye
+- goodbye
+- goodnight
+- good bye
+- good night
+- see ya
+- toodle-oo
+- bye bye
+- gotta go
+- farewell
+
+## intent:thank
+- Thanks
+- Thank you
+- Thank you so much
+- Thanks bot
+- Thanks for that
+- cheers</code></pre>
+<p>您现在可以通过运行以下命令来训练第一个模型并测试机器人：</p>
+<pre class=" language-shell"><code class="language-shell">rasa train
+rasa shell</code></pre>
+<p>该机器人现在应该能够以任何顺序答复我们一致定义的意图。</p>
+<p>例如：</p>
+<p><img src="/2020/10/02/rasa-zhi-nan/2.png"></p>
+<p>交互式地测试bot很好，但是我们还应该添加端到端测试用例，这些用例以后可以包含在<a href="#">CI / CD系统中</a>。端到端的<a href="#">测试对话</a> 包括NLU数据，因此可以测试Rasa的两个组件。该文件 <code>tests/conversation_tests.md</code>包含示例测试对话。删除所有测试对话，并以迄今为止到目前为止您的助手的一些测试对话来代替它们：</p>
+<pre><code>## greet + goodbye
+* greet: Hi!
+  - utter_greet
+* bye: Bye
+  - utter_bye
+
+## greet + thanks
+* greet: Hello there
+  - utter_greet
+* thank: thanks a bunch
+  - utter_noworries
+
+## greet + thanks + goodbye
+* greet: Hey
+  - utter_greet
+* thank: thank you
+  - utter_noworries
+* bye: bye bye
+  - utter_bye</code></pre>
+<p>要针对测试文件测试模型，请运行以下命令：</p>
+<pre><code>rasa test --stories tests/conversation_tests.md</code></pre>
+<p>测试命令将产生一个名为的目录<code>results</code>。它应该包含一个名为的文件<code>failed_stories.md</code>，其中将打印任何失败的测试用例。它还将指定是错误的NLU还是Core预测。作为CI / CD管道的一部分，测试选项<code>--fail-on-prediction-errors</code>可用于引发异常，从而停止管道。</p>
+<h4 id="响应选择器"><a href="#响应选择器" class="headerlink" title="响应选择器"></a>响应选择器</h4><p>该<a href="#">ResponseSelector</a> NLU组件的设计，使其更容易处理对话元素，如<a href="#">小对话</a>和常见问题的信息以简单的方式。通过使用ResponseSelector，您只需要一个故事即可处理所有FAQ，而无需在每次想要增加机器人的范围时添加新故事。</p>
+<p>人们常常问Rasa周边Rasa产品不同的问题，所以让我们开始有三个意图：<code>ask_channels</code>，<code>ask_languages</code>，和<code>ask_rasax</code>。我们将从<a href="#">Sara训练数据中</a>复制一些NLU<a href="#">数据</a> 到我们的<code>nlu.md</code>。这些意图必须带有<code>faq/</code>前缀，这一点很重要，因此ResponseSelector会将它们识别为常见问题意图：</p>
+<pre class=" language-text"><code class="language-text">## intent: faq/ask_channels
+- What channels of communication does rasa support?
+- what channels do you support?
+- what chat channels does rasa uses
+- channels supported by Rasa
+- which messaging channels does rasa support?
+
+## intent: faq/ask_languages
+- what language does rasa support?
+- which language do you support?
+- which languages supports rasa
+- can I use rasa also for another laguage?
+- languages supported
+
+## intent: faq/ask_rasax
+- I want information about rasa x
+- i want to learn more about Rasa X
+- what is rasa x?
+- Can you tell me about rasa x?
+- Tell me about rasa x
+- tell me what is rasa x</code></pre>
+<p>接下来，我们需要<code>responses.md</code>在<code>data/</code>目录中的新文件中定义与这些FAQ相关的响应：</p>
+<pre class=" language-reStructuredText"><code class="language-reStructuredText">* faq/ask_channels
+  - We have a comprehensive list of [supported connectors](https://rasa.com/docs/core/connectors/), but if
+    you don't see the one you're looking for, you can always create a custom connector by following
+    [this guide](https://rasa.com/docs/rasa/user-guide/connectors/custom-connectors/).
+
+## ask languages
+* faq/ask_languages
+  - You can use Rasa to build assistants in any language you want!
+
+## ask rasa x
+* faq/ask_rasax
+ - Rasa X is a tool to learn from real conversations and improve your assistant. Read more [here](https://rasa.com/docs/rasa-x/)</code></pre>
+<p>ResponseSelector应该已经在我们的NLU管道的末尾<code>config.yml</code>：</p>
+<pre class=" language-shell"><code class="language-shell">language: en
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100</code></pre>
+<p>现在我们已经定义了NLU端，我们需要让Core意识到这些变化。打开<code>domain.yml</code>文件并添加<code>faq</code>意图：</p>
+<pre><code>intents:
+  - greet
+  - bye
+  - thank
+  - faq</code></pre>
+<p>我们还需要添加一个<a href="#">检索动作</a>，该<a href="#">动作</a>负责将ResponseSelector预测的响应发送回用户到动作列表。这些操作始终必须以<code>respond_</code>前缀开头：</p>
+<pre><code>actions:
+  - respond_faq</code></pre>
+<p>接下来，我们将编写一个story，以便Core知道要预测的动作：</p>
+<pre><code>## Some question from FAQ
+* faq
+    - respond_faq</code></pre>
+<p>如我们前面所述，此预测由MemoizationPolicy处理。</p>
+<p>完成所有更改后，训练新模型并测试修改后的FAQ：</p>
+<pre><code>rasa train
+rasa shell</code></pre>
+<p>在这个阶段，有必要<code>test_stories.md</code>再次向文件添加一些测试用例：</p>
+<pre><code>## ask channels
+* faq: What messaging channels does Rasa support?
+  - respond_faq
+
+## ask languages
+* faq: Which languages can I build assistants in?
+  - respond_faq
+
+## ask rasa x
+* faq: What’s Rasa X?
+  - respond_faq</code></pre>
+<p>您可以在此<a href="#">博客文章</a>和“ <a href="#">检索操作”</a>页面中阅读更多内容。</p>
+<p>使用我们在本教程中描述的功能，您可以轻松构建无上下文助手。当您准备使用上下文增强助手时，请查看<a href="#">构建上下文助手</a>。</p>
+<blockquote>
+<p>注意</p>
+<p>这是我们为构建基本的FAQ助手而修改的文件的最小清单：</p>
+<ul>
+<li><p>data/nlu.md：为faq/意图添加NLU训练数据</p>
+</li>
+<li><p>data/responses.md：添加与faq/意图相关的响应</p>
+</li>
+<li><p>config.yml：ReponseSelector在您的NLU管道中添加</p>
+</li>
+<li><p>domain.yml：添加检索动作respond_faq和意图faq</p>
+</li>
+<li><p>data/stories.md：为常见问题解答添加简单的故事</p>
+</li>
+<li><p>test_stories.md：为您的常见问题解答添加E2E测试案例</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="构建一个上下文助手"><a href="#构建一个上下文助手" class="headerlink" title="构建一个上下文助手"></a>构建一个上下文助手</h4><p>无论您是刚刚创建FAQ机器人还是从头开始，下一步都是扩展您的bot来处理上下文对话。</p>
+<p>在本教程中，我们将涵盖各种主题：</p>
+<ul>
+<li><a href="#">处理业务逻辑</a></li>
+<li><a href="#">处理意外的用户输入</a></li>
+<li><a href="#">优雅失败</a></li>
+<li><a href="#">更复杂的上下文对话</a></li>
+</ul>
+<p>在开始本部分之前，请确保您已从“<a href="#">构建简单的FAQ助手”</a>部分获取了所有数据。您将需要对配置文件进行一些调整，因为我们现在需要注意上下文：</p>
+<pre><code>policies:
+- name: MemoizationPolicy
+- name: MappingPolicy</code></pre>
+<p>我们删除了配置。默认值为，这意味着Core进行预测时会注意过去5圈（请参阅<a href="#">最大历史记录的</a>说明）。<code>max_history: 15</code></p>
+<h4 id="处理业务逻辑"><a href="#处理业务逻辑" class="headerlink" title="处理业务逻辑"></a>处理业务逻辑</h4><p>许多对话助手的用户目标都是在能够为用户做某事之前先从用户那里收集一堆信息。这称为插槽填充。例如，在银行业中，您可能有一个转移资金的用户目标，在这里您需要收集有关从哪个帐户转账，向谁转账以及转账金额的信息。可以而且应该以基于规则的方式处理这种行为，因为很清楚应该如何收集此信息。</p>
+<p>对于这种类型的用例，我们可以使用Forms和FormPolicy。该<a href="#">FormPolicy</a> 的工作原理是，直到所有的信息从用户收集预测形式下一个动作。</p>
+<p>作为示例，我们将构建Sara的SalesForm。用户想要联系我们的销售团队，为此，我们需要收集以下信息：</p>
+<ul>
+<li>他们的工作</li>
+<li>他们的机器人用例</li>
+<li>他们的名字</li>
+<li>他们的电子邮件</li>
+<li>他们的预算</li>
+<li>他们的公司</li>
+</ul>
+<p>我们将从<code>SalesForm</code>在名为的文件中将其定义为新类开始<code>actions.py</code>。我们需要定义的第一个方法是名称，就像在常规Action中一样，它返回将在我们的story中使用的名称：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rasa_sdk<span class="token punctuation">.</span>forms <span class="token keyword">import</span> FormAction
+
+<span class="token keyword">class</span> <span class="token class-name">SalesForm</span><span class="token punctuation">(</span>FormAction<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Collects sales information and adds it to the spreadsheet"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"sales_form"</span></code></pre>
+<p>接下来，我们必须定义<code>required_slots</code>一种方法，该方法指定要询问的信息，即要填充的插槽。</p>
+<pre class=" language-python"><code class="language-python">@staticmethod
+<span class="token keyword">def</span> <span class="token function">required_slots</span><span class="token punctuation">(</span>tracker<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+        <span class="token string">"job_function"</span><span class="token punctuation">,</span>
+        <span class="token string">"use_case"</span><span class="token punctuation">,</span>
+        <span class="token string">"budget"</span><span class="token punctuation">,</span>
+        <span class="token string">"person_name"</span><span class="token punctuation">,</span>
+        <span class="token string">"company"</span><span class="token punctuation">,</span>
+        <span class="token string">"business_email"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span></code></pre>
+<p>注意：您可以将所需的插槽功能自定义为非静态。例如，如果<code>job_function</code>是开发人员，则可以添加<code>required_slot</code>与Rasa有关的用户体验级别</p>
+<p>完成此操作后，您需要指定机器人应如何请求此信息。这是通过<code>utter_ask_{slotname}</code>在<code>domain.yml</code>文件中指定响应来完成的。对于上述内容，我们需要指定以下内容</p>
+<pre class=" language-reStructuredText"><code class="language-reStructuredText">utter_ask_business_email:
+  - text: What's your business email?
+utter_ask_company:
+  - text: What company do you work for?
+utter_ask_budget:
+  - text: "What's your annual budget for conversational AI? 💸"
+utter_ask_job_function:
+  - text: "What's your job? 🕴"
+utter_ask_person_name:
+  - text: What's your name?
+utter_ask_use_case:
+  - text: What's your use case?</code></pre>
+<p>我们还需要在<code>domain.yml</code>文件中定义所有这些插槽：</p>
+<pre class=" language-reStructuredText"><code class="language-reStructuredText">slots:
+  company:
+    type: unfeaturized
+  job_function:
+    type: unfeaturized
+  person_name:
+    type: unfeaturized
+  budget:
+    type: unfeaturized
+  business_email:
+    type: unfeaturized
+  use_case:
+    type: unfeaturized</code></pre>
+<p>回到我们的表单定义，我们还需要定义<code>submit</code>方法，一旦表单完成，它将对用户提供的信息做一些事情：</p>
+<pre><code>def submit(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -&gt; List[Dict]:
+
+    dispatcher.utter_message("Thanks for getting in touch, we’ll contact you soon")
+    return []</code></pre>
+<p>在这种情况下，我们仅告诉用户我们将与他们联系，但是通常您会将这些信息发送到API或数据库。有关 如何在电子表格中存储此信息的示例，请参见<a target="_blank" rel="noopener" href="https://github.com/RasaHQ/rasa-demo/blob/master/actions/actions.py#L71">rasa-demo</a>。</p>
+<p>我们需要将刚刚创建的表单添加到<code>domain.yml</code>文件中的新部分：</p>
+<pre><code>forms:
+  - sales_form</code></pre>
+<p>我们还需要创建一个激活表单的意图，以及一个提供表单要求用户的所有信息的意图。对于表单激活意图，我们可以创建一个名为的意图<code>contact_sales</code>。将以下训练数据添加到您的nlu文件中：</p>
+<pre><code>## intent:contact_sales
+- I wanna talk to your sales people.
+- I want to talk to your sales people
+- I want to speak with sales
+- Sales
+- Please schedule a sales call
+- Please connect me to someone from sales
+- I want to get in touch with your sales guys
+- I would like to talk to someone from your sales team
+- sales please</code></pre>
+<p>您可以在<a target="_blank" rel="noopener" href="https://github.com/RasaHQ/rasa-demo/blob/master/data/nlu/nlu.md#intentcontact_sales">此处</a>查看完整的意图）</p>
+<p>我们还将创建一个名为的意图<code>inform</code>，该意图涵盖用户提供给机器人的任何信息。<em>之所以将所有这些都放在一个意图下，是因为在提供信息之后并没有真正的意图，只有实体很重要。</em>将以下数据添加到您的NLU文件中：</p>
+<pre><code>## intent:inform
+- [100k](budget)
+- [100k](budget)
+- [240k/year](budget)
+- [150,000 USD](budget)
+- I work for [Rasa](company)
+- The name of the company is [ACME](company)
+- company: [Rasa Technologies](company)
+- it's a small company from the US, the name is [Hooli](company)
+- it's a tech company, [Rasa](company)
+- [ACME](company)
+- [Rasa Technologies](company)
+- [maxmeier@firma.de](business_email)
+- [bot-fan@bots.com](business_email)
+- [maxmeier@firma.de](business_email)
+- [bot-fan@bots.com](business_email)
+- [my email is email@rasa.com](business_email)
+- [engineer](job_function)
+- [brand manager](job_function)
+- [marketing](job_function)
+- [sales manager](job_function)
+- [growth manager](job_function)
+- [CTO](job_function)
+- [CEO](job_function)
+- [COO](job_function)
+- [John Doe](person_name)
+- [Jane Doe](person_name)
+- [Max Mustermann](person_name)
+- [Max Meier](person_name)
+- We plan to build a [sales bot](use_case) to increase our sales by 500%.
+- we plan to build a [sales bot](use_case) to increase our revenue by 100%.
+- a [insurance tool](use_case) that consults potential customers on the best life insurance to choose.
+- we're building a [conversational assistant](use_case) for our employees to book meeting rooms.</code></pre>
+<blockquote>
+<p>注意</p>
+<p>像<code>business_email</code>和<code>budget</code>这样的实体通常由经过预训练的实体提取器（例如<a href="#">DucklingHTTPExtractor</a>或<a href="#">SpacyEntityExtractor</a>）处理，但是对于本教程，我们希望避免任何其他设置。</p>
+</blockquote>
+<p>意图和实体也需要添加到您的<code>domain.yml</code>文件中：</p>
+<pre><code>intents:
+  - greet
+  - bye
+  - thank
+  - faq
+  - contact_sales
+  - inform
+
+entities:
+  - company
+  - job_function
+  - person_name
+  - budget
+  - business_email
+  - use_case</code></pre>
+<p>表单的故事非常简单，因为所有广告位收集表单都发生在表单内部，因此不需要包含在故事中。您只需要编写一个故事，说明何时应激活表单。对于销售表单，将此故事添加到您的<code>stories.md</code>文件中：</p>
+<pre><code>## sales form
+* contact_sales
+    - sales_form                   &lt;!--Run the sales_form action--&gt;
+    - form&amp;#123;"name": "sales_form"&amp;#125;   &lt;!--Activate the form--&gt;
+    - form&amp;#123;"name": null&amp;#125;           &lt;!--Deactivate the form--&gt;</code></pre>
+<p>最后，让我们将FormPolicy添加到我们的配置文件中：</p>
+<pre><code>policies:
+  - name: MemoizationPolicy
+  - name: KerasPolicy
+  - name: MappingPolicy
+  - name: FormPolicy</code></pre>
+<p>至此，您已经有了一个有效的表格，因此让我们尝试一下。确保取消注释 <code>action_endpoint</code>您的，<code>endpoints.yml</code>以使Rasa知道将运行我们表单的动作服务器：</p>
+<pre><code>action_endpoint:
+ url: "http://localhost:5055/webhook"</code></pre>
+<p>然后在新的终端窗口中启动动作服务器：</p>
+<pre><code>rasa run actions</code></pre>
+<p>然后，您可以重新训练并与您的机器人对话：</p>
+<pre><code>rasa train
+rasa shell</code></pre>
+<p>这种简单的形式可以立即使用，但是您可能希望添加更多的功能来处理不同的情况。其中一个示例是验证插槽，以确保用户正确提供了信息（<a href="#">在此处</a>了解更多信息 ）。</p>
+<p>另一个示例是，您可能想填充名称相同的实体以外的东西的插槽。例如，对于我们表单中的“用例”情况，我们希望用户键入完整的句子，而不是您可能必须提取为实体的东西。在这种情况下，我们可以利用该<code>slot_mappings</code>方法，您可以在其中描述应从中提取实体的内容。在这里，我们可以使用该<code>from_text</code>方法提取用户的整个消息：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">slot_mappings</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Union<span class="token punctuation">[</span>Dict<span class="token punctuation">,</span> List<span class="token punctuation">[</span>Dict<span class="token punctuation">[</span>Text<span class="token punctuation">,</span> Any<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""A dictionary to map required slots to
+    - an extracted entity
+    - intent: value pairs
+    - a whole message
+    or a list of them, where a first match will be picked"""</span>
+    <span class="token keyword">return</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"use_case": self.from_text(intent="inform")&amp;#125;</span></code></pre>
+<p>现在，当请求用例插槽时，我们的机器人将提取完整的用户消息，并且我们不需要使用<code>use_case</code>之前定义的实体。</p>
+<p>可以定制表单中的所有方法，以处理业务逻辑中的不同分支。<a target="_blank" rel="noopener" href="https://rasa.com/docs/rasa/core/forms/#">在此处</a>阅读有关此内容的更多信息。但是，您应确保不要处理表单内所有不愉快的路径。应该通过编写常规故事来处理这些问题，以便您的模型可以学习这种行为。</p>
+<blockquote>
+<p>注意</p>
+<p>这是我们为使用表单操作处理业务逻辑而修改的文件的最小清单：</p>
+<ul>
+<li><p><code>actions.py</code>：定义形式作用，包括<code>required_slots</code>，<code>slot_mappings</code>和<code>submit</code>方法</p>
+</li>
+<li><p><code>data/nlu.md</code>：</p>
+<blockquote>
+<ul>
+<li>添加示例以激活表单</li>
+<li>添加示例<code>inform</code>以填写表单</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>domain.yml</code>：</p>
+<blockquote>
+<ul>
+<li>添加表格所需的所有插槽</li>
+<li>添加<code>utter_ask_{slot}</code>所有必需插槽的响应</li>
+<li>将表单动作添加到该<code>forms</code>部分</li>
+<li>从您的NLU培训数据中添加所有意图和实体</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>data/stories.md</code>：为表单添加一个故事</p>
+</li>
+<li><p><code>config.yml</code>：</p>
+<blockquote>
+<ul>
+<li>将新增<code>FormPolicy</code>至您的政策</li>
+<li>将实体提取器添加到管道</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>endpoints.yml</code>：定义 <code>action_endpoint</code></p>
+</li>
+</ul>
+</blockquote>
+<h4 id="处理意想不到的用户输入"><a href="#处理意想不到的用户输入" class="headerlink" title="处理意想不到的用户输入"></a>处理意想不到的用户输入</h4><p>所有预期的用户输入都应通过我们上面定义的形式处理，即，如果用户提供了机器人所要求的信息。但是，在实际情况下，用户的行为通常会有所不同。在本节中，我们将介绍各种形式的“感叹词”以及如何在Rasa中处理它们。</p>
+<p>处理这些类型的用户输入的决定应始终来自查看真实的对话。您应该首先构建助手的一部分，与真实用户（无论是最终用户还是同事）进行测试，然后添加缺失的内容。您不应该尝试实施您认为可能发生的所有可能的极端情况，因为最终用户可能永远不会以这种方式行事。 <a href="#">Rasa X</a> 是可以帮助您查看对话并做出此类决定的工具。</p>
+<h4 id="通用感叹词"><a href="#通用感叹词" class="headerlink" title="通用感叹词"></a>通用感叹词</h4><p>如果您有通用感叹词，无论上下文如何，都应始终具有相同的单个响应，则可以使用<a href="#">映射策略</a>来处理这些感叹词。它将始终为意图预测相同的动作，并且与遗忘机制结合使用时，您也无需编写任何故事。</p>
+<p>例如，假设您看到用户与您的助手进行如下对话，他们在对话中间写了问候-可能是因为他们离开了几分钟：</p>
+<img src="/2020/10/02/rasa-zhi-nan/3.png" style="zoom:30%;">
+
+<p>问候意图是一个很好的例子，我们将始终给出相同的响应，但是我们不希望这种意图影响对话历史。为此，响应必须是返回<code>UserUtteranceReverted()</code>事件以从对话历史记录中删除交互的动作。</p>
+<p>首先，打开<code>domain.yml</code>文件并修改问候意图，然后<code>actions</code>在文件中添加一个新块，然后，<code>action_greet</code>如下所示添加：</p>
+<pre class=" language-reStructuredText"><code class="language-reStructuredText">intents:
+  - greet: &#123;triggers: action_greet&#125;
+  - bye
+  - thank
+  - faq
+  - contact_sales
+  - inform
+
+actions:
+  - action_greet</code></pre>
+<p>如果有，请使用“打招呼”意图删除所有故事。</p>
+<p>接下来，我们需要定义<code>action_greet</code>。将以下操作添加到<code>actions.py</code>文件中：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> rasa_sdk <span class="token keyword">import</span> Action
+<span class="token keyword">from</span> rasa_sdk<span class="token punctuation">.</span>events <span class="token keyword">import</span> UserUtteranceReverted
+
+<span class="token keyword">class</span> <span class="token class-name">ActionGreetUser</span><span class="token punctuation">(</span>Action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token triple-quoted-string string">"""Revertible mapped action for utter_greet"""</span>
+
+<span class="token keyword">def</span> <span class="token function">name</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token string">"action_greet"</span>
+
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> dispatcher<span class="token punctuation">,</span> tracker<span class="token punctuation">,</span> domain<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dispatcher<span class="token punctuation">.</span>utter_template<span class="token punctuation">(</span><span class="token string">"utter_greet"</span><span class="token punctuation">,</span> tracker<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>UserUtteranceReverted<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span></code></pre>
+<p>要测试修改后的意图，我们需要重新启动动作服务器：</p>
+<pre class=" language-shell"><code class="language-shell">rasa run actions</code></pre>
+<p>然后，我们可以重新训练模型，并尝试添加以下内容：</p>
+<pre class=" language-shell"><code class="language-shell">rasa train
+rasa shell</code></pre>
+<p>常见问题解答是另一种通用感叹词，应始终得到相同的响应。例如，用户可能会在填写表单时询问相关的FAQ：</p>
+<img src="/2020/10/02/rasa-zhi-nan/4.png" style="zoom:33%;">
+
+<p>要处理通过检索操作定义的FAQ，您可以添加一个简单的story，该故事将由MemoizationPolicy处理：</p>
+<pre><code>## just sales, continue
+* contact_sales
+    - sales_form
+    - form&amp;#123;"name": "sales_form"&amp;#125;
+* faq
+    - respond_faq
+    - sales_form
+    - form&amp;#123;"name": null&amp;#125;</code></pre>
+<p>这将脱离表格并处理用户的FAQ问题，然后返回到原始任务。例如：</p>
+<img src="/2020/10/02/rasa-zhi-nan/5.png" style="zoom:33%;">
+
+<p>如果发现很难以这种格式编写故事，则可以随时使用“<a href="#">交互式学习”</a> 来帮助您创建故事。</p>
+<p>与往常一样，请确保将端到端测试用例添加到您的test_stories.md文件中。</p>
+<h5 id="语境的问题"><a href="#语境的问题" class="headerlink" title="语境的问题"></a>语境的问题</h5><p>您还可以处理<a href="#">上下文问题</a>，例如用户询问问题“为什么需要知道这一点”。用户可以根据机器人已请求的特定插槽来询问此问题，并且每个插槽的响应应有所不同。例如：</p>
+<img src="/2020/10/02/rasa-zhi-nan/6.png" style="zoom:33%;">
+
+<p>为了解决这个问题，我们需要使<code>requested_slot</code>特征化，并为其分配分类类型：</p>
+<pre class=" language-markdown"><code class="language-markdown">slots:
+  requested_slot:
+<span class="token code keyword">    type: categorical</span>
+<span class="token code keyword">    values:</span>
+<span class="token code keyword">      - business_email</span>
+<span class="token code keyword">      - company</span>
+<span class="token code keyword">      - person_name</span>
+<span class="token code keyword">      - use_case</span>
+<span class="token code keyword">      - budget</span>
+<span class="token code keyword">      - job_function</span></code></pre>
+<p>这意味着Core在进行预测时会注意插槽的值（了解更多有关其他<a href="#">功能化插槽的信息</a>），而未功能化插槽仅用于存储信息。有关的故事应如下所示：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> explain email</span>
+<span class="token list punctuation">*</span> contact_sales
+<span class="token code keyword">    - sales_form</span>
+<span class="token code keyword">    - form&amp;#123;"name": "sales_form"&amp;#125;</span>
+<span class="token code keyword">    - slot&amp;#123;"requested_slot": "business_email"&amp;#125;</span>
+<span class="token list punctuation">*</span> explain
+<span class="token code keyword">    - utter_explain_why_email</span>
+<span class="token code keyword">    - sales_form</span>
+<span class="token code keyword">    - form&amp;#123;"name": null&amp;#125;</span>
+
+<span class="token title important"><span class="token punctuation">##</span> explain budget</span>
+<span class="token list punctuation">*</span> contact_sales
+<span class="token code keyword">    - sales_form</span>
+<span class="token code keyword">    - form&amp;#123;"name": "sales_form"&amp;#125;</span>
+<span class="token code keyword">    - slot&amp;#123;"requested_slot": "budget"&amp;#125;</span>
+<span class="token list punctuation">*</span> explain
+<span class="token code keyword">    - utter_explain_why_budget</span>
+<span class="token code keyword">    - sales_form</span>
+<span class="token code keyword">    - form&amp;#123;"name": null&amp;#125;</span></code></pre>
+<p>我们需要添加刚添加到<code>domain.yml</code>文件中的意图和话语：</p>
+<pre class=" language-markdown"><code class="language-markdown">intents:
+<span class="token list punctuation">-</span> greet: <span class="token entity" title="&#123;">&amp;#123;</span>triggers: action<span class="token italic"><span class="token punctuation">_</span>greet<span class="token punctuation">_</span></span>user<span class="token entity" title="&#125;">&amp;#125;</span>
+<span class="token list punctuation">-</span> bye
+<span class="token list punctuation">-</span> thank
+<span class="token list punctuation">-</span> faq
+<span class="token list punctuation">-</span> explain
+
+responses:
+  utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>why_budget:
+  <span class="token list punctuation">-</span> text: We need to know your budget to recommend a subscription
+  utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>why_email:
+  <span class="token list punctuation">-</span> text: We need your email so we can contact you</code></pre>
+<p>最后，我们需要为解释目的添加一些NLU数据：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> intent:explain</span>
+<span class="token list punctuation">-</span> why
+<span class="token list punctuation">-</span> why is that
+<span class="token list punctuation">-</span> why do you need it
+<span class="token list punctuation">-</span> why do you need to know that?
+<span class="token list punctuation">-</span> could you explain why you need it?</code></pre>
+<p>然后，您可以重新训练您的机器人并再次进行测试:</p>
+<pre><code>rasa train
+rasa shell</code></pre>
+<blockquote>
+<p>注意</p>
+<p>您需要为该广告位的每个<code>requested_slot</code>插槽值添加一个故事，以便该机器人可以处理“为什么要知道”的每种情况</p>
+</blockquote>
+<p>别忘了为您<code>test_stories.md</code>的测试添加一些端到端的故事。</p>
+<blockquote>
+<p>注意</p>
+<p>这是我们为处理意外用户输入而修改的文件的最小清单</p>
+<ul>
+<li><p><code>actions.py</code>：定义 <code>action_greet</code></p>
+</li>
+<li><p><code>data/nlu.md</code>：添加<code>explain</code>意图的训练数据</p>
+</li>
+<li><p><code>domain.yml</code>：</p>
+<blockquote>
+<ul>
+<li>地图意图<code>greet</code>以 <code>action_greet_user</code></li>
+<li>使<code>requested_slot</code>一个分类时隙与所有需要的时隙作为值</li>
+<li>添加<code>explain</code>意图</li>
+<li>添加针对上下文问题打扰的回复</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>data/stories.md</code>：</p>
+<blockquote>
+<ul>
+<li>如果有故事，请使用映射的意图删除故事</li>
+<li>在填写表格时添加带有常见问题解答和上下文中断的故事</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h4 id="正常失败"><a href="#正常失败" class="headerlink" title="正常失败"></a>正常失败</h4><p>即使您完美地设计了机器人，用户也不可避免地会向您的助手说出您意料之外的事情。在这些情况下，您的助手将失败，因此请确保其正常运行很重要。</p>
+<h4 id="后备政策"><a href="#后备政策" class="headerlink" title="后备政策"></a>后备政策</h4><p>最常见的故障之一是NLU置信度低，使用TwoStageFallbackPolicy可以很好地处理它。您可以通过将以下内容添加到配置文件中来启用它，</p>
+<pre><code>policies:
+  - name: TwoStageFallbackPolicy
+    nlu_threshold: 0.8</code></pre>
+<p>并将<code>out_of_scope</code>意图添加到<code>domain.yml</code>文件中：</p>
+<pre><code>intents:
+- out_of_scope</code></pre>
+<p>当nlu置信度降至定义的阈值以下时，机器人将提示用户重新表达其消息。如果僵尸程序无法三遍获取其消息，则将采取最终行动，例如，僵尸程序可以移交给人类。</p>
+<p>要尝试此操作，请重新训练您的模型，然后向您的机器人发送“向我订购披萨”之类的消息：</p>
+<pre><code>rasa train
+rasa shell</code></pre>
+<p>您还可以通过多种方式自定义此策略。在我们的演示机器人Sara中，我们对其进行了自定义，以在一定的置信度范围内向用户建议意图，以使用户更轻松地向机器人提供所需的信息。</p>
+<p>这是通过自定义动作来完成的，<code>ActionDefaultAskAffirmation</code>如<a href="#">Sara rasa-demo动作服务器中所示。</a> 我们定义了一些意图映射，以使用户对意图的理解更加直观。</p>
+<img src="/2020/10/02/rasa-zhi-nan/7.png" style="zoom:33%;">
+
+<h4 id="输出范围意图"><a href="#输出范围意图" class="headerlink" title="输出范围意图"></a>输出范围意图</h4><p>优良作法是也要处理您知道用户可能会问的问题，但您尚未针对这些问题实现用户目标。</p>
+<p>您可以定义一个<code>out_of_scope</code>意图来处理超出范围的通用请求，例如“我饿了”，并让漫游器响应默认消息，例如“抱歉，我无法处理该请求”：</p>
+<pre><code>* out_of_scope
+  utter_out_of_scope</code></pre>
+<p>我们还需要为<code>out_of_scope</code>意图添加NLU数据：</p>
+<pre><code>## intent:out_of_scope
+- I want to order food
+- What is 2 + 2?
+- Who’s the US President?
+- I need a job</code></pre>
+<p>最后，我们将对<code>domain.yml</code>文件添加响应：</p>
+<pre><code>responses:
+  utter_out_of_scope:
+  - text: Sorry, I can’t handle that request.</code></pre>
+<p>现在，我们可以重新训练并测试此添加项</p>
+<pre><code>rasa train
+rasa shell</code></pre>
+<p>再往前走，如果您发现用户要求某些事情，将来又希望成为用户目标，则可以将它们作为单独的意图进行处理，以使用户知道您已经理解了他们的信息，但是还没有解决方案。例如，假设用户问“我想在Rasa申请工作”，然后我们可以回答“我了解您正在寻找工作，但我恐怕还无法处理该技能。”</p>
+<pre><code>* ask_job
+  utter_job_not_handled</code></pre>
+<blockquote>
+<p>注意</p>
+<p>这是我们为帮助助手正常退出而修改的文件的最小清单：</p>
+<ul>
+<li><p><code>data/nlu.md</code>：</p>
+<blockquote>
+<ul>
+<li>添加<code>out_of_scope</code>意图和要单独处理的任何特定范围外意图的训练数据</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>data/stories.md</code>：</p>
+<blockquote>
+<ul>
+<li>为任何超出范围的意图添加故事</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>domain.yml</code>：</p>
+<blockquote>
+<ul>
+<li>添加<code>out_of_scope</code>意图和任何超出范围的意图</li>
+<li><code>utter_out_of_scope</code>为任何超出范围的意图添加一个或多个响应</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>actions.py</code>：</p>
+<blockquote>
+<ul>
+<li>自定义<code>ActionDefaultAskAffirmation</code>建议用户的意图，供用户选择</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>config.yml</code>：</p>
+<blockquote>
+<ul>
+<li>将TwoStageFallbackPolicy添加到该<code>policies</code>部分</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h4 id="更复杂的上下文对话"><a href="#更复杂的上下文对话" class="headerlink" title="更复杂的上下文对话"></a>更复杂的上下文对话</h4><p>并非您定义的每个用户目标都将属于业务逻辑类别。对于其他情况，您将需要使用故事和上下文来帮助用户实现其目标。</p>
+<p>如果我们以Sara的“入门”技能为例，我们想根据他们是否曾经构建过AI助手并且正在从其他工具迁移而来，向他们提供不同的信息。这可以通过故事很简单地完成和<a href="#">最大历史</a>的概念。</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> new to rasa + built a bot before</span>
+ <span class="token list punctuation">*</span> how<span class="token italic"><span class="token punctuation">_</span>to<span class="token punctuation">_</span></span>get_started
+   <span class="token list punctuation">-</span> utter_getstarted
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>first<span class="token punctuation">_</span></span>bot<span class="token italic"><span class="token punctuation">_</span>with<span class="token punctuation">_</span></span>rasa
+ <span class="token list punctuation">*</span> affirm
+   <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>set<span class="token punctuation">_</span></span>onboarding
+   <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"onboarding": true<span class="token entity" title="&#125;">&amp;#125;</span>
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>built<span class="token punctuation">_</span></span>bot_before
+ <span class="token list punctuation">*</span> affirm
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>ask<span class="token punctuation">_</span></span>migration
+ <span class="token list punctuation">*</span> deny
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>rasa_components
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>rasa<span class="token punctuation">_</span></span>components_details
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>ask<span class="token punctuation">_</span></span>explain_nlucorex
+ <span class="token list punctuation">*</span> affirm
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>nlu
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>core
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>x
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>direct<span class="token punctuation">_</span></span>to_step2
+
+ <span class="token title important"><span class="token punctuation">##</span> not new to rasa + core</span>
+ <span class="token list punctuation">*</span> how<span class="token italic"><span class="token punctuation">_</span>to<span class="token punctuation">_</span></span>get_started
+   <span class="token list punctuation">-</span> utter_getstarted
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>first<span class="token punctuation">_</span></span>bot<span class="token italic"><span class="token punctuation">_</span>with<span class="token punctuation">_</span></span>rasa
+ <span class="token list punctuation">*</span> deny
+   <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>set<span class="token punctuation">_</span></span>onboarding
+   <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"onboarding": false<span class="token entity" title="&#125;">&amp;#125;</span>
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>ask<span class="token punctuation">_</span></span>which_product
+ <span class="token list punctuation">*</span> how<span class="token italic"><span class="token punctuation">_</span>to<span class="token punctuation">_</span></span>get_started<span class="token entity" title="&#123;">&amp;#123;</span>"product": "core"<span class="token entity" title="&#125;">&amp;#125;</span>
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>core
+   <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>anything<span class="token punctuation">_</span></span>else</code></pre>
+<p>上面的示例主要利用意图来指导流程，但是您也可以使用实体和插槽来指导流程。例如，如果用户在一开始就向您提供了Rasa的新信息，则您可能希望通过将此信息存储在插槽中来跳过此问题。</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token list punctuation">*</span> how<span class="token italic"><span class="token punctuation">_</span>to<span class="token punctuation">_</span></span>get<span class="token italic"><span class="token punctuation">_</span>started&amp;#123;"user<span class="token punctuation">_</span></span>type": "new"<span class="token entity" title="&#125;">&amp;#125;</span>
+  <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"user_type":"new"<span class="token entity" title="&#125;">&amp;#125;</span>
+  <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>set<span class="token punctuation">_</span></span>onboarding
+  <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"onboarding": true<span class="token entity" title="&#125;">&amp;#125;</span>
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>getstarted<span class="token punctuation">_</span></span>new
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>built<span class="token punctuation">_</span></span>bot_before</code></pre>
+<p>为此，请记住必须在<code>domain.yml</code> 文件中设置该插槽的功能。这次我们可以使用<code>text</code>插槽类型，因为我们只在乎是否<a href="#">设置</a>了 <a href="#">插槽</a>。</p>
+<h5 id="用ML概括"><a href="#用ML概括" class="headerlink" title="用ML概括"></a>用ML概括</h5><p>除了上文所述的基于规则的策略外，Core还提供了一些可以使用的ML策略。这些作为策略配置中的附加层进入，只有在用户遵循您未曾预料到的路径时才跳入。<strong>重要的是要了解使用这些策略并不意味着放开对助手的控制权。</strong>如果基于规则的策略能够做出预测，则该预测将始终具有更高的优先级（<a href="#">在此处</a>了解更多<a href="#">信息</a>）并预测下一个操作。基于ML的策略为您的助手提供了不失败的机会，而如果不使用它们，您的助手肯定会失败，就像在基于状态机的对话系统中一样。</p>
+<p>这些类型的意外用户行为是我们的<a href="#">TEDPolicy</a>非常<a href="#">擅长</a>处理的事情。它可以学习在用户试图完成的主要用户目标中的一些插词之后使用户回到正轨。例如，在下面的对话中（摘自<a href="#">Rasa X</a>上的对话）：</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Story from conversation with a2baab6c83054bfaa8d598459c659d2a on November 28th 2019</span>
+<span class="token list punctuation">*</span> greet
+  <span class="token list punctuation">-</span> action<span class="token italic"><span class="token punctuation">_</span>greet<span class="token punctuation">_</span></span>user
+  <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"shown_privacy":true<span class="token entity" title="&#125;">&amp;#125;</span>
+<span class="token list punctuation">*</span> ask_whoisit
+  <span class="token list punctuation">-</span> action_chitchat
+<span class="token list punctuation">*</span> ask_whatspossible
+  <span class="token list punctuation">-</span> action_chitchat
+<span class="token list punctuation">*</span> telljoke
+  <span class="token list punctuation">-</span> action_chitchat
+<span class="token list punctuation">*</span> how<span class="token italic"><span class="token punctuation">_</span>to<span class="token punctuation">_</span></span>get_started<span class="token entity" title="&#123;">&amp;#123;</span>"product":"x"<span class="token entity" title="&#125;">&amp;#125;</span>
+  <span class="token list punctuation">-</span> slot<span class="token entity" title="&#123;">&amp;#123;</span>"product":"x"<span class="token entity" title="&#125;">&amp;#125;</span>
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>x
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>also<span class="token punctuation">_</span></span>explain_nlucore
+<span class="token list punctuation">*</span> affirm
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>nlu
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>explain<span class="token punctuation">_</span></span>core
+  <span class="token list punctuation">-</span> utter<span class="token italic"><span class="token punctuation">_</span>direct<span class="token punctuation">_</span></span>to_step2</code></pre>
+<p>在这里，我们可以看到用户首先完成了一些闲聊任务，然后最终询问他们如何开始使用RasaX。TEDPolicy正确地预测了应该向用户解释Rasa X，然后也将其沿用下来路径，而不先问所有符合条件的问题。</p>
+<p>由于在这种情况下机器学习策略的推广效果很好，因此有必要将此故事添加到您的训练数据中，以不断改进您的机器人并帮助机器学习进一步推广。<a href="#">Rasa X</a>是一款可以帮助您改善bot并使它与上下文相关的工具。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">daiyizheng</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com/2020/10/02/rasa-zhi-nan/">http://yoursite.com/2020/10/02/rasa-zhi-nan/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">daiyizheng</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Rasa/">
+                                    <span class="chip bg-color">Rasa</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '4UATY1Wl6PiOAJtLDeI11JPG-9Nh9j0Va',
+        appKey: 'm8JJMe4Ok7crFRmTthEbo48R',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/10/03/rasa-wen-dang-zhi-nan-2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Rasa文档指南(2)">
+                        
+                        <span class="card-title">Rasa文档指南(2)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Rasa Version1文档翻译
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-03
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/nlp/" class="post-category">
+                                    nlp
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Rasa/">
+                        <span class="chip bg-color">Rasa</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/02/paddleocr-docker-hua-bu-shu-fu-wu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="PaddleOCR Docker化部署服务">
+                        
+                        <span class="card-title">PaddleOCR Docker化部署服务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            PaddleOCR Docker化部署服务
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BF%90%E7%BB%B4/" class="post-category">
+                                    运维
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/OCR/">
+                        <span class="chip bg-color">OCR</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="song"
+                   id="1297742167"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">daiyizheng</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
