@@ -617,6 +617,605 @@ Python Logging Options:
 <p>注意</p>
 <p>使用训练模型时，确保存在Core和NLU的训练数据。如果仅提供一种模型类型的训练数据，该命令将自动退回到 或取决于提供的训练文件。<code>rasa train  rasa train nlu  rasa train core</code></p>
 </blockquote>
+<h2 id="交互学习"><a href="#交互学习" class="headerlink" title="交互学习"></a>交互学习</h2><p>要与您的助手开始交互式学习会话，请运行</p>
+<pre class=" language-shell"><code class="language-shell">rasa interactive</code></pre>
+<p>如果您使用<code>--model</code>参数提供训练有素的模型，则交互式学习过程将从提供的模型开始。如果未指定任何模型，则在没有其他目录传递给该 标志的情况下，将使用位于其中的数据来训练新的Rasa模型。在训练了初始模型之后，交互式学习会话开始。如果训练数据和配置未更改，则将跳过训练。<code>rasa interactive``data/``--data</code></p>
+<p>可以设置的参数的完整列表为：<code>rasa interactive</code></p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa interactive [-h] [-v] [-vv] [--quiet] [--e2e] [-m MODEL]
+                        [--data DATA [DATA ...]] [--skip-visualization]
+                        [--conversation-id CONVERSATION_ID]
+                        [--endpoints ENDPOINTS] [-c CONFIG] [-d DOMAIN]
+                        [--out OUT] [--augmentation AUGMENTATION]
+                        [--debug-plots] [--force] [--persist-nlu-data]
+                        &#123;core&#125; ... [model-as-positional-argument]
+
+positional arguments:
+  &#123;core&#125;
+    core                Starts an interactive learning session model to create
+                        new training data for a Rasa Core model by chatting.
+                        Uses the 'RegexInterpreter', i.e. `/<intent>` input
+                        format.
+  model-as-positional-argument
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: None)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --e2e                 Save story files in e2e format. In this format user
+                        messages will be included in the stories. (default:
+                        False)
+  -m MODEL, --model MODEL
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: None)
+  --data DATA [DATA ...]
+                        Paths to the Core and NLU data files. (default:
+                        ['data'])
+  --skip-visualization  Disable plotting the visualization during interactive
+                        learning. (default: False)
+  --conversation-id CONVERSATION_ID
+                        Specify the id of the conversation the messages are
+                        in. Defaults to a UUID that will be randomly
+                        generated. (default: 39156e0e50ca4ac2993dd943a540a3da)
+  --endpoints ENDPOINTS
+                        Configuration file for the model server and the
+                        connectors as a yml file. (default: None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)
+
+Train Arguments:
+  -c CONFIG, --config CONFIG
+                        The policy and NLU pipeline configuration of your bot.
+                        (default: config.yml)
+  -d DOMAIN, --domain DOMAIN
+                        Domain specification (yml file). (default: domain.yml)
+  --out OUT             Directory where your models should be stored.
+                        (default: models)
+  --augmentation AUGMENTATION
+                        How much data augmentation to use during training.
+                        (default: 50)
+  --debug-plots         If enabled, will create plots showing checkpoints and
+                        their connections between story blocks in a file
+                        called `story_blocks_connections.html`. (default:
+                        False)
+  --force               Force a model training even if the data has not
+                        changed. (default: False)
+  --persist-nlu-data    Persist the nlu training data in the saved model.
+                        (default: False)</code></pre>
+<h2 id="与您的助手交谈"><a href="#与您的助手交谈" class="headerlink" title="与您的助手交谈"></a>与您的助手交谈</h2><p>要在命令行上与您的助手开始聊天会话，请运行：</p>
+<pre><code>rasa shell</code></pre>
+<p>可与bot互动的模型可以通过指定<code>--model</code>。如果您使用仅NLU模型启动外壳程序，则可以获取在命令行上键入的任何文本的意图和实体。如果您的模型包括训练有素的Core模型，则可以与您的机器人聊天，并查看该机器人下一步的预测。如果您已经训练了一个组合的Rasa模型，但是仍然想查看模型从文本中提取的意图和实体，则可以使用命令。<code>rasa shell``rasa shell nlu</code></p>
+<p>要提高调试的日志记录级别，请运行：</p>
+<pre><code>rasa shell --debug</code></pre>
+<p>选项的完整列表是<code>rasa shell</code></p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa shell [-h] [-v] [-vv] [--quiet]
+                  [--conversation-id CONVERSATION_ID] [-m MODEL]
+                  [--log-file LOG_FILE] [--endpoints ENDPOINTS] [-p PORT]
+                  [-t AUTH_TOKEN] [--cors [CORS [CORS ...]]] [--enable-api]
+                  [--response-timeout RESPONSE_TIMEOUT]
+                  [--remote-storage REMOTE_STORAGE]
+                  [--ssl-certificate SSL_CERTIFICATE]
+                  [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                  [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                  [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                  [--jwt-method JWT_METHOD]
+                  &#123;nlu&#125; ... [model-as-positional-argument]
+
+positional arguments:
+  &#123;nlu&#125;
+    nlu                 Interprets messages on the command line using your NLU
+                        model.
+  model-as-positional-argument
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: None)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --conversation-id CONVERSATION_ID
+                        Set the conversation ID. (default:
+                        71b04d860ac8469c9d97c6b68226019a)
+  -m MODEL, --model MODEL
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: models)
+  --log-file LOG_FILE   Store logs in specified file. (default: None)
+  --endpoints ENDPOINTS
+                        Configuration file for the model server and the
+                        connectors as a yml file. (default: None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)
+
+Server Settings:
+  -p PORT, --port PORT  Port to run the server at. (default: 5005)
+  -t AUTH_TOKEN, --auth-token AUTH_TOKEN
+                        Enable token based authentication. Requests need to
+                        provide the token to be accepted. (default: None)
+  --cors [CORS [CORS ...]]
+                        Enable CORS for the passed origin. Use * to whitelist
+                        all origins. (default: None)
+  --enable-api          Start the web server API in addition to the input
+                        channel. (default: False)
+  --response-timeout RESPONSE_TIMEOUT
+                        Maximum time a response can take to process (sec).
+                        (default: 3600)
+  --remote-storage REMOTE_STORAGE
+                        Set the remote location where your Rasa model is
+                        stored, e.g. on AWS. (default: None)
+  --ssl-certificate SSL_CERTIFICATE
+                        Set the SSL Certificate to create a TLS secured
+                        server. (default: None)
+  --ssl-keyfile SSL_KEYFILE
+                        Set the SSL Keyfile to create a TLS secured server.
+                        (default: None)
+  --ssl-ca-file SSL_CA_FILE
+                        If your SSL certificate needs to be verified, you can
+                        specify the CA file using this parameter. (default:
+                        None)
+  --ssl-password SSL_PASSWORD
+                        If your ssl-keyfile is protected by a password, you
+                        can specify it using this paramer. (default: None)
+
+Channels:
+  --credentials CREDENTIALS
+                        Authentication credentials for the connector as a yml
+                        file. (default: None)
+  --connector CONNECTOR
+                        Service to connect to. (default: None)
+
+JWT Authentication:
+  --jwt-secret JWT_SECRET
+                        Public key for asymmetric JWT methods or shared
+                        secretfor symmetric methods. Please also make sure to
+                        use --jwt-method to select the method of the
+                        signature, otherwise this argument will be ignored.
+                        (default: None)
+  --jwt-method JWT_METHOD
+                        Method used for the signature of the JWT
+                        authentication payload. (default: HS256)</code></pre>
+<h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><p>要启动运行您的Rasa模型的服务器，请运行：</p>
+<pre><code>rasa run</code></pre>
+<p>以下参数可用于配置Rasa服务器：</p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa run [-h] [-v] [-vv] [--quiet] [-m MODEL] [--log-file LOG_FILE]
+                [--endpoints ENDPOINTS] [-p PORT] [-t AUTH_TOKEN]
+                [--cors [CORS [CORS ...]]] [--enable-api]
+                [--response-timeout RESPONSE_TIMEOUT]
+                [--remote-storage REMOTE_STORAGE]
+                [--ssl-certificate SSL_CERTIFICATE]
+                [--ssl-keyfile SSL_KEYFILE] [--ssl-ca-file SSL_CA_FILE]
+                [--ssl-password SSL_PASSWORD] [--credentials CREDENTIALS]
+                [--connector CONNECTOR] [--jwt-secret JWT_SECRET]
+                [--jwt-method JWT_METHOD]
+                &#123;actions&#125; ... [model-as-positional-argument]
+
+positional arguments:
+  &#123;actions&#125;
+    actions             Runs the action server.
+  model-as-positional-argument
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: None)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m MODEL, --model MODEL
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: models)
+  --log-file LOG_FILE   Store logs in specified file. (default: None)
+  --endpoints ENDPOINTS
+                        Configuration file for the model server and the
+                        connectors as a yml file. (default: None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)
+
+Server Settings:
+  -p PORT, --port PORT  Port to run the server at. (default: 5005)
+  -t AUTH_TOKEN, --auth-token AUTH_TOKEN
+                        Enable token based authentication. Requests need to
+                        provide the token to be accepted. (default: None)
+  --cors [CORS [CORS ...]]
+                        Enable CORS for the passed origin. Use * to whitelist
+                        all origins. (default: None)
+  --enable-api          Start the web server API in addition to the input
+                        channel. (default: False)
+  --response-timeout RESPONSE_TIMEOUT
+                        Maximum time a response can take to process (sec).
+                        (default: 3600)
+  --remote-storage REMOTE_STORAGE
+                        Set the remote location where your Rasa model is
+                        stored, e.g. on AWS. (default: None)
+  --ssl-certificate SSL_CERTIFICATE
+                        Set the SSL Certificate to create a TLS secured
+                        server. (default: None)
+  --ssl-keyfile SSL_KEYFILE
+                        Set the SSL Keyfile to create a TLS secured server.
+                        (default: None)
+  --ssl-ca-file SSL_CA_FILE
+                        If your SSL certificate needs to be verified, you can
+                        specify the CA file using this parameter. (default:
+                        None)
+  --ssl-password SSL_PASSWORD
+                        If your ssl-keyfile is protected by a password, you
+                        can specify it using this paramer. (default: None)
+
+Channels:
+  --credentials CREDENTIALS
+                        Authentication credentials for the connector as a yml
+                        file. (default: None)
+  --connector CONNECTOR
+                        Service to connect to. (default: None)
+
+JWT Authentication:
+  --jwt-secret JWT_SECRET
+                        Public key for asymmetric JWT methods or shared
+                        secretfor symmetric methods. Please also make sure to
+                        use --jwt-method to select the method of the
+                        signature, otherwise this argument will be ignored.
+                        (default: None)
+  --jwt-method JWT_METHOD
+                        Method used for the signature of the JWT
+                        authentication payload. (default: HS256)</code></pre>
+<p>有关其他参数的更多信息，请参阅“<a href="#">配置HTTP API”</a>。有关所有端点的详细文档，请参见Rasa <a href="#">HTTP API</a>文档。</p>
+<h2 id="启动动作服务器"><a href="#启动动作服务器" class="headerlink" title="启动动作服务器"></a>启动动作服务器</h2><p>要运行动作服务器，请运行</p>
+<pre><code>rasa run actions</code></pre>
+<p>以下参数可用于调整服务器设置：</p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa run actions [-h] [-v] [-vv] [--quiet] [-p PORT]
+                        [--cors [CORS [CORS ...]]] [--actions ACTIONS]
+                        [--ssl-keyfile SSL_KEYFILE]
+                        [--ssl-certificate SSL_CERTIFICATE]
+                        [--ssl-password SSL_PASSWORD] [--auto-reload]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -p PORT, --port PORT  port to run the server at (default: 5055)
+  --cors [CORS [CORS ...]]
+                        enable CORS for the passed origin. Use * to whitelist
+                        all origins (default: None)
+  --actions ACTIONS     name of action package to be loaded (default: None)
+  --ssl-keyfile SSL_KEYFILE
+                        Set the SSL certificate to create a TLS secured
+                        server. (default: None)
+  --ssl-certificate SSL_CERTIFICATE
+                        Set the SSL certificate to create a TLS secured
+                        server. (default: None)
+  --ssl-password SSL_PASSWORD
+                        If your ssl-keyfile is protected by a password, you
+                        can specify it using this paramer. (default: None)
+  --auto-reload         Enable auto-reloading of modules containing Action
+                        subclasses. (default: False)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)</code></pre>
+<h2 id="可视化你的故事"><a href="#可视化你的故事" class="headerlink" title="可视化你的故事"></a>可视化你的故事</h2><p>要打开带有显示您的故事的图形的浏览器选项卡，请执行以下操作：</p>
+<pre><code>rasa visualize</code></pre>
+<p>通常，目录<code>data</code>中的培训案例是可视化的。如果您的故事位于其他地方，则可以使用来指定它们的位置<code>--stories</code>。</p>
+<p>其他参数是：</p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa visualize [-h] [-v] [-vv] [--quiet] [-d DOMAIN] [-s STORIES]
+                      [-c CONFIG] [--out OUT] [--max-history MAX_HISTORY]
+                      [-u NLU]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DOMAIN, --domain DOMAIN
+                        Domain specification (yml file). (default: domain.yml)
+  -s STORIES, --stories STORIES
+                        File or folder containing your training stories.
+                        (default: data)
+  -c CONFIG, --config CONFIG
+                        The policy and NLU pipeline configuration of your bot.
+                        (default: config.yml)
+  --out OUT             Filename of the output path, e.g. 'graph.html'.
+                        (default: graph.html)
+  --max-history MAX_HISTORY
+                        Max history to consider when merging paths in the
+                        output graph. (default: 2)
+  -u NLU, --nlu NLU     File or folder containing your NLU data, used to
+                        insert example messages into the graph. (default:
+                        None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)</code></pre>
+<h2 id="在测试数据上评估模型"><a href="#在测试数据上评估模型" class="headerlink" title="在测试数据上评估模型"></a>在测试数据上评估模型</h2><p>要根据测试数据评估模型，请运行：</p>
+<pre><code>rasa test</code></pre>
+<p>指定要测试的模型<code>--model</code>。在“<a href="#">评估NLU模型</a>和<a href="#">评估核心模型”中</a>查看更多详细信息。</p>
+<p>以下参数可用于：<code>rasa test</code></p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa test [-h] [-v] [-vv] [--quiet] [-m MODEL] [-s STORIES]
+                 [--max-stories MAX_STORIES] [--endpoints ENDPOINTS]
+                 [--fail-on-prediction-errors] [--url URL]
+                 [--evaluate-model-directory] [-u NLU] [--out OUT]
+                 [--successes] [--no-errors] [--histogram HISTOGRAM]
+                 [--confmat CONFMAT] [-c CONFIG [CONFIG ...]]
+                 [--cross-validation] [-f FOLDS] [-r RUNS]
+                 [-p PERCENTAGES [PERCENTAGES ...]] [--no-plot]
+                 &#123;core,nlu&#125; ...
+
+positional arguments:
+  &#123;core,nlu&#125;
+    core                Tests Rasa Core models using your test stories.
+    nlu                 Tests Rasa NLU models using your test NLU data.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m MODEL, --model MODEL
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: models)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)
+
+Core Test Arguments:
+  -s STORIES, --stories STORIES
+                        File or folder containing your test stories. (default:
+                        tests)
+  --max-stories MAX_STORIES
+                        Maximum number of stories to test on. (default: None)
+  --endpoints ENDPOINTS
+                        Configuration file for the connectors as a yml file.
+                        (default: None)
+  --fail-on-prediction-errors
+                        If a prediction error is encountered, an exception is
+                        thrown. This can be used to validate stories during
+                        tests, e.g. on travis. (default: False)
+  --url URL             If supplied, downloads a story file from a URL and
+                        trains on it. Fetches the data by sending a GET
+                        request to the supplied URL. (default: None)
+  --evaluate-model-directory
+                        Should be set to evaluate models trained via 'rasa
+                        train core --config <config-1> <config-2>'. All models
+                        in the provided directory are evaluated and compared
+                        against each other. (default: False)
+
+NLU Test Arguments:
+  -u NLU, --nlu NLU     File or folder containing your NLU data. (default:
+                        data)
+  --out OUT             Output path for any files created during the
+                        evaluation. (default: results)
+  --successes           If set successful predictions (intent and entities)
+                        will be written to a file. (default: False)
+  --no-errors           If set incorrect predictions (intent and entities)
+                        will NOT be written to a file. (default: False)
+  --histogram HISTOGRAM
+                        Output path for the confidence histogram. (default:
+                        hist.png)
+  --confmat CONFMAT     Output path for the confusion matrix plot. (default:
+                        confmat.png)
+  -c CONFIG [CONFIG ...], --config CONFIG [CONFIG ...]
+                        Model configuration file. If a single file is passed
+                        and cross validation mode is chosen, cross-validation
+                        is performed, if multiple configs or a folder of
+                        configs are passed, models will be trained and
+                        compared directly. (default: None)
+  --no-plot             Don't render evaluation plots (default: False)</code></pre>
+<h2 id="创建训练测试拆分"><a href="#创建训练测试拆分" class="headerlink" title="创建训练测试拆分"></a>创建训练测试拆分</h2><p>要创建NLU数据的拆分，请运行：</p>
+<pre><code>rasa data split nlu</code></pre>
+<p>您可以使用以下参数指定训练数据，分数和输出目录：</p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa data split nlu [-h] [-v] [-vv] [--quiet] [-u NLU]
+                           [--training-fraction TRAINING_FRACTION]
+                           [--random-seed RANDOM_SEED] [--out OUT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u NLU, --nlu NLU     File or folder containing your NLU data. (default:
+                        data)
+  --training-fraction TRAINING_FRACTION
+                        Percentage of the data which should be in the training
+                        data. (default: 0.8)
+  --random-seed RANDOM_SEED
+                        Seed to generate the same train/test split. (default:
+                        None)
+  --out OUT             Directory where the split files should be stored.
+                        (default: train_test_split)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)</code></pre>
+<p>此命令将尝试在训练和测试中保持意图的比例相同。如果您有NLG数据用于检索操作，则将其保存到单独的文件中：</p>
+<pre class=" language-shell"><code class="language-shell">ls train_test_split
+
+      nlg_test_data.md     test_data.json
+      nlg_training_data.md training_data.json</code></pre>
+<h2 id="在Markdown和JSON之间转换数据"><a href="#在Markdown和JSON之间转换数据" class="headerlink" title="在Markdown和JSON之间转换数据"></a>在Markdown和JSON之间转换数据</h2><p>要将NLU数据从LUIS数据格式，WIT数据格式，Dialogflow数据格式，JSON或Markdown转换为JSON或Markdown，请运行：</p>
+<pre><code>rasa data convert nlu</code></pre>
+<p>您可以使用以下参数指定输入文件，输出文件和输出格式：</p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa data convert nlu [-h] [-v] [-vv] [--quiet] --data DATA --out OUT
+                             [-l LANGUAGE] -f &#123;json,md&#125;
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data DATA           Path to the file or directory containing Rasa NLU
+                        data. (default: None)
+  --out OUT             File where to save training data in Rasa format.
+                        (default: None)
+  -l LANGUAGE, --language LANGUAGE
+                        Language of data. (default: en)
+  -f &#123;json,md&#125;, --format &#123;json,md&#125;
+                        Output format the training data should be converted
+                        into. (default: None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)</code></pre>
+<h2 id="将对话导出到事件代理"><a href="#将对话导出到事件代理" class="headerlink" title="将对话导出到事件代理"></a>将对话导出到事件代理</h2><p>要使用事件代理从跟踪商店中导出事件，请运行：</p>
+<pre><code>rasa export</code></pre>
+<p>您可以指定环境文件的位置，应发布的事件的最小和最大时间戳以及应发布的对话ID。</p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa export [-h] [-v] [-vv] [--quiet] [--endpoints ENDPOINTS]
+                   [--minimum-timestamp MINIMUM_TIMESTAMP]
+                   [--maximum-timestamp MAXIMUM_TIMESTAMP]
+                   [--conversation-ids CONVERSATION_IDS]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --endpoints ENDPOINTS
+                        Endpoint configuration file specifying the tracker
+                        store and event broker. (default: endpoints.yml)
+  --minimum-timestamp MINIMUM_TIMESTAMP
+                        Minimum timestamp of events to be exported. The
+                        constraint is applied in a 'greater than or equal'
+                        comparison. (default: None)
+  --maximum-timestamp MAXIMUM_TIMESTAMP
+                        Maximum timestamp of events to be exported. The
+                        constraint is applied in a 'less than' comparison.
+                        (default: None)
+  --conversation-ids CONVERSATION_IDS
+                        Comma-separated list of conversation IDs to migrate.
+                        If unset, all available conversation IDs will be
+                        exported. (default: None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)</code></pre>
+<h2 id="启动Rasa"><a href="#启动Rasa" class="headerlink" title="启动Rasa"></a>启动Rasa</h2><p>Rasa X是一个工具集，可帮助您利用对话来改善您的助手。您可以<a href="#">在此处</a>找到有关它的更多信息。</p>
+<p>您可以通过执行以下命令在本地启动Rasa X</p>
+<pre><code>rasa x</code></pre>
+<p>为了能够启动Rasa X，您需要安装Rasa X本地模式，并且需要处于Rasa项目中。</p>
+<blockquote>
+<p>注意</p>
+<p>默认情况下，Rasa X在端口5002上运行。使用该参数<code>--rasa-x-port</code>可以将其更改为任何其他端口。</p>
+</blockquote>
+<p>以下参数可用于：<code>rasa x</code></p>
+<pre class=" language-shell"><code class="language-shell">usage: rasa x [-h] [-v] [-vv] [--quiet] [-m MODEL] [--data DATA] [-c CONFIG]
+              [--no-prompt] [--production] [--rasa-x-port RASA_X_PORT]
+              [--config-endpoint CONFIG_ENDPOINT] [--log-file LOG_FILE]
+              [--endpoints ENDPOINTS] [-p PORT] [-t AUTH_TOKEN]
+              [--cors [CORS [CORS ...]]] [--enable-api]
+              [--response-timeout RESPONSE_TIMEOUT]
+              [--remote-storage REMOTE_STORAGE]
+              [--ssl-certificate SSL_CERTIFICATE] [--ssl-keyfile SSL_KEYFILE]
+              [--ssl-ca-file SSL_CA_FILE] [--ssl-password SSL_PASSWORD]
+              [--credentials CREDENTIALS] [--connector CONNECTOR]
+              [--jwt-secret JWT_SECRET] [--jwt-method JWT_METHOD]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m MODEL, --model MODEL
+                        Path to a trained Rasa model. If a directory is
+                        specified, it will use the latest model in this
+                        directory. (default: models)
+  --data DATA           Path to the file or directory containing stories and
+                        Rasa NLU data. (default: data)
+  -c CONFIG, --config CONFIG
+                        The policy and NLU pipeline configuration of your bot.
+                        (default: config.yml)
+  --no-prompt           Automatic yes or default options to prompts and
+                        oppressed warnings. (default: False)
+  --production          Run Rasa X in a production environment. (default:
+                        False)
+  --rasa-x-port RASA_X_PORT
+                        Port to run the Rasa X server at. (default: 5002)
+  --config-endpoint CONFIG_ENDPOINT
+                        Rasa X endpoint URL from which to pull the runtime
+                        config. This URL typically contains the Rasa X token
+                        for authentication. Example:
+                        https://example.com/api/config?token=my_rasa_x_token
+                        (default: None)
+  --log-file LOG_FILE   Store logs in specified file. (default: None)
+  --endpoints ENDPOINTS
+                        Configuration file for the model server and the
+                        connectors as a yml file. (default: None)
+
+Python Logging Options:
+  -v, --verbose         Be verbose. Sets logging level to INFO. (default:
+                        None)
+  -vv, --debug          Print lots of debugging statements. Sets logging level
+                        to DEBUG. (default: None)
+  --quiet               Be quiet! Sets logging level to WARNING. (default:
+                        None)
+
+Server Settings:
+  -p PORT, --port PORT  Port to run the server at. (default: 5005)
+  -t AUTH_TOKEN, --auth-token AUTH_TOKEN
+                        Enable token based authentication. Requests need to
+                        provide the token to be accepted. (default: None)
+  --cors [CORS [CORS ...]]
+                        Enable CORS for the passed origin. Use * to whitelist
+                        all origins. (default: None)
+  --enable-api          Start the web server API in addition to the input
+                        channel. (default: False)
+  --response-timeout RESPONSE_TIMEOUT
+                        Maximum time a response can take to process (sec).
+                        (default: 3600)
+  --remote-storage REMOTE_STORAGE
+                        Set the remote location where your Rasa model is
+                        stored, e.g. on AWS. (default: None)
+  --ssl-certificate SSL_CERTIFICATE
+                        Set the SSL Certificate to create a TLS secured
+                        server. (default: None)
+  --ssl-keyfile SSL_KEYFILE
+                        Set the SSL Keyfile to create a TLS secured server.
+                        (default: None)
+  --ssl-ca-file SSL_CA_FILE
+                        If your SSL certificate needs to be verified, you can
+                        specify the CA file using this parameter. (default:
+                        None)
+  --ssl-password SSL_PASSWORD
+                        If your ssl-keyfile is protected by a password, you
+                        can specify it using this paramer. (default: None)
+
+Channels:
+  --credentials CREDENTIALS
+                        Authentication credentials for the connector as a yml
+                        file. (default: None)
+  --connector CONNECTOR
+                        Service to connect to. (default: None)
+
+JWT Authentication:
+  --jwt-secret JWT_SECRET
+                        Public key for asymmetric JWT methods or shared
+                        secretfor symmetric methods. Please also make sure to
+                        use --jwt-method to select the method of the
+                        signature, otherwise this argument will be ignored.
+                        (default: None)
+  --jwt-method JWT_METHOD
+                        Method used for the signature of the JWT
+                        authentication payload. (default: HS256)</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1130,30 +1729,29 @@ Python Logging Options:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/03/rasa-wen-dang-zhi-nan-2/">
+                <a href="/2020/10/03/rasa-wen-dang-zhi-nan-3/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Rasa文档指南(2)">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Rasa文档指南(3)">
                         
-                        <span class="card-title">Rasa文档指南(2)</span>
+                        <span class="card-title">Rasa文档指南(3)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Rasa Version1文档翻译
+                            架构
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1166,7 +1764,6 @@ Python Logging Options:
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1197,7 +1794,7 @@ Python Logging Options:
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Rasa Version1文档翻译
+                            Rasa基础
                         
                     </div>
                     <div class="publish-info">

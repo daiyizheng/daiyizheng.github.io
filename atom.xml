@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-03T12:56:57.224Z</updated>
+  <updated>2020-10-04T15:42:48.031Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,289 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Rasa文档指南(12)</title>
+    <link href="http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-12/"/>
+    <id>http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-12/</id>
+    <published>2020-10-04T11:09:22.000Z</published>
+    <updated>2020-10-04T15:42:48.031Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;组件&quot;&gt;&lt;a href=&quot;#组件&quot; class=&quot;headerlink&quot; title=&quot;组件&quot;&gt;&lt;/a&gt;组件&lt;/h1&gt;&lt;p&gt;这是Rasa Open Source中每个内置组件的配置选项的参考。如果要构建自定义组件，请查询“&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(11)</title>
+    <link href="http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-11/"/>
+    <id>http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-11/</id>
+    <published>2020-10-04T05:30:39.000Z</published>
+    <updated>2020-10-04T08:36:09.236Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;关于&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;仅使用NLU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;训练数据格式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;语言支援&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(10)</title>
+    <link href="http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-10/"/>
+    <id>http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-10/</id>
+    <published>2020-10-03T16:53:32.000Z</published>
+    <updated>2020-10-03T16:54:53.258Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;云存储&quot;&gt;&lt;a href=&quot;#云存储&quot; class=&quot;headerlink&quot; title=&quot;云存储&quot;&gt;&lt;/a&gt;云存储&lt;/h1&gt;&lt;p&gt;Rasa支持使用&lt;a href=&quot;https://aws.amazon.com/s3/&quot;&gt;S3&lt;/a&gt;， &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(9)</title>
+    <link href="http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-9/"/>
+    <id>http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-9/</id>
+    <published>2020-10-03T16:50:13.000Z</published>
+    <updated>2020-10-04T04:35:02.734Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;部署Rasa助手&quot;&gt;&lt;a href=&quot;#部署Rasa助手&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(8)</title>
+    <link href="http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-8/"/>
+    <id>http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-8/</id>
+    <published>2020-10-03T16:34:53.000Z</published>
+    <updated>2020-10-03T16:50:03.357Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;配置HTTP-API&quot;&gt;&lt;a href=&quot;#配置HTTP-API&quot; class=&quot;headerlink&quot; title=&quot;配置HTTP API&quot;&gt;&lt;/a&gt;配置HTTP API&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;使用Rasa的HTTP
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(7)</title>
+    <link href="http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-7/"/>
+    <id>http://yoursite.com/2020/10/04/rasa-wen-dang-zhi-nan-7/</id>
+    <published>2020-10-03T16:24:51.000Z</published>
+    <updated>2020-10-03T16:34:40.012Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;验证数据&quot;&gt;&lt;a href=&quot;#验证数据&quot; class=&quot;headerlink&quot; title=&quot;验证数据&quot;&gt;&lt;/a&gt;验证数据&lt;/h1&gt;&lt;h2 id=&quot;测试域和数据文件中的错误&quot;&gt;&lt;a href=&quot;#测试域和数据文件中的错误&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(6)</title>
+    <link href="http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-6/"/>
+    <id>http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-6/</id>
+    <published>2020-10-03T15:50:58.000Z</published>
+    <updated>2020-10-03T16:24:30.183Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;设置CI-CD&quot;&gt;&lt;a href=&quot;#设置CI-CD&quot; class=&quot;headerlink&quot; title=&quot;设置CI / CD&quot;&gt;&lt;/a&gt;设置CI /
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(5)</title>
+    <link href="http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-5/"/>
+    <id>http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-5/</id>
+    <published>2020-10-03T14:44:37.000Z</published>
+    <updated>2020-10-03T15:45:23.469Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;测试您的助手&quot;&gt;&lt;a href=&quot;#测试您的助手&quot; class=&quot;headerlink&quot; title=&quot;测试您的助手&quot;&gt;&lt;/a&gt;测试您的助手&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;端到端测试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(4)</title>
+    <link href="http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-4/"/>
+    <id>http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-4/</id>
+    <published>2020-10-03T14:25:23.000Z</published>
+    <updated>2020-10-03T14:41:37.537Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;消息和语音通道&quot;&gt;&lt;a href=&quot;#消息和语音通道&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rasa文档指南(3)</title>
+    <link href="http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-3/"/>
+    <id>http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-3/</id>
+    <published>2020-10-03T14:02:55.000Z</published>
+    <updated>2020-10-03T14:24:25.897Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;架构&quot;&gt;&lt;a href=&quot;#架构&quot; class=&quot;headerlink&quot; title=&quot;架构&quot;&gt;&lt;/a&gt;架构&lt;/h1&gt;&lt;h2 id=&quot;消息处理&quot;&gt;&lt;a href=&quot;#消息处理&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
+    
+    
+      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Rasa文档指南(2)</title>
     <link href="http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-2/"/>
     <id>http://yoursite.com/2020/10/03/rasa-wen-dang-zhi-nan-2/</id>
     <published>2020-10-03T12:22:35.000Z</published>
-    <updated>2020-10-03T12:56:57.224Z</updated>
+    <updated>2020-10-03T13:44:54.713Z</updated>
     
     <summary type="html">
     
@@ -48,7 +326,7 @@
     <link href="http://yoursite.com/2020/10/02/rasa-zhi-nan/"/>
     <id>http://yoursite.com/2020/10/02/rasa-zhi-nan/</id>
     <published>2020-10-02T13:37:09.000Z</published>
-    <updated>2020-10-03T12:22:06.596Z</updated>
+    <updated>2020-10-03T14:45:13.665Z</updated>
     
     <summary type="html">
     
@@ -282,285 +560,6 @@
     
     
       <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多轮对话框架Rasa代码解读-1</title>
-    <link href="http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/"/>
-    <id>http://yoursite.com/2020/09/20/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-1/</id>
-    <published>2020-09-20T07:08:02.000Z</published>
-    <updated>2020-09-20T10:30:18.139Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Rasa&quot;&gt;&lt;a href=&quot;#Rasa&quot; class=&quot;headerlink&quot; title=&quot;Rasa&quot;&gt;&lt;/a&gt;Rasa&lt;/h1&gt;&lt;h2 id=&quot;整体架构&quot;&gt;&lt;a href=&quot;#整体架构&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
-    
-    
-      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
-    
-      <category term="QA" scheme="http://yoursite.com/tags/QA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聚类算法原理</title>
-    <link href="http://yoursite.com/2020/09/19/ju-lei-suan-fa-yuan-li/"/>
-    <id>http://yoursite.com/2020/09/19/ju-lei-suan-fa-yuan-li/</id>
-    <published>2020-09-19T10:39:57.000Z</published>
-    <updated>2020-09-25T13:43:11.799Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;聚类算法原理&quot;&gt;&lt;a href=&quot;#聚类算法原理&quot; class=&quot;headerlink&quot; title=&quot;聚类算法原理&quot;&gt;&lt;/a&gt;聚类算法原理&lt;/h1&gt;&lt;h2 id=&quot;无监督学习与聚类算法&quot;&gt;&lt;a href=&quot;#无监督学习与聚类算法&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="树模型" scheme="http://yoursite.com/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多轮对话框架Rasa代码解读-2</title>
-    <link href="http://yoursite.com/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/"/>
-    <id>http://yoursite.com/2020/09/19/duo-lun-dui-hua-kuang-jia-rasa-dai-ma-jie-du-xun-lian/</id>
-    <published>2020-09-19T10:37:21.000Z</published>
-    <updated>2020-09-20T09:08:36.504Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Rasa源码解读&quot;&gt;&lt;a href=&quot;#Rasa源码解读&quot; class=&quot;headerlink&quot; title=&quot;Rasa源码解读&quot;&gt;&lt;/a&gt;Rasa源码解读&lt;/h1&gt;&lt;h2 id=&quot;脚本总入口&quot;&gt;&lt;a href=&quot;#脚本总入口&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
-    
-    
-      <category term="Rasa" scheme="http://yoursite.com/tags/Rasa/"/>
-    
-      <category term="QA" scheme="http://yoursite.com/tags/QA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随机森林原理</title>
-    <link href="http://yoursite.com/2020/09/18/sui-ji-sen-lin-yuan-li/"/>
-    <id>http://yoursite.com/2020/09/18/sui-ji-sen-lin-yuan-li/</id>
-    <published>2020-09-18T08:01:26.000Z</published>
-    <updated>2020-09-25T10:40:21.697Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;随机森林原理&quot;&gt;&lt;a href=&quot;#随机森林原理&quot; class=&quot;headerlink&quot; title=&quot;随机森林原理&quot;&gt;&lt;/a&gt;随机森林原理&lt;/h1&gt;&lt;h2 id=&quot;集成算法概述&quot;&gt;&lt;a href=&quot;#集成算法概述&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="树模型" scheme="http://yoursite.com/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>word2vec实战：获取和预处理中文维基百科(Wikipedia)语料库，并训练成word2vec模型</title>
-    <link href="http://yoursite.com/2020/09/18/word2vec-shi-zhan-huo-qu-he-yu-chu-li-zhong-wen-wei-ji-bai-ke-wikipedia-yu-liao-ku-bing-xun-lian-cheng-word2vec-mo-xing/"/>
-    <id>http://yoursite.com/2020/09/18/word2vec-shi-zhan-huo-qu-he-yu-chu-li-zhong-wen-wei-ji-bai-ke-wikipedia-yu-liao-ku-bing-xun-lian-cheng-word2vec-mo-xing/</id>
-    <published>2020-09-18T04:13:02.000Z</published>
-    <updated>2020-09-18T04:19:26.113Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;word2vec实战：获取和预处理中文维基百科-Wikipedia-语料库，并训练成word2vec模型&quot;&gt;&lt;a href=&quot;#word2vec实战：获取和预处理中文维基百科-Wikipedia-语料库，并训练成word2vec模型&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
-    
-    
-      <category term="语言模型" scheme="http://yoursite.com/tags/%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"/>
-    
-      <category term="词向量" scheme="http://yoursite.com/tags/%E8%AF%8D%E5%90%91%E9%87%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>rasa使用指南</title>
-    <link href="http://yoursite.com/2020/09/18/rasa-shi-yong-zhi-nan/"/>
-    <id>http://yoursite.com/2020/09/18/rasa-shi-yong-zhi-nan/</id>
-    <published>2020-09-18T01:38:04.000Z</published>
-    <updated>2020-09-19T03:46:07.716Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;转载：&lt;a href=&quot;https://www.jianshu.com/u/fd743bd5ad2d&quot;&gt;https://www.jianshu.com/u/fd743bd5ad2d&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Rasa&quot;&gt;&lt;a href=&quot;#Rasa&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="nlp" scheme="http://yoursite.com/categories/nlp/"/>
-    
-    
-      <category term="聊天系统" scheme="http://yoursite.com/tags/%E8%81%8A%E5%A4%A9%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="rasa" scheme="http://yoursite.com/tags/rasa/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sklearn机器学习原理汇总</title>
-    <link href="http://yoursite.com/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/"/>
-    <id>http://yoursite.com/2020/09/17/ji-qi-xue-xi-yuan-li-hui-zong/</id>
-    <published>2020-09-17T12:27:51.000Z</published>
-    <updated>2020-09-25T14:22:26.078Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;sklearn机器学习汇总&quot;&gt;&lt;a href=&quot;#sklearn机器学习汇总&quot; class=&quot;headerlink&quot; title=&quot;sklearn机器学习汇总&quot;&gt;&lt;/a&gt;sklearn机器学习汇总&lt;/h1&gt;&lt;h2 id=&quot;sklearn-建模流程&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>决策树原理</title>
-    <link href="http://yoursite.com/2020/09/17/jue-ce-shu-yuan-li/"/>
-    <id>http://yoursite.com/2020/09/17/jue-ce-shu-yuan-li/</id>
-    <published>2020-09-17T11:26:50.000Z</published>
-    <updated>2020-09-25T07:46:09.843Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;决策树&quot;&gt;&lt;a href=&quot;#决策树&quot; class=&quot;headerlink&quot; title=&quot;决策树&quot;&gt;&lt;/a&gt;决策树&lt;/h1&gt;&lt;p&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="树模型" scheme="http://yoursite.com/tags/%E6%A0%91%E6%A8%A1%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Transformers中使用TorchScript</title>
-    <link href="http://yoursite.com/2020/09/17/transformers-zhong-shi-yong-torchscript/"/>
-    <id>http://yoursite.com/2020/09/17/transformers-zhong-shi-yong-torchscript/</id>
-    <published>2020-09-17T05:25:44.000Z</published>
-    <updated>2020-09-17T05:36:46.756Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Transformers中使用TorchScript&quot;&gt;&lt;a href=&quot;#Transformers中使用TorchScript&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    
-      <category term="-部署" scheme="http://yoursite.com/tags/%E9%83%A8%E7%BD%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TorchServe部署方法及注意事项</title>
-    <link href="http://yoursite.com/2020/09/17/torchserve-bu-shu-zhu-yi-shi-xiang/"/>
-    <id>http://yoursite.com/2020/09/17/torchserve-bu-shu-zhu-yi-shi-xiang/</id>
-    <published>2020-09-17T00:42:31.000Z</published>
-    <updated>2020-09-17T05:23:04.915Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;TorchServe部署方法及问题&quot;&gt;&lt;a href=&quot;#TorchServe部署方法及问题&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="运维" scheme="http://yoursite.com/categories/%E8%BF%90%E7%BB%B4/"/>
-    
-    
-      <category term="部署" scheme="http://yoursite.com/tags/%E9%83%A8%E7%BD%B2/"/>
     
   </entry>
   
