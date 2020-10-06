@@ -1218,7 +1218,7 @@
 </tr>
 <tr>
 <td><strong>Configuration</strong></td>
-<td>配置小鸭组件应提取的尺寸，即实体类型。<a target="_blank" rel="noopener" href="https://duckling.wit.ai/">小鸭文档</a>中提供了可用尺寸的完整列表。不指定尺寸选项将提取所有可用尺寸。<br></td>
+<td>配置小鸭组件应提取的尺寸，即实体类型。<a target="_blank" rel="noopener" href="https://duckling.wit.ai/">小鸭文档</a>中提供了可用尺寸的完整列表。不指定尺寸选项将提取所有可用尺寸。<br>pipeline: <br>       - name: “DucklingHTTPExtractor”   <br>         url: “”  <br>         dimensions: [“time”, “number”, “amount-of-money”, “distance”]  <br>         locale: “de_DE”  <br>         timezone: “Europe/Berlin”   <br>         timeout : 3</td>
 </tr>
 </tbody></table>
 <h3 id="DIETClassifier-1"><a href="#DIETClassifier-1" class="headerlink" title="DIETClassifier"></a>DIETClassifier</h3><table>
@@ -1802,30 +1802,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/04/rasa-wen-dang-zhi-nan-12/">
+                <a href="/2020/10/04/rasa-wen-dang-zhi-nan-13/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Rasa文档指南(12)">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Rasa文档指南(13)">
                         
-                        <span class="card-title">Rasa文档指南(12)</span>
+                        <span class="card-title">Rasa文档指南(13)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            NLU-组件
+                            NLU - 实体提取
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1838,7 +1837,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
