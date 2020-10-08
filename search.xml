@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>本地端口映射到公网(jupyter为例)</title>
+      <link href="/2020/10/07/ben-di-duan-kou-ying-she-dao-gong-wang-jupyter-wei-li/"/>
+      <url>/2020/10/07/ben-di-duan-kou-ying-she-dao-gong-wang-jupyter-wei-li/</url>
+      
+        <content type="html"><![CDATA[<h1 id="本地端口映射到公网-jupyter为例"><a href="#本地端口映射到公网-jupyter为例" class="headerlink" title="本地端口映射到公网(jupyter为例)"></a>本地端口映射到公网(jupyter为例)</h1><h2 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h2><ul><li>条件python环境，安装了jupyter</li></ul><pre class=" language-python"><code class="language-python">jupyter notebook <span class="token operator">-</span><span class="token operator">-</span>generate<span class="token operator">-</span>config</code></pre><h2 id="生成密码"><a href="#生成密码" class="headerlink" title="生成密码"></a>生成密码</h2><pre class=" language-python"><code class="language-python">In <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">from</span> notebook<span class="token punctuation">.</span>auth <span class="token keyword">import</span> passwdIn <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> passwd<span class="token punctuation">(</span><span class="token punctuation">)</span>Enter password<span class="token punctuation">:</span> Verify password<span class="token punctuation">:</span> Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'sha1:***************************'</span></code></pre><p>把生成的密文‘sha:……’复制下来。</p><h2 id="修改默认配置文件"><a href="#修改默认配置文件" class="headerlink" title="修改默认配置文件"></a>修改默认配置文件</h2><p>进入上面生成的配置文件</p><pre class=" language-shell"><code class="language-shell">c.NotebookApp.ip='*'c.NotebookApp.password = u'sha:ce...刚才复制的那个密文'c.NotebookApp.open_browser = Falsec.NotebookApp.port =8888 #随便指定一个端口</code></pre><h2 id="ngrok配置"><a href="#ngrok配置" class="headerlink" title="ngrok配置"></a>ngrok配置</h2><h3 id="第一种-ngrok"><a href="#第一种-ngrok" class="headerlink" title="第一种 ngrok"></a>第一种 ngrok</h3><p>进入ngrok官网（<a href="https://ngrok.com/%EF%BC%89%EF%BC%8C%E6%B3%A8%E5%86%8Cngrok%E8%B4%A6%E5%8F%B7%E5%B9%B6%E4%B8%8B%E8%BD%BDngrok%EF%BC%9B">https://ngrok.com/），注册ngrok账号并下载ngrok；</a></p><p>根据官网给定的授权码，运行如下授权命令；</p><ul><li>授权码<br><img src="/2020/10/07/ben-di-duan-kou-ying-she-dao-gong-wang-jupyter-wei-li/1.png"></li><li>授权命令</li></ul><pre><code>ngrok authtoken 授权码</code></pre><p>授权码和账户是绑定的，在授权命令运行后，ngrok会将授权码保存在<code>~/.ngrok2/ngrok.yml</code>中，所以只需要运行一次，以后都可以使用。<br>根据需要，运行命令开发端口。</p><pre><code>ngrok http 8080</code></pre><p>需要注意的是，这里的端口<code>8080</code>可以根据需要替换成其他端口。这条命令的意思是将本地8080端口对应的服务暴露到外网中。</p><h3 id="第二种-sunny-ngrok"><a href="#第二种-sunny-ngrok" class="headerlink" title="第二种 sunny-ngrok"></a>第二种 sunny-ngrok</h3><p>教程：<a href="https://www.jianshu.com/p/056fad6e2fe3">https://www.jianshu.com/p/056fad6e2fe3</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ngork </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Rasa文档指南(14)</title>
       <link href="/2020/10/05/rasa-wen-dang-zhi-nan-14/"/>
       <url>/2020/10/05/rasa-wen-dang-zhi-nan-14/</url>
